@@ -43,7 +43,17 @@
 
                                     <div class="form-group">
                                         <label>Nội dung</label>
-                                        <textarea class="form-control ckeditor_form" name="contents" id="contents" cols="30" rows="15">{{ $dataProduct->contents }}</textarea>
+                                        <textarea class="form-control ck-form  @error('short_content') is-invalid @enderror" name="short_content" id="short_content"
+                                            cols="30" rows="15">{{ dataProduct->short_content }}</textarea>
+                                    </div>
+                                    @error('short_content')
+                                        <div class="alert alert-warning text-error">{{ $message }}</div>
+                                    @enderror
+                                    <hr width="100%" />
+
+                                    <div class="form-group">
+                                        <label>Nội dung</label>
+                                        <textarea class="form-control ck-form" name="contents" id="contents" cols="30" rows="15">{{ $dataProduct->contents }}</textarea>
                                     </div>
                                     <hr width="100%" />
 

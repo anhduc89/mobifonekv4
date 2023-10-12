@@ -44,7 +44,7 @@
 
                                     <div class="form-group">
                                         <label>Nội dung</label>
-                                        <textarea class="form-control ckeditor_form  @error('contents') is-invalid @enderror" name="contents" id="contents"
+                                        <textarea class="form-control ck-form  @error('contents') is-invalid @enderror" name="contents" id="contents"
                                             cols="30" rows="15">{{ $dataUpdate->contents }}</textarea>
                                     </div>
                                     @error('contents')
@@ -122,8 +122,11 @@
 @endsection
 
 @section('js-custom-admin')
-    <script src="//cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
-    <script src="{{ asset('admins/recruitment/recruitment.js') }}"></script>
+    <script src="{{ asset('asset/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('asset/ckeditor/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('asset/ckfinder/ckfinder.js') }}"></script>
+    <script src="{{ asset('asset/custom_ckeditor.js') }}"></script>
+    <script src="{{ asset('admins/news/news.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
     <script type="text/javascript">

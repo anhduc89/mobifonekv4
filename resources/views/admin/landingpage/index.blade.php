@@ -46,17 +46,17 @@
                                         @foreach ($listLDP as $item)
                                             <tr>
                                                 <th>{{ $stt }}</th>
-                                                <td><p class="text-news" >{{ $item->title }}</p></td>
+                                                <td><p class="text-news" >{{ $item->name }}</p></td>
                                                 <td>
-                                                    <img src="{{ $item->image_path }}" class="image-list">
+                                                    <img src="{{ $item->avatar_path }}" class="image-list">
                                                 </td>
 
                                                 {{-- categoriesNews ở model News. Quan hệ 1 - n . 1 danh mục có nhiều bài  --}}
-                                                <td><p class="text-news"> {{ optional($item->categoriesNews)->name }} </p></td>
-                                                <td><p class="text-news"> {{ date( "d/m/Y", strtotime($item->date))  }} </p></td>
+                                                {{-- <td><p class="text-news"> {{ optional($item->categoriesNews)->name }} </p></td>
+                                                <td><p class="text-news"> {{ date( "d/m/Y", strtotime($item->date))  }} </p></td> --}}
 
                                                 <td>
-                                                    <a href="{{ route('news.edit',['id' => $item->id]) }}"><button type="button" class="btn btn-outline-success btn-sm">Chỉnh sửa</button></a>
+                                                    <a href="{{ route('landingpage.edit',['id' => $item->id]) }}"><button type="button" class="btn btn-outline-success btn-sm">Chỉnh sửa</button></a>
 
                                                     <button type="button" class="btn btn-outline-warning btn-sm">Xóa</button>
                                                 </td>

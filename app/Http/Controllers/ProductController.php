@@ -38,6 +38,7 @@ class ProductController extends Controller
             'name' => $productsRequest->name,
             'product_categories'    => $productsRequest->product_categories,
             'contents' => $productsRequest->contents,
+            'short_content' => $productsRequest->short_content,
             'slug' => str_slug($productsRequest->name) . '-' . date("dmY", time()) . time() . '.html'
         );
 
@@ -70,6 +71,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'product_categories'    => $request->product_categories,
             'contents' => $request->contents,
+            'short_content' => $request->short_content,
             'slug' => str_slug($request->name) . '-' . date("dmY", time()) . time() . '.html'
         );
 

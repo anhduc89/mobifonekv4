@@ -44,14 +44,25 @@
                                     <hr width="100%" />
 
                                     <div class="form-group">
+                                        <label>Nội dung ngắn</label>
+                                        <textarea class="form-control ck-form  @error('short_content') is-invalid @enderror" name="short_content" id="short_content"
+                                            cols="30" rows="15">{{ old('short_content') }}</textarea>
+                                    </div>
+                                    @error('short_content')
+                                        <div class="alert alert-warning text-error">{{ $message }}</div>
+                                    @enderror
+                                    <hr width="100%" />
+
+                                    <div class="form-group">
                                         <label>Nội dung</label>
-                                        <textarea class="form-control ckeditor_form  @error('contents') is-invalid @enderror" name="contents" id="contents"
+                                        <textarea class="form-control ck-form  @error('contents') is-invalid @enderror" name="contents" id="contents"
                                             cols="30" rows="15">{{ old('contents') }}</textarea>
                                     </div>
                                     @error('contents')
                                         <div class="alert alert-warning text-error">{{ $message }}</div>
                                     @enderror
                                     <hr width="100%" />
+
 
                                     <div class="form-group">
                                         <label>Hình ảnh bài viết</label>

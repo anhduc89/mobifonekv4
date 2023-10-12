@@ -104,8 +104,6 @@ class NewsController extends Controller
     public function edit(Request $request, $id)
     {
         $itemNews = $this->news->find($id);
-        // dd($itemNews->tags);
-        // #echo "<pre>"; print_r($itemNews->tags); exit;
         $listCategory = $this->newsCategory->all()->toArray();
         return view('admin.news.edit',compact('itemNews','listCategory'));
     }

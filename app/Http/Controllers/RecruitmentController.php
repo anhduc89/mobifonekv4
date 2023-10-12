@@ -40,20 +40,18 @@ class RecruitmentController extends Controller
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
-                'status' => 1 // 1 là cho hiển thị ra ngoài. 0 là ẩn
+                'status' => 1, // 1 là cho hiển thị ra ngoài. 0 là ẩn
+                'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
-            #echo "<pre>"; print_r($dataInsert); exit;
-            //upload image
+
             $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
             if (!empty($dataUploadImage)) {
                 $dataInsert['image_name'] = $dataUploadImage['file_name'];
                 $dataInsert['image_path'] = $dataUploadImage['file_path'];
             }
+
             $this->recruiment->create($dataInsert);
-
-
             DB::commit();
-
             return redirect()->route('recruitment.index');
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -81,6 +79,7 @@ class RecruitmentController extends Controller
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
                 'status' => $recruimentRequest->status,// 1 là cho hiển thị ra ngoài. 0 là ẩn
+                'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
 
             //upload image
@@ -97,9 +96,7 @@ class RecruitmentController extends Controller
             }
 
             $this->recruiment->find($id)->update($dataUpdate);
-
             DB::commit();
-
             return redirect()->route('recruitment.index');
         }
         catch (\Exception $exception) {
@@ -107,6 +104,4 @@ class RecruitmentController extends Controller
             Log::error("message " . $exception->getMessage() . 'Line: ' . $exception->getLine());
         }
     }
-
-
 }

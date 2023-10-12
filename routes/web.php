@@ -318,21 +318,20 @@ Route::prefix('admin')->group(function () {
         Route::post('/addLandingPage', [
             LadingPage::class,
             'as' => 'landingpage.addLandingPage',
-            'uses' => 'LadingPageController@addRecruitment'
+            'uses' => 'LadingPageController@addLandingPage'
         ]);
 
-        // Route::get('/edit/{id}', [
-        //     Recruitment::class,
-        //     'as' => 'recruitment.edit',
-        //     'uses' => 'RecruitmentController@edit'
-        // ]);
+        Route::get('/edit/{id}', [
+            LadingPage::class,
+            'as' => 'landingpage.edit',
+            'uses' => 'LadingPageController@edit'
+        ]);
 
-
-        // Route::post('/updateRecruitment/{id}', [
-        //     Recruitment::class,
-        //     'as' => 'recruitment.updateRecruitment',
-        //     'uses' => 'RecruitmentController@updateRecruitment'
-        // ]);
+        Route::post('/updateLandingPage/{id}', [
+            LandingPage::class,
+            'as' => 'landingpage.updateLandingPage',
+            'uses' => 'LadingPageController@updateLandingPage'
+        ]);
     });
 
 

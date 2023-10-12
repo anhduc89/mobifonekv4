@@ -41,13 +41,13 @@
 
                                     <div class="form-group">
                                         <label>Nội dung ngắn</label>
-                                        <textarea class="form-control ckeditor_form" name="short_content" id="short_content" cols="30" rows="5">{{ $itemNews->short_content }}</textarea>
+                                        <textarea class="form-control ck-form" name="short_content" id="short_content" cols="30" rows="5">{{ $itemNews->short_content }}</textarea>
                                     </div>
 
                                     <hr width="100%" />
                                     <div class="form-group">
                                         <label>Nội dung</label>
-                                        <textarea class="form-control ckeditor_form" name="contents" id="contents" cols="30" rows="15">{{ $itemNews->content }}</textarea>
+                                        <textarea class="form-control ck-form" name="contents" id="contents" cols="30" rows="15">{{ $itemNews->content }}</textarea>
                                     </div>
 
                                     <hr width="100%" />

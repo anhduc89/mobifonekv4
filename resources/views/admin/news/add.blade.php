@@ -53,13 +53,13 @@
 
                                     <div class="form-group">
                                         <label>Nội dung ngắn</label>
-                                        <textarea class="form-control ckeditor_form" name="short_content" id="short_content" cols="30" rows="5"></textarea>
+                                        <textarea class="form-control ck-form" name="short_content" id="short_content" cols="30" rows="5"></textarea>
                                     </div>
                                     <hr width="100%" />
 
                                     <div class="form-group">
                                         <label>Nội dung</label>
-                                        <textarea class="form-control ckeditor_form  @error('contents') is-invalid @enderror" name="contents" id="contents"
+                                        <textarea class="form-control ck-form  @error('contents') is-invalid @enderror" name="contents" id="contents"
                                             cols="30" rows="15"></textarea>
                                     </div>
                                     @error('contents')
