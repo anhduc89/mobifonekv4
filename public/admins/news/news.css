@@ -1,0 +1,24 @@
+.select2-selection__choice__display {
+    color: black;
+    margin-left: 5px;
+}
+
+.select2-search__field {
+    height: 25px;
+}
+
+.image-list {
+    width: 260px;
+    height: auto;
+}
+.text-news {
+    font-size: 14px !important;
+}
+
+.text-error {
+    color: #fff;
+}
+div.ck-editor__editable {
+    height: 300px !important;
+    overflow: scroll;
+}
