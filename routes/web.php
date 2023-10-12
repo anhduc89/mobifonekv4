@@ -218,7 +218,6 @@ Route::prefix('admin')->group(function () {
 
     // ------------------------------------------------------------------------------------------
     // route dành cho photo
-    // 1. slider
     Route::prefix('image')->group(function () {
         Route::get('/', [
             ImageController::class,
@@ -298,6 +297,42 @@ Route::prefix('admin')->group(function () {
             'as' => 'recruitment.updateRecruitment',
             'uses' => 'RecruitmentController@updateRecruitment'
         ]);
+    });
+
+    // ------------------------------------------------------------------------------------------
+    // route landing page
+    Route::prefix('landingpage')->group(function () {
+        Route::get('/', [
+            LadingPage::class,
+            'as' => 'landingpage.index',
+            'uses' => 'LadingPageController@index'
+        ]);
+
+        Route::get('/create', [
+            LadingPage::class,
+            'as' => 'landingpage.create',
+            'uses' => 'LadingPageController@create'
+        ]);
+
+        // thêm mới
+        Route::post('/addLandingPage', [
+            LadingPage::class,
+            'as' => 'landingpage.addLandingPage',
+            'uses' => 'LadingPageController@addRecruitment'
+        ]);
+
+        // Route::get('/edit/{id}', [
+        //     Recruitment::class,
+        //     'as' => 'recruitment.edit',
+        //     'uses' => 'RecruitmentController@edit'
+        // ]);
+
+
+        // Route::post('/updateRecruitment/{id}', [
+        //     Recruitment::class,
+        //     'as' => 'recruitment.updateRecruitment',
+        //     'uses' => 'RecruitmentController@updateRecruitment'
+        // ]);
     });
 
 

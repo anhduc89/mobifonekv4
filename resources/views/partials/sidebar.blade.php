@@ -131,7 +131,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('recruitment.index') }}" class="nav-link">
-                            &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-user-plus"></i>&nbsp
+                            &nbsp&nbsp&nbsp&nbsp<i class="nav-icon far fa-newspaper"></i>&nbsp
                             <p>Tin tuyển dụng </p>
                             </a>
                         </li>
@@ -149,9 +149,9 @@
                 <!-- Landing page -->
                 <li class="nav-header">----- LANDING PAGE</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('landingpage.index') }}" class="nav-link">
                         <i class="far fa-file-word"></i>&nbsp
-                        <p> Landing page </p>
+                        <p>Landing page </p>
                     </a>
                 </li>
 
@@ -173,7 +173,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="pages/mailbox/mailbox.html" class="nav-link">
                                 &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
                                 <p>Không thành công</p>
@@ -184,7 +184,7 @@
                                 &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
                                 <p>Liên hệ thành công</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
 
@@ -192,10 +192,7 @@
                 <!-- THÔNG TIN CÔNG TY -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-info"></i>
-                        <p>
-                            Thông tin
-                            <i class="fas fa-angle-left right"></i>
+                        <i class="nav-icon fas fa-info"></i><p>Thông tin <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
