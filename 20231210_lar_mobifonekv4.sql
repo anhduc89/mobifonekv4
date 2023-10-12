@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3307
--- Thời gian đã tạo: Th10 12, 2023 lúc 05:41 AM
+-- Thời gian đã tạo: Th10 12, 2023 lúc 05:54 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.0.25
 
@@ -120,6 +120,32 @@ CREATE TABLE `info_companies` (
 
 INSERT INTO `info_companies` (`id`, `image_logo`, `favicon`, `address`, `email`, `phone`, `map`, `facebook`, `tiktok`, `zalo`, `youtube`, `created_at`, `updated_at`, `image_logo_path`, `image_favicon_path`) VALUES
 (3, '2 xanh đỏ .png', 'English logo XĐ 2.png', 'Tòa nhà MobiFone - Khu Đồng Mạ - P. Tiên Cát - TP Việt Trì - T. Phú Thọ', 'mobifonekv4@mobifone.vn', '0899838838', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59471.43160630164!2d105.3398740486328!3d21.31242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134f3b59d1746f7%3A0xcb2964dd35567dab!2zQ8O0bmcgdHkgZOG7i2NoIHbhu6UgTW9iaUZvbmUga2h1IHbhu7FjIDQ!5e0!3m2!1svi!2s!4v1690379681652!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'https://www.facebook.com/mobifonekv4.vn', 'https://www.tiktok.com/@mobifonekv4', 'https://zalo.me/626767492003379900?gidzl=pAGh9RQ-XN3Clo8gkwECSyAwBosZy8XqZRju8FEXt7sFjoWZyQtRUeYxVNJnh8qksxLvTJbFBvPiihk9Vm', 'https://www.youtube.com/channel/UCOsP75SL3f-EM7z4eylRbJQ', '2023-07-26 08:25:37', '2023-07-26 09:59:09', '/storage/logo/1/26072023_031649_2hQluK4cDl.png', '/storage/logo/1/26072023_031649_AsLj6o9gIu.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `landing_page`
+--
+
+CREATE TABLE `landing_page` (
+  `id` mediumint(9) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `content` text NOT NULL,
+  `advantage` text NOT NULL COMMENT 'ưu điểm của giải pháp-dịch vụ',
+  `feature` text NOT NULL COMMENT 'tính năng của giải pháp-dịch vụ',
+  `avatar` varchar(200) NOT NULL,
+  `avatar_path` varchar(200) NOT NULL,
+  `slug` varchar(500) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `landing_page`
+--
+
+INSERT INTO `landing_page` (`id`, `name`, `content`, `advantage`, `feature`, `avatar`, `avatar_path`, `slug`, `created_at`, `updated_at`) VALUES
+(1, 'mobifone e-contract', '<p style=\"text-align:justify;\"><strong>Công ty Dịch vụ MobiFone Khu vực 4</strong></p><p style=\"text-align:justify;\">Công ty Dịch vụ MobiFone Khu vực 4 được thành lập vào ngày 10/02/2015, là đơn vị trực thuộc Tổng Công ty Viễn thông MobiFone, chịu trách nhiệm kinh doanh trong phạm vi 13 tỉnh/thành phố bao gồm: Vĩnh Phúc, Phú Thọ, Lào Cai, Yên Bái, Sơn La, Lai Châu, Điện Biên, Ninh Bình, Hà Nam, Hoà Bình, Nam Định, Hà Giang, Tuyên Quang.</p><p style=\"text-align:justify;\">Trụ sở của công ty được đặt tại Khu Đồng Mạ, Đường Nguyễn Tất Thành, TP Việt Trì, tỉnh Phú Thọ.</p>', '<p style=\"text-align:justify;\"><strong>Tầm nhìn:&nbsp;</strong></p><p style=\"text-align:justify;\">Nhằm cụ thể hóa những nội dung của Chiến lược phát triển kinh tế-xã hội giai đoạn 2021-2030, Chiến lược phát triển các doanh nghiệp thuộc Ủy ban Quản lý vốn nhà nước tại doanh nghiệp, tầm nhìn phát triển đến năm 2030 của MobiFone được thể hiện rõ nét trong thông điệp&nbsp;<strong>“Sáng tạo tương lai số”.</strong>&nbsp;</p><p style=\"text-align:justify;\">MobiFone hướng đến trở thành nhà cung cấp hạ tầng, giải pháp/ nền tảng và dịch vụ số hàng đầu tại Việt Nam và quốc tế.</p><p style=\"text-align:justify;\">MobiFone mang tới các nền tảng, công nghệ, giải pháp ưu việt giúp các cá nhân, doanh nghiệp, tổ chức nhanh chóng chuyển đổi, hòa nhịp vào nền kinh tế số; góp phần sớm đưa Việt Nam trở thành quốc gia số.</p><p style=\"text-align:justify;\">MobiFone xây dựng hệ sinh thái số hoàn chỉnh đáp ứng mọi nhu cầu, đánh thức mọi tiềm năng và đồng hành cùng khách hàng kiến tạo tương lai số.</p><p style=\"text-align:justify;\">Đến năm 2035, MobiFone phấn đấu trở thành Tập đoàn Công nghệ có hệ sinh thái công nghệ (hạ tầng viễn thông, hạ tầng công nghệ, dịch vụ/giải pháp công nghệ) hàng đầu Việt Nam; với cơ sở hạ tầng công nghệ đáp ứng nhu cầu phát triển của thị trường và xã hội Việt Nam; phát triển, mở rộng các giải pháp công nghệ để đáp ứng yêu cầu của cuộc cách mạng công nghiệp 4.0 và xu thế vận động của nền kinh tế thế giới.</p>', '<p><strong>Sứ mệnh</strong><span style=\"background-color:rgb(255,255,255);color:rgb(5,67,121);\">: Không ngừng đổi mới, sáng tạo và tạo dựng hệ sinh thái số hoàn chỉnh, đáp ứng mọi nhu cầu, đánh thức mọi tiềm năng, đồng hành cùng người Việt kiến tạo tương lai số, xã hội số và góp phần đưa Việt Nam sớm trở thành quốc gia số.</span></p>', 'nghịch.jpg', '/storage/landing_page//12102023_102304_OAC5668jyj.jpg', 'mobifone.html', '2023-10-12 15:04:55', '2023-10-12 15:04:55');
 
 -- --------------------------------------------------------
 
@@ -251,21 +277,6 @@ CREATE TABLE `news_tags` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `news_tags`
---
-
-INSERT INTO `news_tags` (`id`, `news_id`, `tag_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2023-07-19 13:45:18', '2023-07-19 13:45:18'),
-(2, 1, 2, '2023-07-19 13:45:18', '2023-07-19 13:45:18'),
-(3, 2, 1, '2023-07-19 13:51:33', '2023-07-19 13:51:33'),
-(4, 2, 3, '2023-07-19 13:51:33', '2023-07-19 13:51:33'),
-(15, 7, 0, '2023-07-26 07:07:32', '2023-07-26 07:07:32'),
-(17, 3, 16, '2023-07-26 07:13:18', '2023-07-26 07:13:18'),
-(18, 8, 18, '2023-10-11 04:10:08', '2023-10-11 04:10:08'),
-(19, 8, 19, '2023-10-11 04:10:08', '2023-10-11 04:10:08'),
-(20, 8, 20, '2023-10-11 04:10:08', '2023-10-11 04:10:08');
-
 -- --------------------------------------------------------
 
 --
@@ -310,6 +321,7 @@ CREATE TABLE `products` (
   `image_path` varchar(191) NOT NULL,
   `product_categories` int(11) NOT NULL,
   `contents` text NOT NULL,
+  `short_content` text NOT NULL,
   `slug` varchar(191) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -353,9 +365,17 @@ CREATE TABLE `recruitments` (
   `number_of_applicants` int(11) NOT NULL,
   `application_deadline` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` tinyint(4) NOT NULL,
+  `slug` varchar(200) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `recruitments`
+--
+
+INSERT INTO `recruitments` (`id`, `title`, `image_name`, `image_path`, `contents`, `number_of_applicants`, `application_deadline`, `status`, `slug`, `created_at`, `updated_at`) VALUES
+(9, 'Phú Thọ - Tuyển dụng vị trí lập trình viên', '377764412_641523244739776_480983576695863628_n.jpg', '/storage/recruiment//12102023_030427_U1ANmMNsNI.jpg', '<p>&nbsp;</p><figure class=\"image\"><img src=\"/ckfinder/userfiles/files/377764412_641523244739776_480983576695863628_n.jpg\"></figure><p style=\"text-align:justify;\"><strong>Lĩnh vực kinh doanh:</strong>&nbsp;</p><p style=\"text-align:justify;\">MobiFone định hướng tiếp tục đẩy mạnh việc chuyển đổi số và xây dựng hạ tầng số, hệ sinh thái số cho khách hàng, đối tác, xã hội. Phát triển có chiều sâu, mở rộng và tăng trưởng mạnh trong các lĩnh vực kinh doanh trụ cột: (1) Hạ tầng số (hạ tầng dữ liệu di động (kết nối 3G/4G/5G/…), hạ tầng Cloud, băng rộng cố định); (2) Nền tảng số, giải pháp số doanh nghiệp (tài chính số/thanh toán số, IoT, Giám sát thông minh, Bảo mật số, dịch vụ chuyển đổi số doanh nghiệp,...); (3) Dịch vụ nội dung số (Giáo dục, Chăm sóc sức khỏe, Quảng cáo, Âm nhạc, video, truyền hình OTT,...).</p>', 9, '2023-10-12 15:31:46', 1, 'phu-tho-tuyen-dung-vi-tri-lap-trinh-vien-121020231697124706.html', '2023-10-12 08:27:04', '2023-10-12 08:31:46');
 
 -- --------------------------------------------------------
 
@@ -369,22 +389,6 @@ CREATE TABLE `tags` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tags`
---
-
-INSERT INTO `tags` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'thi đua', '2023-07-19 13:45:18', '2023-07-19 13:45:18'),
-(2, 'sáng kiến', '2023-07-19 13:45:18', '2023-07-19 13:45:18'),
-(3, 'phong trào', '2023-07-19 13:51:33', '2023-07-19 13:51:33'),
-(4, 'công đoàn', '2023-07-19 15:23:51', '2023-07-19 15:23:51'),
-(5, 'chính sách', '2023-07-19 15:23:51', '2023-07-19 15:23:51'),
-(16, 'hội nghị', '2023-07-19 16:18:07', '2023-07-19 16:18:07'),
-(17, 'ghfjghf', '2023-07-25 14:31:19', '2023-07-25 14:31:19'),
-(18, 'ádfádgdfgd', '2023-10-11 04:10:08', '2023-10-11 04:10:08'),
-(19, 'dfhgftytyu', '2023-10-11 04:10:08', '2023-10-11 04:10:08'),
-(20, 'ttest1110', '2023-10-11 04:10:08', '2023-10-11 04:10:08');
 
 -- --------------------------------------------------------
 
@@ -438,6 +442,12 @@ ALTER TABLE `image`
 -- Chỉ mục cho bảng `info_companies`
 --
 ALTER TABLE `info_companies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `landing_page`
+--
+ALTER TABLE `landing_page`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -544,6 +554,12 @@ ALTER TABLE `info_companies`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT cho bảng `landing_page`
+--
+ALTER TABLE `landing_page`
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
@@ -559,7 +575,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `news_categories`
@@ -571,7 +587,7 @@ ALTER TABLE `news_categories`
 -- AUTO_INCREMENT cho bảng `news_tags`
 --
 ALTER TABLE `news_tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -595,13 +611,13 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT cho bảng `recruitments`
 --
 ALTER TABLE `recruitments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
