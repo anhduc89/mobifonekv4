@@ -26,6 +26,6 @@ class LadingPageController extends Controller
 
     public function addLandingPage()
     {
-        echo 'abc xyz';
+        echo 'test';
     }
 }
