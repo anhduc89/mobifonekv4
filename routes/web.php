@@ -3,8 +3,12 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
+use Illuminate\Http\Request;
 
+// Frontend
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FrontendProductController;
+use App\Http\Controllers\FrontendNewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +21,62 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+// ====================================================== Frontend ===========================================
+
+Route::get('/token', function (Request $request) {
+    $token = $request->session()->token();
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('homeFrontEnd');
+Route::get('/trang-chu', [HomeController::class, 'index'])->name('homeFrontEnd');
 
+// Newss
 
+Route::prefix('tin-tuc')->group(function () {
+
+    Route::get('/', [
+        FrontendNewsController::class, 'index'])
+    ->name('newsFrontEnd');
+    
+    Route::get('/danh-muc/{slug}', [
+        FrontendNewsController::class, 'category'])
+    ->name('newsFrontEnd.category');
+
+    Route::get('/chi-tiet/{slug}', [
+        FrontendNewsController::class, 'detail'])
+    ->name('newsFrontEnd.detail');
+    
+    Route::get('/tags/{slug}', [
+        FrontendNewsController::class, 'tags'])
+    ->name('newsFrontEnd.tags');
+
+});
+
+// products
+Route::prefix('san-pham-dich-vu')->group(function () {
+
+    Route::get('/', [FrontendProductController::class, 'index'])->name('productFrontEnd');
+    Route::get('/{slug}', [FrontendProductController::class, 'detail'])->name('productDetailFrontEnd');
+    
+});
+
+// Contact
+Route::get('/lien-he', [HomeController::class, 'contact'])->name('contactFrontEnd');
+
+// Contact post
+Route::post('/lien-he', [HomeController::class, 'contactForm'])->name('contactFormFrontEnd');
+
+// About us
+Route::get('/gioi-thieu', [HomeController::class, 'aboutUs'])->name('aboutUsFrontEnd');
+
+Route::get('/ve-mobifone-kv4', [HomeController::class, 'aboutUs'])->name('aboutUsFrontEnd');
+
+// Tuyển dụng
+Route::get('/tuyen-dung', [HomeController::class, 'tuyenDung'])->name('tuyenDungFrontEnd');
+
+Route::post('/tuyen-dung', [HomeController::class, 'tuyenDungForm'])->name('tuyenDungFormFrontEnd');
+
+// ====================================================== Admin ===========================================
 
 // dùng cái này để làm chức năng login logout
 // Route::get('/login', function () {

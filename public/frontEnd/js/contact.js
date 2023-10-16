@@ -35,48 +35,52 @@ $(document).ready(function(){
             },
             messages: {
                 name: {
-                    required: "come on, you have a name, don't you?",
-                    minlength: "your name must consist of at least 2 characters"
+                    required: "Vui lòng nhập tên của bạn",
+                    minlength: "Nhiều hơn  2 ký tự"
                 },
                 subject: {
-                    required: "come on, you have a subject, don't you?",
-                    minlength: "your subject must consist of at least 4 characters"
+                    required: "Vui lòng nhập số điện thoại của bạn",
+                    minlength: "Nhiều hơn  4 ký tự"
                 },
                 number: {
-                    required: "come on, you have a number, don't you?",
-                    minlength: "your Number must consist of at least 5 characters"
+                    required: "Vui lòng nhập số điện thoại của bạn",
+                    minlength: "Nhiều hơn  5 ký tự"
                 },
                 email: {
-                    required: "no email, no message"
+                    required: "Vui lòng nhập email của bạn"
                 },
                 message: {
-                    required: "um...yea, you have to write something to send this form.",
-                    minlength: "thats all? really?"
+                    required: "Vui lòng nhập lời nhắn của bạn đến chúng tôi",
+                    minlength: "Nhiều hơn  20 ký tự"
                 }
             },
             submitHandler: function(form) {
-                $(form).ajaxSubmit({
-                    type:"POST",
-                    data: $(form).serialize(),
-                    url:"contact_process.php",
-                    success: function() {
-                        $('#contactForm :input').attr('disabled', 'disabled');
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $(this).find(':input').attr('disabled', 'disabled');
-                            $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#success').modal('show');
-                        })
-                    },
-                    error: function() {
-                        $('#contactForm').fadeTo( "slow", 1, function() {
-                            $('#error').fadeIn()
-                            $('.modal').modal('hide');
-		                	$('#error').modal('show');
-                        })
-                    }
-                })
+                $(form).submit();
+
+                // ajax submit
+
+                // $(form).ajaxSubmit({
+                //     type:"POST",
+                //     data: $(form).serialize(),
+                //     url:"contact_process.php",
+                //     success: function() {
+                //         $('#contactForm :input').attr('disabled', 'disabled');
+                //         $('#contactForm').fadeTo( "slow", 1, function() {
+                //             $(this).find(':input').attr('disabled', 'disabled');
+                //             $(this).find('label').css('cursor','default');
+                //             $('#success').fadeIn()
+                //             $('.modal').modal('hide');
+		        //         	$('#success').modal('show');
+                //         })
+                //     },
+                //     error: function() {
+                //         $('#contactForm').fadeTo( "slow", 1, function() {
+                //             $('#error').fadeIn()
+                //             $('.modal').modal('hide');
+		        //         	$('#error').modal('show');
+                //         })
+                //     }
+                // })
             }
         })
     })

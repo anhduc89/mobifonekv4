@@ -28,8 +28,8 @@
                     <div class="row">
                         <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-sm-12">
                             <div class="hero-caption">
-                                <span data-animation="fadeInUp" data-delay=".2s" style="color: red">Chúng tôi là</span>
-                                <h1 data-animation="fadeInUp" data-delay=".2s" style="color: blue">CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h1>
+                                {{-- <span data-animation="fadeInUp" data-delay=".2s" style="color: red">Chúng tôi là</span>
+                                <h1 data-animation="fadeInUp" data-delay=".2s" style="color: blue">CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h1> --}}
                                 {{-- <P data-animation="fadeInUp" data-delay=".4s">Lorem ipsum dolor sit amet,
                                     consectetur adipiscing elit.
                                     Suspendisse varius enim in eros elementum tristique.</P> --}}
@@ -96,7 +96,7 @@
                             <p>Có thể khẳng định một cách chắc chắn rằng trong lĩnh vực công nghệ số,<br> tốc độ là yếu tố quyết định. 
                                 Trong không gian số không hề... </p>
                         </div>
-                        <a href="projects.html"><i class="ti-angle-right"></i></a>
+                        <a href="/gioi-thieu"><i class="ti-angle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                             <p>Để MobiFone có thể hiện thực hóa tầm nhìn của mình, chúng ta cần phải <br>
                                 ĐỔI MỚI. Đây không chỉ là khẩu hiệu mà còn là mệnh lệnh...</p>
                         </div>
-                        <a href="projects.html"><i class="ti-angle-right"></i></a>
+                        <a href="/gioi-thieu"><i class="ti-angle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                             <h3>Giá trị “Chuyên nghiệp”</h3>
                             <p>Không thể thực hiện giá trị “Đổi mới” hay “Thần tốc” nếu thiếu đi nền <br>tảng của giá trị “Chuyên nghiệp”...</p>
                         </div>
-                        <a href="projects.html"><i class="ti-angle-right"></i></a>
+                        <a href="/gioi-thieu"><i class="ti-angle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -135,7 +135,7 @@
                             <p>“Hiệu quả” là giá trị cốt lõi thể hiện nét văn hóa nổi bật của MobiFone<br> 
                                 trong suốt chiều dài lịch sử hình thành và phát triển...</p>
                         </div>
-                        <a href="projects.html"><i class="ti-angle-right"></i></a>
+                        <a href="/gioi-thieu"><i class="ti-angle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -146,6 +146,8 @@
     </section>
 
     
+    
+
     {{-- Sản phẩm --}}
     <style>
         h2 a:hover{
@@ -174,7 +176,7 @@
                                     <img src="{{ $item -> image_path }}" alt>
                                 </div>
                                 <div class="blog-caption">
-                                    <h3><a href="/san-pham/{{ $item -> slug }}">{{ $item -> name }}</a></h3>
+                                    <h3><a href="/san-pham-dich-vu/{{ $item -> slug }}">{{ $item -> name }}</a></h3>
                                     {{-- <p> <?php echo  $item -> contents ?> </p> --}}
                                     {{-- <a href="#" class="browse-btn">Learn More</a> --}}
                                 </div>
@@ -187,6 +189,7 @@
         </div>
     </section>
 
+    {{-- Tin tức --}}
     <section class="class-offer-area section-padding border-bottom">
         <div class="container-fluid">
             <div class="row">
@@ -204,10 +207,10 @@
                         <div class="properties pb-30">
                             <div class="properties__card">
                                 <div class="properties__img">
-                                    <a href="/tin-tuc/{{ $item -> slug }}"><img src="{{ $item -> image_path }}" alt></a>
+                                    <a href="/tin-tuc/chi-tiet/{{ $item -> slug }}"><img src="{{ $item -> image_path }}" alt></a>
                                 </div>
                                 <div class="properties__caption text-center">
-                                    <h3><a href="/tin-tuc/{{ $item -> slug }}">{{ $item -> title }}</a></h3>
+                                    <h3><a href="/tin-tuc/chi-tiet/{{ $item -> slug }}">{{ $item -> title }}</a></h3>
                                 </div>
                             </div>
                         </div>

@@ -41,7 +41,12 @@
 
                 <li class="nav-header">----- NỘI DUNG WEBSITE</li>
                 <!-- Tin tức - bài viết -->
-                <li class="nav-item">
+
+                @php
+                    $isMenu = (url()->current() == route('newsCategories.index') || url()->current() == route('news.index') );
+                @endphp
+
+                <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
                     <a href="#" class="nav-link">
                        <i class="nav-icon fas fa-copy"></i>&nbsp
                         <p> Tin bài
@@ -49,15 +54,15 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('newsCategories.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('newsCategories.index') }}">
+                            <a href="{{ route('newsCategories.index') }}" class="nav-link {{ (url()->current() == route('newsCategories.index')) ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-th"></i>
                                 <p>Danh mục tin bài</p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="{{ route('news.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('news.index') }}">
+                            <a href="{{ route('news.index') }}" class="nav-link {{ (url()->current() == route('news.index')) ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class=" nav-icon fas fa-pencil-alt"></i>&nbsp
                                 <p>Viết tin mới </p>
                             </a>
@@ -66,8 +71,11 @@
                     </ul>
                 </li>
 
+                @php
+                    $isMenu = (url()->current() == route('productCategories.index') || url()->current() == route('products.index') );
+                @endphp
                 <!-- Sản phẩm dịch vụ -->
-                <li class="nav-item">
+                <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
@@ -76,14 +84,14 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('productCategories.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('productCategories.index') }}">
+                            <a href="{{ route('productCategories.index') }}" class="nav-link {{ (url()->current() == route('productCategories.index')) ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
                                 <p>Loại danh mục</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('products.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('products.index') }}">
+                            <a href="{{ route('products.index') }}" class="nav-link {{ (url()->current() == route('products.index')) ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
                                 <p>Sản phẩm - dịch vụ</p>
                             </a>
@@ -93,7 +101,13 @@
                 </li>
 
                 <!-- Hình ảnh -->
-                <li class="nav-item">
+
+                
+                @php
+                    $isMenu = ( url()->current() == route('image.index') );
+                @endphp
+
+                <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-image"></i>
                         <p> Hình ảnh
@@ -101,8 +115,8 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('image.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('image.index') }}">
+                            <a href="{{ route('image.index') }}" class="nav-link {{ $isMenu ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-photo-video"></i>
                                 <p> Slider + Gallery </p>
                             </a>
@@ -121,7 +135,11 @@
                 <!-- Tuyển dụng -->
                 <li class="nav-header">----- TUYỂN DỤNG </li>
 
-                <li class="nav-item">
+                @php
+                    $isMenu = (url()->current() == route('recruitment.index') || url()->current() == route('recruitment.index') );
+                @endphp
+
+                <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-plus"></i>
                         <p> Tuyển dụng
@@ -129,14 +147,14 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        <li class="nav-item" id="{{ route('productCategories.index') }}">
                             <a href="{{ route('recruitment.index') }}" class="nav-link">
                             &nbsp&nbsp&nbsp&nbsp<i class="nav-icon far fa-newspaper"></i>&nbsp
                             <p>Tin tuyển dụng </p>
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item" id="{{ route('productCategories.index') }}">
                             <a href="{{ route('recruitment.index') }}" class="nav-link">
                             &nbsp&nbsp&nbsp&nbsp<i class="nav-icon far fa-paper-plane"></i>&nbsp
                             <p>Ứng viên liên hệ </p>
@@ -148,8 +166,13 @@
 
                 <!-- Landing page -->
                 <li class="nav-header">----- LANDING PAGE</li>
-                <li class="nav-item">
-                    <a href="{{ route('landingpage.index') }}" class="nav-link">
+
+                @php
+                    $isMenu = (url()->current() == route('landingpage.index') );
+                @endphp
+
+                <li class="nav-item" id="{{ route('landingpage.index') }}">
+                    <a href="{{ route('landingpage.index') }}" class="nav-link  {{ $isMenu ? "active" : ""}}">
                         <i class="far fa-file-word"></i>&nbsp
                         <p>Landing page </p>
                     </a>
@@ -190,28 +213,31 @@
 
                 <li class="nav-header">----- THÔNG TIN CÔNG TY</li>
                 <!-- THÔNG TIN CÔNG TY -->
-                <li class="nav-item">
+                @php
+                    $isMenu = ( url()->current() == route('infoCompany.aboutus') || url()->current() == route('infoCompany.infor') || route('infoCompany.socialNetwork') == url()->current() );
+                @endphp
+                <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-info"></i><p>Thông tin <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('infoCompany.aboutus') }}" class="nav-link">
+                            <a href="{{ route('infoCompany.aboutus') }}" class="nav-link {{ url()->current() == route('infoCompany.aboutus') ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-users"></i>
                                 <p>Về chúng tôi</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('infoCompany.infor') }}" class="nav-link">
+                            <a href="{{ route('infoCompany.infor') }}" class="nav-link {{ url()->current() == route('infoCompany.infor') ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-address-card"></i>
                                 <p>Thông tin liên hệ</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('infoCompany.socialNetwork') }}" class="nav-link">
+                            <a href="{{ route('infoCompany.socialNetwork') }}" class="nav-link {{ url()->current() == route('infoCompany.socialNetwork') ? "active" : "" }}">
                                 &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-share-alt"></i>
                                 <p>Mạng xã hội</p>
                             </a>
@@ -224,7 +250,7 @@
                 <!-- Cài đặt - tùy chỉnh website-->
                 <li class="nav-header">----- CÀI ĐẶT CHUNG</li>
                 <li class="nav-item">
-                    <a href="{{ route('menus.index') }}" class="nav-link">
+                    <a href="{{ route('menus.index') }}" class="nav-link {{(url()->current() ==  route('menus.index')) ? "active" : "" }}">
                         <i class="fas fa-ellipsis-v"></i>&nbsp
                         <p> Menu website </p>
                     </a>
@@ -244,3 +270,13 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
+
+<script>
+
+
+    // Scroll menu active
+    const element = document.getElementById("<?php echo url()->current() ?>");
+    element.scrollIntoView({ behavior: "smooth"});
+
+</script>

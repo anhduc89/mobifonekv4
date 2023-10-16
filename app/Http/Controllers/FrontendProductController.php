@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+use DB;
+
+class FrontendProductController extends Controller
+{
+    public function index()
+    {
+        
+        $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
+        
+        return view('frontEnd.page.products.list',  compact('listProduct'));
+
+    }
+
+    public function detail(Request $request, $slug){
+        
+
+        $detailProduct =  DB::select("
+            SELECT * FROM `products` WHERE slug = '$slug'
+        ")
+        ;
+
+        if(count($detailProduct ) < 1){
+            abort(404);
+        }
+
+        // danh mục tin tức
+        $listNewsCategory = DB::select("
+            SELECT 
+                a.*, COUNT(b.id) total_news 
+            FROM 
+                `news_categories` a 
+            LEFT JOIN 
+                news b ON a.id = b.category_id 
+            GROUP BY a.id;"
+        );
+
+        return view('frontEnd.page.products.detail',  compact('detailProduct', 'listNewsCategory'));
+
+    }
+}
