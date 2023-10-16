@@ -1,9 +1,11 @@
 @php
 
+
     $menus = session()->get('frontend')['menus'];
     
 
-@endphp 
+
+@endphp
 
 <header>
     <div class="header-area">
@@ -13,7 +15,9 @@
 
                     <div class="left-side d-flex align-items-center">
                         <div class="logo">
+
                             <a href="/"><img src="{{ asset( 'frontEnd/img/logo/logo1.png ') }}" alt='Mobifone'></a>
+
                         </div>
 
                         <div class="main-menu d-none d-lg-block">
@@ -23,16 +27,19 @@
                                     {{-- menu --}}
 
                                     @foreach ($menus as $key => $item)
+
                                         @if ( $item -> parent_id == 0)
                                             <li><a href="/{{ $item -> slug_name }}"> {{ $item -> name }} </a>
                                                 
-                                                @php
 
+
+                                                @php
                                                     $count = 0;
                                                     $submenu = '';
                                                 @endphp
 
                                                 @foreach ($menus as $key1 => $itemSubmenu)
+
                                                 
                                                 @php
 
@@ -40,24 +47,24 @@
                                                         
                                                         $submenu .= '<li><a href=" /tin-tuc/chi-tiet/' . $itemSubmenu -> slug_name .'"> '. $itemSubmenu -> name .' </a></li>';
 
-                                                        $count ++;
 
-                                                        unset($menus[$key1]);
+                                                        if ($itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
+                                                            $submenu .= '<li><a href="' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
 
-                                                    }
+                                                            $count++;
 
-                                                @endphp
-                    
+                                                            unset($menus[$key1]);
+                                                        }
+
+                                                    @endphp
                                                 @endforeach
 
                                                 @if ($count > 0)
-
-                                                    <ul class="submenu">    
+                                                    <ul class="submenu">
                                                         @php
                                                             echo $submenu;
                                                         @endphp
                                                     </ul>
-
                                                 @endif
 
                                             </li>
@@ -65,8 +72,6 @@
                                                 unset($menus[$key]);
                                             @endphp
                                         @endif
-
-                                       
                                     @endforeach
 
                                 </ul>
@@ -82,6 +87,7 @@
                             <li> <a href="https://www.youtube.com/channel/UCOsP75SL3f-EM7z4eylRbJQ" title="Youtube"  target="_blank"><i class="fab fa-youtube-square"></i></a></li>
                             <li><a href="tel:0899.838.838" title="Hostline" target="_blank"><i class="fas fa-phone-alt"></i></a></li>
                         </ul> --}}
+
                     </div>
 
                     <div class="col-12">

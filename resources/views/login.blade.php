@@ -87,14 +87,14 @@
                     <div class="card">
                         <div class="card-header"></div>
                         <div class="card-body">
-                            {{-- <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}"> --}}
-                            <form action="" method="post" id="login-form" class="form">
+                            <form class="form-horizontal" role="form" method="POST" action="{{ route('login-user') }}">
+                            {{-- <form action="" method="post" id="login-form" class="form"> --}}
                                 @csrf {{-- phải có cái này khi post từ form  --}}
 
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">Tài khoản</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="name" class="form-control" name="name" required autofocus>
+                                        <input type="text" id="name" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                                     </div>
                                 </div>
 
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
+                                {{-- <div class="form-group row">
                                     <div class="col-md-6 offset-md-4">
                                         <div class="checkbox">
                                             <label>
@@ -113,6 +113,20 @@
                                             </label>
                                         </div>
                                     </div>
+                                </div> --}}
+
+                                <div class="alert-login">
+                                    @if (session('warning'))
+                                    <div class="alert alert-warning" role="alert">
+                                        {{ session('warning') }}
+                                    </div>
+                                @endif
+
+                                    @if (session('error'))
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
                                 </div>
 
                                 <div class="col-md-6 offset-md-4">
