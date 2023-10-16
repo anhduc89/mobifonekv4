@@ -1,3 +1,12 @@
+
+@php
+
+    // Lấy thông tin công ty    
+    $info_companies = session()->get('frontend')['info_companies']
+
+@endphp
+
+
 <footer>
     <div class="footer-wrapper gray-bg">
         <div class="footer-area footer-padding">
@@ -6,9 +15,8 @@
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="single-footer-caption mb-20">
-
                                 <div class="footer-logo mb-35">
-                                    <a href=""><img src="{{ asset( 'frontEnd/img/logo/logo.png ') }}" alt="Mobifone" width="100%" ></a>
+                                    <a href=""><img src="{{ $info-> image_logo_path }}" alt="Mobifone" width="100%" ></a>
                                 </div>
                             </div>
                         </div>
@@ -41,12 +49,12 @@
                             </div> --}}
 
                             <div class="footer-social mt-30">
-                                <a href="tel:0899.838.838" title="Hostline" target="_blank"><i class="fas fa-phone-alt"></i></a>
-                                <a href="mailto:mobifonekv4@mobifone.vn" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
-                                <a href="https://www.facebook.com/mobifonekv4.vn" title="Facebook" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                                <a href="https://www.tiktok.com/@mobifonekv4" title="Tiktok"  target="_blank"><i class="fab fa-tiktok"></i></a>
-                                <a href="https://zalo.me/626767492003379900?gidzl=pAGh9RQ-XN3Clo8gkwECSyAwBosZy8XqZRju8FEXt7sFjoWZyQtRUeYxVNJnh8qksxLvTJbFBvPiihk9Vm" title="Zalo"  target="_blank"><i class="fas fa-sms"></i></a>
-                                <a href="https://www.youtube.com/channel/UCOsP75SL3f-EM7z4eylRbJQ" title="Youtube"  target="_blank"><i class="fab fa-youtube-square"></i></a>
+                                <a href="tel:{{ $info-> phone }}" title="Hostline" target="_blank"><i class="fas fa-phone-alt"></i></a>
+                                <a href="mailto:{{ $info-> email }}" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
+                                <a href="{{ $info-> facebook }}" title="Facebook" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                                <a href="{{ $info-> tiktok }}" title="Tiktok"  target="_blank"><i class="fab fa-tiktok"></i></a>
+                                <a href="{{ $info-> zalo }}" title="Zalo"  target="_blank"><i class="fas fa-sms"></i></a>
+                                <a href="{{ $info-> youtube }}" title="Youtube"  target="_blank"><i class="fab fa-youtube-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -87,7 +95,7 @@
                         <div class="col-xl-12 ">
                             <div class="footer-copy-right text-center">
                                 <p> Bản quyền &copy;
-                                    <script>document.write(new Date().getFullYear());</script> Công ty Mobifone Khu Vực 4
+                                    <script>document.write(new Date().getFullYear());</script> Công ty dịch vụ Mobifone Khu Vực 4
                                 </p>
                             </div>
                         </div>

@@ -13,24 +13,87 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // $listNews = $this->news->latest()->paginate(5); //
-        //  echo "<pre>"; print_r($listNews); exit;
-        // return view('admin.news.index', compact('listNews'));
-
+        
         $listNews =  DB::select("SELECT * FROM `news` ORDER BY `id` DESC LIMIT 0,3 ;");
 
-        $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC LIMIT 0,3 ;");
-        // If you would like to retrieve a list of 
-        // all files within a given directory including all sub-directories   
+        $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC LIMIT 0,3");
         
         $path = public_path() . '/frontEnd/img/partner/';
-
-        // dd($path);
         
-        $files = File::allFiles($path); 
+        $files = File::allFiles($path);
 
 
         return view('frontEnd.page.home',  compact('listNews', 'listProduct', 'files'));
+
+    }
+
+    public function contact(Request $request)
+    {
+
+        $token = $request->session()->token();
+ 
+        // $token = csrf_token();
+
+        return view('frontEnd.page.contact');
+
+    }
+
+    public function contactForm(Request $request)
+    {
+
+        // $token = $request->session()->token();
+ 
+        // $token = csrf_token();
+
+        // echo $request->name;
+
+        $insert = DB::table('contact')->insert([
+
+            'name' =>  $request->name,
+
+            'email' => $request->email,
+
+            'number_phone' => $request->number_phone,
+
+            'message' => $request->message,
+
+            'type' => 1, // Liên hệ
+
+        ]);
+
+        // dd($insert);
+        
+        return view('frontEnd.page.contact', compact('insert'));
+
+    }
+
+    public function aboutUs()
+    {
+        
+        $aboutUs = DB::select("SELECT * FROM `about_us`");
+
+
+        return view('frontEnd.page.aboutUs',  compact('aboutUs'));
+
+    }
+
+    public function tuyenDung()
+    {
+        
+        $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
+        
+        return view('frontEnd.page.tuyendung.list',  compact('listProduct'));
+
+    }
+
+    public function tuyenDungForm(Request $request)
+    {
+        
+        dd($request);
+
+        $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
+        
+        return view('frontEnd.page.tuyendung.list',  compact('listProduct'));
 
     }
 }

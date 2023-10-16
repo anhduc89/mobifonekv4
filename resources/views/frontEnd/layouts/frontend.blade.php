@@ -1,3 +1,30 @@
+@php
+    session()->flush();
+    
+    if (!session()->has('frontend')) {
+        
+        // Lấy info_companies
+        $info = DB::table('info_companies')->first();
+
+        // lấy menu
+        $menus = DB::table('menus')->get();
+
+        session( ['frontend' => 
+
+            [   'info_companies' => $info,
+
+                'menus' => $menus
+            ]
+
+        ]);
+        
+    } 
+
+    // Lấy thông tin công ty    
+    $info_companies = session()->get('frontend')['info_companies']
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +32,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('title')
+    @yield('meta')
 
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -19,7 +47,7 @@
 	<meta property="og:image" name="ogimage" content="" />
 	<meta property="og:sitename" content="{{ Request::fullUrl() }}" />
 	<link rel="canonical" href="{{ Request::fullUrl() }}" />
-	<link rel="shortcut icon" type="image/png" href="" />
+	<link rel="shortcut icon" type="image/png" href="{{ $info_companies -> image_favicon_path }}" />
 
 
  
@@ -34,6 +62,7 @@
     <link rel="stylesheet" href="{{ asset('frontEnd/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/style.css') }}">
+    
 
     @yield('css-custom-frontend')
 </head>
