@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->products->latest()->paginate(10);
+        $products = $this->products->latest()->paginate(1);
         // dd($products);
         return view('admin.product.index',compact('products'));
     }

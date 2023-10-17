@@ -41,21 +41,21 @@
                                                 @foreach ($menus as $key1 => $itemSubmenu)
 
                                                 
-                                                @php
+                                                    @php
 
-                                                    if ( $itemSubmenu -> parent_id != 0 && $item -> id == $itemSubmenu -> parent_id ){
-                                                        
-                                                        $submenu .= '<li><a href=" /tin-tuc/chi-tiet/' . $itemSubmenu -> slug_name .'"> '. $itemSubmenu -> name .' </a></li>';
+                                                        if ( $itemSubmenu -> parent_id != 0 && $item -> id == $itemSubmenu -> parent_id ){
+                                                            
+                                                            $submenu .= '<li><a href=" /tin-tuc/chi-tiet/' . $itemSubmenu -> slug_name .'"> '. $itemSubmenu -> name .' </a></li>';
 
 
-                                                        if ($itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
-                                                            $submenu .= '<li><a href="' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
+                                                            if ($itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
+                                                                $submenu .= '<li><a href="' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
 
-                                                            $count++;
+                                                                $count++;
 
-                                                            unset($menus[$key1]);
+                                                                unset($menus[$key1]);
+                                                            }
                                                         }
-
                                                     @endphp
                                                 @endforeach
 

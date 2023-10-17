@@ -15,7 +15,7 @@ class NewsCategoriesController extends Controller
     }
     public function index()
     {
-        $dataDisplay = $this->newsCategories->all()->sortByDesc("id");;//latest()->paginate(10);
+        $dataDisplay = $this->newsCategories->all()->sortByDesc("id")->latest()->paginate(5);
         #echo "<pre>"; print_r($dataDisplay); exit;
         return view('admin.newsCategories.index',compact('dataDisplay'));
     }

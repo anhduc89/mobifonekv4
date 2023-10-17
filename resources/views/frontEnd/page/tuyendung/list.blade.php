@@ -93,8 +93,8 @@
                                         <?php echo $item->contents; ?>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal" >Nộp CV</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close{{ $key }}">Đóng</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal" onclick="closeModal({{ $key }})" >Nộp CV</button>
                                     </div>
                                 </div>
                             </div>
@@ -168,13 +168,21 @@
     <script>
 
         function NopCv(id){
+            
+            
 
-            alert(id);
+            // alert(id);
             // Get the select element
             var selectElement = document.getElementById("vitriungtuyen");
 
             // Set the selected option by value
             selectElement.value = id;
+        }
+
+        function closeModal(id){
+
+            document.getElementById('close' + id).click()
+
         }
 
     </script>

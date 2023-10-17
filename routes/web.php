@@ -96,7 +96,7 @@ Route::get('/homeAdmin', function () {
 })->name('homeAdmin');
 //});
 
-Route::middleware(['checkLogin'])->group(function () {
+// Route::middleware(['checkLogin'])->group(function () {
     Route::prefix('admin')->group(function () {
 
         // ------------------------------------------------------------------------------------------
@@ -545,4 +545,4 @@ Route::middleware(['checkLogin'])->group(function () {
         // });
 
     });
-});
+// });
