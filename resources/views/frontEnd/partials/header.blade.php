@@ -49,7 +49,7 @@
 
 
                                                             if ($itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
-                                                                $submenu .= '<li><a href="' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
+                                                                // $submenu .= '<li><a href="' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
 
                                                                 $count++;
 
