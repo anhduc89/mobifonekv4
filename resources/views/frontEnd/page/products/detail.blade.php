@@ -1,7 +1,7 @@
 @extends('frontEnd.layouts.frontend')
 
 @section('title')
-    <title>Mobifone Khu Vực 4 | {{ $detailProduct[0] -> name }}</title>
+    <title>Mobifone Khu Vực 4 | {{ $detailProduct->name }}</title>
 @endsection
 
 @section('css-custom-frontend')
@@ -30,7 +30,17 @@
             </div>
         </div>
 
-
+        <style>
+            .share a i {
+                color: #1889E3;
+                font-size: 21px;
+                margin: 0px 10px;
+                width: 30px;
+            }
+            .share a i:hover {
+                cursor: pointer;
+            }
+        </style>
         <section class="blog_area single-post-area section-padding">
             <div class="container">
                 <div class="row">
@@ -40,13 +50,23 @@
                                 <img class="img-fluid" src="assets/img/blog/single_blog_1.jpg" alt>
                             </div>
                             <div class="blog_details">
-                                <h2 style="color: #2d2d2d;">{{ $detailProduct[0] -> name }}
-                                </h2>
+                                <h2 style="color: #2d2d2d;">{{ $detailProduct->name }} </h2>
+                                <img class="card-img rounded-0" src="{{ $detailProduct->image_path }}" alt>
                                 <ul class="blog-info-link mt-3 mb-4">
-                                    {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailProduct[0] -> user_id }}</a></li> --}}
+                                    {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailProduct -> user_id }}</a></li> --}}
                                     {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
                                 </ul>
-                               <?php echo $detailProduct[0] -> contents ?>
+                                <?php echo $detailProduct->contents; ?>
+                            </div>
+                            <hr />
+                            <div class="share">
+                                <h4>Chia sẻ </h4>
+                                <input type="hidden" id="linkShare" value="{{ url()->current() }}">
+                                <a id="shareWithFb"><i class="fab fa-facebook-f"></i></a>
+                                {{-- <a href=""><i class="fab fa-tiktok"></i></a> --}}
+                                <a id="shareWithTwitter"><i class="fab fa-twitter"></i></a>
+                                <a id="copyToClipboard"><i class="fas fa-link"></i></a>
+
                             </div>
                         </div>
 
@@ -98,4 +118,8 @@
         </section>
 
     </main>
+@endsection
+
+@section('js-custom-frontend')
+    <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script>
 @endsection

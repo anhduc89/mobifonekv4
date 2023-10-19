@@ -183,6 +183,7 @@
                                     </div>
                                     <div class="blog-caption">
                                         <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
+                                        <p>{!! $item->short_content !!} </p>
                                         {{-- <p> <?php echo $item->contents; ?> </p> --}}
                                         {{-- <a href="#" class="browse-btn">Learn More</a> --}}
                                     </div>

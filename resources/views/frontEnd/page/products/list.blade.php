@@ -27,7 +27,7 @@
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
-                                <h2>Sản phẩm</h2>
+                                <h2>Sản phẩm - dịch vụ</h2>
                                 <p>Chúng tôi mang đến những sản phẩm - dịch vụ chất lượng tốt nhất phục vụ cho hàng triệu khách hàng</p>
                             </div>
                         </div>

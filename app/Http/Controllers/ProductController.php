@@ -21,7 +21,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->products->latest()->paginate(1);
+        $products = $this->products->latest()->paginate(10);
         // dd($products);
         return view('admin.product.index',compact('products'));
     }
@@ -56,6 +56,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $dataProduct = $this->products->find($id);
+        // dd($dataProduct);
+        // echo "<pre>"; print_r($dataProduct); exit;
         $categories = $this->productCategories->all();
         return view('admin.product.edit', compact('dataProduct','categories'));
     }

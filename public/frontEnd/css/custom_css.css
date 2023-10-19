@@ -9,15 +9,22 @@ body {
     text-align: left;
     background-color: #fff;
 }
+
 p {
     font-weight: 200;
 }
+
 /* hết reset css */
 
 /* các element dùng chung cho các page */
-.slider-area .hero-caption.hero-caption2 h2 , .slider-area .hero-caption.hero-caption2 p {
+.slider-area .hero-caption.hero-caption2 h2,
+.slider-area .hero-caption.hero-caption2 p {
     font-weight: 200;
     text-transform: uppercase;
+}
+
+.slider-area .hero-caption.hero-caption2 h2 {
+    font-size: 52px;
 }
 
 /* hết phần element dùng chung */
@@ -47,6 +54,7 @@ p {
     color: #004390;
     /* padding-top: 120px; */
 }
+
 .section-bg {
     /* background: #FCF2EB; */
     background-color: #F8FBFC;
@@ -58,16 +66,18 @@ p {
 .visit-three .tailor-details {
     padding: auto;
 }
+
 /* hết trang home */
 
 /* trang sản phẩm */
 .section-padding {
     padding-top: 50px;
 }
+
 /* hết trang sản phẩm */
 
 /* trang news */
-.cat-list li a p{
+.cat-list li a p {
     text-transform: capitalize;
 }
 
@@ -80,11 +90,13 @@ p {
     font-weight: 200;
     text-transform: uppercase;
 }
+
 /* hết trang news */
 
 .full-height {
     height: 95% !important;
 }
+
 .blog-caption p span {
     line-height: 25px !important;
     font-weight: 200;
@@ -92,8 +104,9 @@ p {
 
 .home-blog .single-blogs .blog-caption h3 a {
     font-size: 23px;
-    font-weight: 200 ;
+    font-weight: 200;
 }
+
 .properties__caption h3 a {
     text-transform: uppercase;
     font-weight: 200;
@@ -103,7 +116,9 @@ p {
 .btn-recruiment {
     background-color: #1293EE !important;
 }
+
 .home-blog .single-blogs .blog-caption {
-    padding: 10px 10px 25px 10px;
+    padding: 18px 10px 25px 10px;
 }
+
 /* hết tuyển dụng */

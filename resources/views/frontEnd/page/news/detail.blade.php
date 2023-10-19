@@ -287,8 +287,8 @@
                                     @foreach ($listNewsCategory as $item)
                                         <li>
                                             <a href="/tin-tuc/danh-muc/{{ $item->slug_name }}" class="d-flex ">
-                                                <p>{{ $item->name }}</p>
-                                                <p>({{ $item->total_news }})</p>
+                                                <p>{{ $item->name }} ({{ $item->total_news }})</p>
+                                                {{-- <p>({{ $item->total_news }})</p> --}}
                                             </a>
                                         </li>
                                     @endforeach
