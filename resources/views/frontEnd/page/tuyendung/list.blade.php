@@ -5,7 +5,7 @@
 @endsection
 
 @section('css-custom-frontend')
-    {{-- <link rel="stylesheet" href="{{ asset('admins/news/news.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
 
 
@@ -131,7 +131,7 @@
                             @foreach ($array_vitri as $item)
                                 <option value="{{ $item['key'] }}"> {{ $item['value'] }} </option>
                             @endforeach
-                        
+
                         </select>
                     </div>
                     <div class="mb-3">
@@ -157,7 +157,7 @@
                     </div>
                 </form>
             </div>
-           
+
             </div>
         </div>
         </div>
@@ -168,14 +168,14 @@
     <script>
 
         function NopCv(id){
-            
+
             // alert(id);
             // Get the select element
             var selectElement = document.getElementById("vitriungtuyen");
 
             // Set the selected option by value
             selectElement.value = id;
-            
+
         }
 
         function closeModal(id){

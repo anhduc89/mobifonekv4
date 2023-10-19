@@ -1,15 +1,15 @@
 @php
     session()->flush();
-    
+
     if (!session()->has('frontend')) {
-        
+
         // Lấy info_companies
         $info = DB::table('info_companies')->first();
 
         // lấy menu
         $menus = DB::table('menus')->get();
 
-        session( ['frontend' => 
+        session( ['frontend' =>
 
             [   'info_companies' => $info,
 
@@ -17,10 +17,10 @@
             ]
 
         ]);
-        
-    } 
 
-    // Lấy thông tin công ty    
+    }
+
+    // Lấy thông tin công ty
     $info_companies = session()->get('frontend')['info_companies']
 
 @endphp
@@ -50,7 +50,7 @@
 	<link rel="shortcut icon" type="image/png" href="{{ $info_companies -> image_favicon_path }}" />
 
 
- 
+
 
     <link rel="stylesheet" href="{{ asset('frontEnd/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/owl.carousel.min.css') }}">
@@ -62,7 +62,7 @@
     <link rel="stylesheet" href="{{ asset('frontEnd/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('frontEnd/css/style.css') }}">
-    
+
 
     @yield('css-custom-frontend')
 </head>
@@ -71,12 +71,12 @@
     <div class="wrapper">
         @include('frontEnd.partials.header')
         {{-- @include('partials.sidebar')--}}
-        @yield('content') 
+        @yield('content')
         @include('frontEnd.partials.footer')
     </div>
 
 
-    
+
     <script src="{{ asset('frontEnd/js/vendor/modernizr-3.5.0.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/vendor/jquery-1.12.4.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/popper.min.js') }}"></script>

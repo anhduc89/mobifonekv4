@@ -5,7 +5,7 @@
 @endsection
 
 @section('css-custom-frontend')
-    {{-- <link rel="stylesheet" href="{{ asset('admins/news/news.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
 
 

@@ -77,19 +77,18 @@
                                     </div>
 
                                     {{-- Bài viết có cho lên app không? Để mặc định là "có". --}}
-                                    {{-- <div class="form-group">
+                                    <div class="form-group">
                                         <label>Hiển thị lên app</label>
                                         <select name="show_app" class="form-control">
                                             <option value="1">Có</option>
                                             <option value="0">Không</option>
                                         </select>
-                                    </div> --}}
+                                    </div>
 
                                     <hr width="100%" />
                                     <div class="form-group">
                                         <label>Tags bài viết</label>
                                         <select class="form-control tag-news" multiple="multiple" name="tags[]">
-
                                             @foreach ($itemNews->tags as $item)
                                                 <option value="{{ $item->name }}" selected>{{ $item->name }}</option>
                                             @endforeach

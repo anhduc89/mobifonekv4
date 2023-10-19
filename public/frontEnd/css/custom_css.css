@@ -1,0 +1,49 @@
+/* css cho menu */
+.blog_details .image img {
+    width: 100% !important;
+}
+
+#navigation li a {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.submenu li {
+    border-bottom: 1px solid #eeeeee;
+    padding: 8px 0px;
+}
+
+/* hết menu */
+
+/* trang home */
+.section-tittle h2 {
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+.visit-three {
+    background-color: #F8FBFC;
+}
+.visit-three .tailor-details {
+    padding: auto;
+}
+/* hết trang home */
+
+
+
+
+.full-height {
+    height: 95% !important;
+}
+.blog-caption p span {
+    line-height: 25px !important;
+    font-weight: 200;
+}
+
+.home-blog .single-blogs .blog-caption h3 a {
+    font-size: 23px;
+    font-weight: 200 ;
+}
+.properties__caption h3 a {
+    text-transform: uppercase;
+    font-weight: 200;
+}

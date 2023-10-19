@@ -1,12 +1,10 @@
 @php
-
-
     $menus = session()->get('frontend')['menus'];
-    
-
-
 @endphp
 
+@section('css-custom-frontend')
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
+@endsection
 <header>
     <div class="header-area">
         <div class="header-bottom  header-sticky">
@@ -16,7 +14,7 @@
                     <div class="left-side d-flex align-items-center">
                         <div class="logo">
 
-                            <a href="/"><img src="{{ asset( 'frontEnd/img/logo/logo1.png ') }}" alt='Mobifone'></a>
+                            <a href="/"><img src="{{ asset('frontEnd/img/logo/logo1.png ') }}" alt='Mobifone'></a>
 
                         </div>
 
@@ -27,34 +25,22 @@
                                     {{-- menu --}}
 
                                     @foreach ($menus as $key => $item)
-
-                                        @if ( $item -> parent_id == 0)
-                                            <li><a href="/{{ $item -> slug_name }}"> {{ $item -> name }} </a>
-                                                
-
+                                        @if ($item->parent_id == 0)
+                                            <li><a href="/{{ $item->slug_name }}"> {{ $item->name }} </a>
 
                                                 @php
                                                     $count = 0;
                                                     $submenu = '';
+                                                    $submenu .= '<li><a href="/gioi-thieu-cong-ty"> Giới thiệu công ty </a></li>';
                                                 @endphp
 
                                                 @foreach ($menus as $key1 => $itemSubmenu)
-
-                                                
                                                     @php
+                                                        if ($itemSubmenu->id != 3 && $itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
+                                                            $submenu .= '<li><a href="/tin-tuc/danh-muc/' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
+                                                            $count++;
 
-                                                        if ( $itemSubmenu -> parent_id != 0 && $item -> id == $itemSubmenu -> parent_id ){
-                                                            
-                                                            $submenu .= '<li><a href=" /tin-tuc/chi-tiet/' . $itemSubmenu -> slug_name .'"> '. $itemSubmenu -> name .' </a></li>';
-
-
-                                                            if ($itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
-                                                                $submenu .= '<li><a href="' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
-
-                                                                $count++;
-
-                                                                unset($menus[$key1]);
-                                                            }
+                                                            unset($menus[$key1]);
                                                         }
                                                     @endphp
                                                 @endforeach
@@ -79,7 +65,7 @@
                         </div>
                     </div>
                     <div class="header-right-btn d-flex f-right align-items-center">
-                        <a  class="header-btn2 d-none d-xl-inline-block">Liên Hệ : <span> (89) 9 838 838</span></a>
+                        <a class="header-btn2 d-none d-xl-inline-block">Hotline : <span> 0899 838 838</span></a>
                         {{-- <ul class="header-social d-none d-sm-block">
                             <li><a href="https://www.facebook.com/mobifonekv4.vn" title="Facebook" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
                             <li><a href="https://www.tiktok.com/@mobifonekv4" title="Tiktok"  target="_blank"><i class="fab fa-tiktok"></i></a></li>

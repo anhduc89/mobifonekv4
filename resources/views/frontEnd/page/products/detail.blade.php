@@ -5,7 +5,7 @@
 @endsection
 
 @section('css-custom-frontend')
-    {{-- <link rel="stylesheet" href="{{ asset('admins/news/news.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
 
 
@@ -20,7 +20,7 @@
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
-                                <h2>Tin tức Mobifone</h2>
+                                <h2>Sản Phẩm - Dịch Vụ</h2>
                                 {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                     Suspendisse varius enim in eros elementum tristique.</p> --}}
                             </div>
@@ -49,7 +49,7 @@
                                <?php echo $detailProduct[0] -> contents ?>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-lg-4">
                         <div class="blog_right_sidebar">
@@ -90,7 +90,7 @@
 
                                 </ul>
                             </aside>
-                           
+
                         </div>
                     </div>
                 </div>

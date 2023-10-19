@@ -4,15 +4,17 @@
     <title>Liên hệ | Mobifone Khu Vực 4</title>
 @endsection
 
-
-
 @section('css-custom-frontend')
-    <link rel="stylesheet" href="{{ asset('admins/news/news.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
+
+{{-- @section('css-custom-frontend')
+    <link rel="stylesheet" href="{{ asset('admins/news/news.css') }}">
+@endsection --}}
 
 @php
 
-    // Lấy thông tin công ty    
+    // Lấy thông tin công ty
     $info_companies = session()->get('frontend')['info_companies']
 
 @endphp
@@ -42,9 +44,9 @@
             <div class="d-none d-sm-block mb-5 pb-4">
                 <div id="map" style="height: 480px; position: relative; overflow: hidden;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1352.6546944621189!2d105.41700360024022!3d21.312212461505116!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134f3da4ee0df67%3A0x5fa6e56b1b16bc88!2zTW9iaWZvbmUgUGjDuiBUaOG7jQ!5e0!3m2!1svi!2s!4v1696836043360!5m2!1svi!2s" width="1248" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    
+
                 </div>
-                
+
             </div>
             <div class="row">
                 <div class="col-12">

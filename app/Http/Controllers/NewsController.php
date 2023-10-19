@@ -104,11 +104,12 @@ class NewsController extends Controller
     public function edit(Request $request, $id)
     {
         $itemNews = $this->news->find($id);
+        #echo "<pre>"; print_r($itemNews); exit;
         $listCategory = $this->newsCategory->all()->toArray();
         return view('admin.news.edit',compact('itemNews','listCategory'));
     }
 
-    public function updateNews(NewsRequest $request, $id)
+    public function updateNews(Request $request, $id)
     {
         try {
             DB::beginTransaction();
@@ -118,7 +119,7 @@ class NewsController extends Controller
                 'content' => $request->contents,
                 'date' => date("Y-m-d H:s:i", time()),
                 'category_id' => $request->category_id,
-                'show_app' => 1, //$request->show_app,
+                'show_app' => $request->show_app,
                 'status' => 1,
                 'user_id' => auth()->id(),
                 'slug'  => str_slug($request->title).'-'.date("dmY", time()).time().'.html'

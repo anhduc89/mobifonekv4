@@ -37,7 +37,7 @@ Route::prefix('tin-tuc')->group(function () {
     Route::get('/', [
         FrontendNewsController::class, 'index'])
     ->name('newsFrontEnd');
-    
+
     Route::get('/danh-muc/{slug}', [
         FrontendNewsController::class, 'category'])
     ->name('newsFrontEnd.category');
@@ -45,7 +45,7 @@ Route::prefix('tin-tuc')->group(function () {
     Route::get('/chi-tiet/{slug}', [
         FrontendNewsController::class, 'detail'])
     ->name('newsFrontEnd.detail');
-    
+
     Route::get('/tags/{slug}', [
         FrontendNewsController::class, 'tags'])
     ->name('newsFrontEnd.tags');
@@ -57,7 +57,7 @@ Route::prefix('san-pham-dich-vu')->group(function () {
 
     Route::get('/', [FrontendProductController::class, 'index'])->name('productFrontEnd');
     Route::get('/{slug}', [FrontendProductController::class, 'detail'])->name('productDetailFrontEnd');
-    
+
 });
 
 // Contact
@@ -67,7 +67,7 @@ Route::get('/lien-he', [HomeController::class, 'contact'])->name('contactFrontEn
 Route::post('/lien-he', [HomeController::class, 'contactForm'])->name('contactFormFrontEnd');
 
 // About us
-Route::get('/gioi-thieu', [HomeController::class, 'aboutUs'])->name('aboutUsFrontEnd');
+Route::get('/gioi-thieu-cong-ty', [HomeController::class, 'aboutUs'])->name('aboutUsFrontEnd');
 
 Route::get('/ve-mobifone-kv4', [HomeController::class, 'aboutUs'])->name('aboutUsFrontEnd');
 

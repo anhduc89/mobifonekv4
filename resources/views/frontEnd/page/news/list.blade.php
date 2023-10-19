@@ -5,14 +5,14 @@
 @endsection
 
 @section('css-custom-frontend')
-    {{-- <link rel="stylesheet" href="{{ asset('admins/news/news.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
 
 
 @php
-    
+
     // Chuỗi tháng
-    $array_month = [ 
+    $array_month = [
         1 => 'Jan',
         2 => 'Feb',
         3 => 'Mat',
@@ -133,8 +133,8 @@
                                         </a>
                                     </li>
                                 @endforeach
-                                
-                                
+
+
                             </ul>
                         </aside>
                         {{-- <aside class="single_sidebar_widget popular_post_widget">
