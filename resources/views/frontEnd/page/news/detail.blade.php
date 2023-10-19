@@ -48,6 +48,12 @@
             </div>
         </div>
 
+        <style>
+
+            .blog_details p img{
+                width: 100% !important;
+            }
+        </style>
 
         <section class="blog_area single-post-area section-padding">
             <div class="container">
