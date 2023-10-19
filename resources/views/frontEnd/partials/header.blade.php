@@ -39,7 +39,6 @@
                                                         if ($itemSubmenu->id != 3 && $itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
                                                             $submenu .= '<li><a href="/tin-tuc/danh-muc/' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
                                                             $count++;
-
                                                             unset($menus[$key1]);
                                                         }
                                                     @endphp
