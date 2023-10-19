@@ -28,9 +28,7 @@
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
                                 <h2>Sản phẩm</h2>
-                                <p>Với phương châm hỗ trợ khách hàng tối đa, MobiFone tiếp tục miễn phí thay sim 4G trên
-                                    toàn
-                                    quốc nhằm nâng cao tiện ích, và tăng tính trải nghiệm cho khách hàng.</p>
+                                <p>Chúng tôi mang đến những sản phẩm - dịch vụ chất lượng tốt nhất phục vụ cho hàng triệu khách hàng</p>
                             </div>
                         </div>
                     </div>

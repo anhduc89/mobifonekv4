@@ -21,7 +21,6 @@
                                 <h2>Tuyển dụng</h2>
                                 <p>Bạn đang tìm kiếm một môi trường làm việc chuyên nghiệp, năng động, hiện đại,
                                     sáng tạo nơi bạn được trao cơ hội, được cống hiến và được ghi nhận? <br>
-
                                     Hãy gia nhập Công ty dịch vụ Mobifone Khu Vực 4 ngay hôm nay</p>
                             </div>
                         </div>
@@ -60,21 +59,19 @@
                     @endphp
                     @foreach ($listProduct as $key => $item)
                         <div class="col-lg-4 col-md-6">
-                            <div class="single-blogs mb-30  full-height">
-                                <div class="blog-img" style="height: 45%">
+                            <div class="single-blogs mb-30 full-height">
+                                <div class="blog-img" style="height: 35%">
                                     <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
                                 </div>
                                 <div class="blog-caption">
-                                    <h3><a data-bs-toggle="modal"
-                                            data-bs-target="#staticBackdrop{{ $key }}">{{ $item->name }}</a>
-                                    </h3>
+                                    <h3><a data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $key }}">{{ $item->name }}</a> </h3>
                                     <p><i class="fa fa-users" aria-hidden="true"></i> Số lượng: 5</p>
                                     <p><i class="fa fa-calendar" aria-hidden="true"></i> Hạn chót: 20/11/2023</p>
                                     {{-- <a href="/san-pham-dich-vu/{{ $item -> slug}}" class="browse-btn">Xem chi tiết</a> --}}
 
 
                                 </div>
-                                <button class="genric-btn success radius" style="WIDTH: 100%;" data-bs-toggle="modal" data-bs-target="#formModal" onclick="NopCv({{$item -> id}})">Nộp CV</button>
+                                <button class="genric-btn info radius btn-recruiment" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#formModal" onclick="NopCv({{$item -> id}})">Nộp CV</button>
                             </div>
                         </div>
 

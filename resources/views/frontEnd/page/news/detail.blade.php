@@ -1,16 +1,14 @@
 @extends('frontEnd.layouts.frontend')
 
 @section('title')
-    <title>Mobifone Khu Vực 4 | {{ $detailNews[0] -> title }}</title>
+    <title>Mobifone Khu Vực 4 | {{ $detailNews->title }}</title>
 @endsection
 
 @section('css-custom-frontend')
     <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
 
-
 @php
-
     // Chuỗi tháng
     $array_month = [
         1 => 'Jan',
@@ -26,7 +24,6 @@
         11 => 'Nov',
         12 => 'Dec',
     ];
-
 @endphp
 
 @section('content')
@@ -38,7 +35,7 @@
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
-                                <h2>Tin tức Mobifone</h2>
+                                <h2>Bài viết </h2>
                                 {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                     Suspendisse varius enim in eros elementum tristique.</p> --}}
                             </div>
@@ -47,13 +44,6 @@
                 </div>
             </div>
         </div>
-
-        <style>
-
-            .blog_details p img{
-                width: 100% !important;
-            }
-        </style>
 
         <section class="blog_area single-post-area section-padding">
             <div class="container">
@@ -64,13 +54,13 @@
                                 <img class="img-fluid" src="assets/img/blog/single_blog_1.jpg" alt>
                             </div>
                             <div class="blog_details">
-                                <h2 style="color: #2d2d2d;">{{ $detailNews[0] -> title }}
-                                </h2>
+                                <h2 style="color: #2d2d2d;">{{ $detailNews->title }} </h2>
                                 <ul class="blog-info-link mt-3 mb-4">
-                                    <li><a href="#"><i class="fa fa-user"></i>{{ $detailNews[0] -> user_id }}</a></li>
+                                    <li><i class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}</li>
+                                    {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailNews->user_id }}</a></li> --}}
                                     {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
                                 </ul>
-                               <?php echo $detailNews[0] -> content ?>
+                                <?php echo $detailNews->content; ?>
                             </div>
                         </div>
                         {{-- <div class="navigation-top">
@@ -275,7 +265,7 @@
                                 <form action="#">
                                     <div class="form-group m-0">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search Keyword">
+                                            <input type="text" class="form-control" placeholder="Nhập từ khóa">
                                             <div class="input-group-append d-flex">
                                                 <button class="boxed-btn2" type="button">Tìm kiếm</button>
                                             </div>
