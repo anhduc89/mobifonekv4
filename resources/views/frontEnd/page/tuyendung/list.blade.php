@@ -169,14 +169,13 @@
 
         function NopCv(id){
             
-            
-
             // alert(id);
             // Get the select element
             var selectElement = document.getElementById("vitriungtuyen");
 
             // Set the selected option by value
             selectElement.value = id;
+            
         }
 
         function closeModal(id){
