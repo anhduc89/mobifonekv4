@@ -195,7 +195,7 @@
                 </div>
             </div>
         </section>
-
+        
         {{-- Tin tức --}}
         <section class="class-offer-area section-padding border-bottom">
             <div class="container-fluid">
