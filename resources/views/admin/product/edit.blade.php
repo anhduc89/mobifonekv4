@@ -85,6 +85,18 @@
                                         </select>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Sản phẩm - dịch vụ nổi bật</label>
+                                        <select name="highlight" class="form-control">
+                                                <?php
+                                                    if($dataProduct->highlight == 1) { echo '<option value="1">Có</option>'; }
+                                                    else {echo '<option value="0">Không</option>'; }
+                                                ?>
+                                                <option value="1">Có</option>
+                                                <option value="0">Không</option>
+                                        </select>
+                                    </div>
+
                                     {{-- Bài viết có cho lên app không? Để mặc định là "có". --}}
                                     {{-- <div class="form-group">
                                         <label>Hiển thị lên app</label>

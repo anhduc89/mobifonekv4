@@ -39,9 +39,10 @@ class ProductController extends Controller
             'product_categories'    => $productsRequest->product_categories,
             'contents' => $productsRequest->contents,
             'short_content' => $productsRequest->short_content,
+            'highlight' => $productsRequest->highlight,
             'slug' => str_slug($productsRequest->name) . '-' . date("dmY", time()) . time() . '.html'
         );
-
+        // echo "<pre>"; print_r($dataInsert); exit;
         $dataUploadImage = $this->storageTraitUpload($productsRequest, 'image_path', 'products');
         if (!empty($dataUploadImage)) {
             $dataInsert['image_name'] = $dataUploadImage['file_name'];
@@ -74,6 +75,7 @@ class ProductController extends Controller
             'product_categories'    => $request->product_categories,
             'contents' => $request->contents,
             'short_content' => $request->short_content,
+            'highlight' => $request->highlight,
             'slug' => str_slug($request->name) . '-' . date("dmY", time()) . time() . '.html'
         );
 

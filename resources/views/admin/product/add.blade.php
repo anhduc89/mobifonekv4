@@ -84,6 +84,14 @@
                                         </select>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Sản phẩm - dịch vụ nổi bật</label>
+                                        <select name="highlight" class="form-control">
+                                                <option value="1">Có</option>
+                                                <option value="0">Không</option>
+                                        </select>
+                                    </div>
+
                                     {{-- Bài viết có cho lên app không? Để mặc định là "có". --}}
                                     {{-- <div class="form-group">
                                         <label>Hiển thị lên app</label>

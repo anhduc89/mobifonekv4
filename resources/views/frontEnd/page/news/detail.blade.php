@@ -70,7 +70,7 @@
                                 <h4>Chia sẻ </h4>
                                 <input type="hidden" id="linkShare" value="{{ url()->current() }}">
                                 <a id="shareWithFb"><i class="fab fa-facebook-f"></i></a>
-                               
+
                                 <a id="shareWithTwitter"><i class="fab fa-twitter"></i></a>
                                 <a id="copyToClipboard"><i class="fas fa-link"></i></a>
                             </div> --}}
@@ -431,6 +431,8 @@
         </section>
 
     </main>
+
+
     <input type="hidden" id="linkShare" value="{{ url()->current() }}">
     <div class="mf-social-side-list" id="left_sidebar">
         <ul id="ul_left_sidebar">
