@@ -49,8 +49,6 @@
                             </div>
                             <hr />
                             <div class="share">
-                                <h4>Chia sẻ </h4>
-
                                 {{-- ------------------------------------------------------------- --}}
                                 <div class="singular-sidebar side-bar-height" data-module="social-pin">
                                     <ul class="cpanel-action social-pin">
@@ -118,9 +116,9 @@
                                     </ul>
                                 </div>
 
-
-                                {{--  --}}
                                 <input type="hidden" id="linkShare" value="{{ url()->current() }}">
+
+
                                 {{-- <a id="shareWithFb"><i class="fab fa-facebook-f"></i></a> --}}
                                 {{-- <a href=""><i class="fab fa-tiktok"></i></a> --}}
                                 {{-- <a id="shareWithTwitter"><i class="fab fa-twitter"></i></a>
