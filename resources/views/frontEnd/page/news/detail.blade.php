@@ -62,6 +62,17 @@
                                 </ul>
                                 <?php echo $detailNews->content; ?>
                             </div>
+
+                            <hr />
+                            <div class="share">
+                                <h4>Chia sẻ </h4>
+                                <input type="hidden" id="linkShare" value="{{ url()->current() }}">
+                                <a id="shareWithFb"><i class="fab fa-facebook-f"></i></a>
+                                {{-- <a href=""><i class="fab fa-tiktok"></i></a> --}}
+                                <a id="shareWithTwitter"><i class="fab fa-twitter"></i></a>
+                                <a id="copyToClipboard"><i class="fas fa-link"></i></a>
+                            </div>
+
                         </div>
                         {{-- <div class="navigation-top">
                             <div class="d-sm-flex justify-content-between text-center">
@@ -418,4 +429,9 @@
         </section>
 
     </main>
+@endsection
+
+@section('js-custom-frontend')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script>
 @endsection
