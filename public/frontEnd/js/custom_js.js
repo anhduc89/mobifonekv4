@@ -1,7 +1,7 @@
 
 let linkShare = '';
 
-$(document).ready(function(){
+$(document).ready(function () {
     linkShare = $('#linkShare').val();
 
     $('#shareWithFb').click(function () {
@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
 
     var clipboard = new ClipboardJS('#copyToClipboard', {
-        text: function() {
+        text: function () {
             return linkShare; //document.querySelector('#copyText').value;
         }
     });
@@ -23,23 +23,23 @@ $(document).ready(function(){
     function turnOffCopied() {
         copied.style.display = 'none';
     }
-      
-    clipboard.on('success', function(e) {
-        copied.style.display = 'flex';
-        copied.style.backgroundColor = 'green';
+
+    clipboard.on('success', function (e) {
+        // copied.style.display = 'flex';
+        // copied.style.backgroundColor = '#00acee';
+        // copied.style.color = '#FFFFFF';
         copied.innerHTML = 'Đã sao chép';
-        setTimeout(turnOffCopied, 3000)
+        setTimeout(turnOffCopied, 6000)
         // alert('Đã sao chép: ' + e.text);
     });
 
-    clipboard.on('error', function(e) {
+    clipboard.on('error', function (e) {
         copied.style.display = 'flex';
         copied.style.backgroundColor = 'Red';
         copied.innerText = 'Không thể sao chép';
         setTimeout(turnOffCopied, 3000)
     });
 });
-
 
 $(window).bind('scroll', function () {
 
@@ -48,8 +48,7 @@ $(window).bind('scroll', function () {
     if ($(window).scrollTop() > 150 && $(window).scrollTop() < (elmnt - 200)) {
         document.getElementById("ul_left_sidebar").style.display = 'flex'
     }
-    else
-    {
+    else {
         document.getElementById("ul_left_sidebar").style.display = 'none'
     }
-    });
+});

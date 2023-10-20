@@ -13,8 +13,8 @@ class FrontendProductController extends Controller
     {
 
         $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
-
-        return view('frontEnd.page.products.list',  compact('listProduct'));
+        $listCategories = DB::select("SELECT * FROM `product_categories` ");
+        return view('frontEnd.page.products.list',  compact('listProduct','listCategories'));
 
     }
 

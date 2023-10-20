@@ -15,7 +15,6 @@
     .blog-caption p span {
         line-height: 25px !important;
     } */
-
 </style>
 
 @section('content')
@@ -28,7 +27,8 @@
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
                                 <h2>Sản phẩm - dịch vụ</h2>
-                                <p>Chúng tôi mang đến những sản phẩm - dịch vụ chất lượng tốt nhất phục vụ cho hàng triệu khách hàng</p>
+                                <p>Chúng tôi mang đến những sản phẩm - dịch vụ chất lượng tốt nhất phục vụ cho hàng triệu
+                                    khách hàng</p>
                             </div>
                         </div>
                     </div>
@@ -52,9 +52,15 @@
                 </div>
 
                 <div class="row">
+                    <ul class="nav">
+                        <li data-filter="0"> Tất cả  </li>
+                        @foreach ($listCategories as $item)
+                            <li data-filter="{{ $item->id }}"> --  {{ $item->name }} </li>
+                        @endforeach
+                    </ul>
                     @foreach ($listProduct as $item)
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single-blogs mb-30  full-height">
+                        <div class="col-lg-4 col-md-4 filter" data-multifilter="{{ $item->product_categories }}">
+                            <div class="single-blogs mb-30 full-height">
                                 <div class="blog-img">
                                     <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
                                 </div>
@@ -73,4 +79,19 @@
         </section>
 
     </main>
+@endsection
+
+@section('js-custom-frontend')
+    <script src="{{ asset('frontEnd/js/jquery.filterizr.min.js') }}"></script>
+    {{-- <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script> --}}
+    <script>
+        $(function() {
+            $('.filter').filterizr();
+            var filterSingle = $('.filter').filterizr({
+                setupControls: false,
+                animationDuration: 0.5,
+                delay: 0
+            });
+        });
+    </script>
 @endsection
