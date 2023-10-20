@@ -55,7 +55,7 @@
                                 <div class="singular-sidebar side-bar-height" data-module="social-pin">
                                     <ul class="cpanel-action social-pin">
                                         <li>
-                                            <a class="cpanel-item facebook" target="_blank"
+                                            <a class="cpanel-item facebook" target="_blank" id="shareWithFb"
                                                 title="Chia sẻ bài viết lên facebook">
                                                 <svg width="40" height="40" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
                                         </li>
 
                                         <li>
-                                            <a class="cpanel-item twitter" target="_blank"
+                                            <a class="cpanel-item twitter" target="_blank" id="shareWithTwitter"
                                                 title="Chia sẻ bài viết lên twitter">
                                                 <svg width="40" height="40" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -92,15 +92,14 @@
                                                     </g>
                                                     <defs>
                                                         <clipPath id="IconZalo_svg__a">
-                                                            <path fill="#fff" transform="translate(8 15)"
-                                                                d="M0 0h25v9H0z"></path>
+                                                            <path fill="#fff" transform="translate(8 15)" d="M0 0h25v9H0z"></path>
                                                         </clipPath>
                                                     </defs>
                                                 </svg>
                                             </button>
                                         </li>
                                         <li>
-                                            <button type="button" class="cpanel-item link" title="Copy">
+                                            <button type="button" class="cpanel-item link" title="Copy" id="copyToClipboard">
                                                 <svg width="40" height="40" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <g clip-path="url(#IconLinking_svg__prefix__clip0_608_611)"
