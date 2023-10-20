@@ -18,12 +18,25 @@ $(document).ready(function(){
         }
     });
 
+    var copied = document.getElementById("Copied");
+
+    function turnOffCopied() {
+        copied.style.display = 'none';
+    }
+      
     clipboard.on('success', function(e) {
-        alert('Đã sao chép: ' + e.text);
+        copied.style.display = 'flex';
+        copied.style.backgroundColor = 'green';
+        copied.innerHTML = 'Đã sao chép';
+        setTimeout(turnOffCopied, 3000)
+        // alert('Đã sao chép: ' + e.text);
     });
 
     clipboard.on('error', function(e) {
-        alert('Không thể sao chép.');
+        copied.style.display = 'flex';
+        copied.style.backgroundColor = 'Red';
+        copied.innerText = 'Không thể sao chép';
+        setTimeout(turnOffCopied, 3000)
     });
 });
 
