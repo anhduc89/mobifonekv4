@@ -449,6 +449,7 @@
             </li>
             <li>
                 <a id="copyToClipboard"><i class="fas fa-link text-white"></i></a>
+                <div id="Copied" class="copied"></div>
             </li>
         </ul>
     </div>

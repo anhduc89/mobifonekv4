@@ -220,6 +220,15 @@ body {
     }
 }
 
+.copied {
+    color: white;
+    display: none;
+    float: right;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 /* hết trang news */
 
 .full-height {
