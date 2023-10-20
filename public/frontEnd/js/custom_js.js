@@ -26,3 +26,17 @@ $(document).ready(function(){
         alert('Không thể sao chép.');
     });
 });
+
+
+$(window).bind('scroll', function () {
+
+    const elmnt = document.getElementById("session_detail").offsetHeight;
+
+    if ($(window).scrollTop() > 150 && $(window).scrollTop() < (elmnt - 200)) {
+        document.getElementById("ul_left_sidebar").style.display = 'flex'
+    }
+    else
+    {
+        document.getElementById("ul_left_sidebar").style.display = 'none'
+    }
+    });

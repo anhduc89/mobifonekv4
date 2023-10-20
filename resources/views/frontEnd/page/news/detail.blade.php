@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <section class="blog_area single-post-area section-padding">
+        <section class="blog_area single-post-area section-padding" id="session_detail">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 posts-list">
@@ -56,7 +56,9 @@
                             <div class="blog_details">
                                 <h2 style="color: #2d2d2d;">{{ $detailNews->title }} </h2>
                                 <ul class="blog-info-link mt-3 mb-4">
-                                    <li><i class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}</li>
+                                    <li><i
+                                            class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}
+                                    </li>
                                     {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailNews->user_id }}</a></li> --}}
                                     {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
                                 </ul>
@@ -64,14 +66,14 @@
                             </div>
 
                             <hr />
-                            <div class="share">
+                            {{-- <div class="share">
                                 <h4>Chia sẻ </h4>
                                 <input type="hidden" id="linkShare" value="{{ url()->current() }}">
                                 <a id="shareWithFb"><i class="fab fa-facebook-f"></i></a>
-                                {{-- <a href=""><i class="fab fa-tiktok"></i></a> --}}
+                               
                                 <a id="shareWithTwitter"><i class="fab fa-twitter"></i></a>
                                 <a id="copyToClipboard"><i class="fas fa-link"></i></a>
-                            </div>
+                            </div> --}}
 
                         </div>
                         {{-- <div class="navigation-top">
@@ -429,85 +431,27 @@
         </section>
 
     </main>
+    <input type="hidden" id="linkShare" value="{{ url()->current() }}">
+    <div class="mf-social-side-list" id="left_sidebar">
+        <ul id="ul_left_sidebar">
+            <li>
+                <a id="shareWithFb"><i class="fab fa-facebook-f text-white"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </li>
 
-    <div class="mf-social-side-list">
-        <ul>
-        <li>
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        </li>
-        <li>
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        </li>
-        <li>
-        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        </li>
-        <li>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </li>
-        <li>
-        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-        </li>
+            <li>
+                <a id="shareWithTwitter"><i class="fab fa-twitter text-white"></i></a>
+            </li>
+            <li>
+                <a id="copyToClipboard"><i class="fas fa-link text-white"></i></a>
+            </li>
         </ul>
-        </div>
-
-      <style>
-
-*, *::before, *::after{
-    box-sizing: border-box;    
-}
-body {
-    position: relative;
-}
-.mf-social-side-list {
-    position: fixed;
-    top: 30vh;
-    left: 200px;
-    z-index: 100;
-}
-.mf-social-side-list ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-   padding: 0;
-   margin:0
-}
-.mf-social-side-list ul li a {
-    color: #ffffff;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    margin-top: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
-.mf-social-side-list ul li a:hover {
-    opacity: .9;
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
-}
-.mf-social-side-list ul li a[href*='facebook'] {
-    background: #3b5998;
-}
-.mf-social-side-list ul li a[href*='instagram'] {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);;
-}
-.mf-social-side-list ul li a[href*='youtube'] {
-    background: #c4302b;
-}
-.mf-social-side-list ul li a[href*='linkedin'] {
-    background: #0077B5;
-}
-.mf-social-side-list ul li a[href*='twitter'] {
-    background: #00acee;
-}
-976B4;
-}
-      </style>
+    </div>
 @endsection
 
 @section('js-custom-frontend')
