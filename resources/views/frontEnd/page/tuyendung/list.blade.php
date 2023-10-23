@@ -29,6 +29,11 @@
             </div>
         </div>
 
+        @if(session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
 
         <section class="home-blog section-padding">
             <div class="container">
@@ -145,12 +150,16 @@
                         <input type="text" name="number_phone" class="form-control" id="number_phone" required >
                     </div>
                     <div class="mb-3">
+                        <label for="mail" class="col-form-label">Email:</label>
+                        <input type="text" name="mail" class="form-control" id="mail" required >
+                    </div>
+                    <div class="mb-3">
                         <label for="address" class="col-form-label">Địa chỉ:</label required>
                         <input type="text" name="address" class="form-control" id="address">
                     </div>
                     <div class="mb-3">
                         <label for="fileCv" class="col-form-label">Cv:</label >
-                        <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf,.txt" required>
+                        <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf" required>
                     </div>
 
                     <div class="modal-footer">
@@ -165,6 +174,7 @@
         </div>
 
     </main>
+
 
 
     <script>

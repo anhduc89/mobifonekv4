@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Traits\StorageImageTrait;
 
 use File;
 
@@ -11,6 +12,7 @@ use DB;
 
 class HomeController extends Controller
 {
+    use StorageImageTrait;
     public function index()
     {
 
@@ -82,25 +84,76 @@ class HomeController extends Controller
         return view('frontEnd.page.tuyendung.list', compact('listTuyenDung'));
     }
 
-    
-    public function tuyenDungDetail(Request $request, $slug){
-        $detailTuyenDung = collect(DB::select(" SELECT * FROM `recruitments` WHERE slug = '$slug' "))->first()  ;
 
-        if(empty($detailTuyenDung )){
+    public function tuyenDungDetail(Request $request, $slug)
+    {
+        $detailTuyenDung = collect(DB::select(" SELECT * FROM `recruitments` WHERE slug = '$slug' "))->first();
+
+        if (empty($detailTuyenDung)) {
             abort(404);
         }
         // danh mục tin tức
         $listTuyenDung = DB::select("SELECT * FROM `recruitments` WHERE slug <> '$slug' and status = 1");
-        return view('frontEnd.page.tuyendung.detail', compact('detailTuyenDung' , 'listTuyenDung'));
+        return view('frontEnd.page.tuyendung.detail', compact('detailTuyenDung', 'listTuyenDung'));
     }
     public function tuyenDungForm(Request $request)
     {
 
-        dd($request);
+        $message = "Gửi Cv Thất bại, Vui lòng thử lại";
 
-        $listProduct = DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
+        $url_return_page = route("tuyenDungFrontEnd");
 
-        return view('frontEnd.page.tuyendung.list', compact('listProduct'));
+        $file_path = $destinationPath = 'uploads/CV/';
+
+        // Tạo thư mục
+        if (!file_exists($destinationPath))     mkdir($destinationPath, 0755, true);
+        
+        // Upload file
+        if ($request->hasFile('fileCv')) {
+
+            $extension = $request->file('fileCv')->getClientOriginalExtension();
+
+            $name = $request->file('fileCv')->getClientOriginalName();
+
+            // Valid extensions
+            $validextensions = array("pdf");
+
+            if (in_array(strtolower($extension), $validextensions)) {
+
+                $fileName = time() . "_" . $request->name . ".pdf";
+
+                $request->file('fileCv')->move($destinationPath, $fileName);
+
+                $file_path .= $fileName;
+
+            }else{
+
+                return redirect($url_return_page)->with('message',  "Gửi Cv Thất bại, Vui lòng thử lại");
+
+            }
+
+        }
+
+        $insert = DB::table('contact')->insert([
+
+            'name' => $request->name,
+
+            'email' => $request->mail,
+
+            'number_phone' => $request->number_phone,
+
+            'vitri' => $request->vitri,
+
+            'files' => $file_path,
+
+            'type' => 2,
+            // Tuyên dụng
+
+        ]);
+
+        // $listProduct = DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
+        if( $insert)    return redirect($url_return_page)->with('message',  "Gửi Cv Thành công");
+        else return redirect($url_return_page)->with('message',  "Gửi Cv Thất bại, Vui lòng thử lại");
 
     }
 }
