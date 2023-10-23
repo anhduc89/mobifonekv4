@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $listNews = DB::select("SELECT * FROM `news` ORDER BY `id` DESC LIMIT 0,3 ;");
+        $listNews = DB::select("SELECT * FROM `news` ORDER BY `id` DESC LIMIT 0,3");
 
         $listProduct = DB::select("SELECT * FROM `products` WHERE highlight = 1 ORDER BY `id` DESC LIMIT 0,3");
 

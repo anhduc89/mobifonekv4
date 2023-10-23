@@ -52,26 +52,28 @@
                     .sticky-bar {
                         position: relative;
                     }
+
+
                 </style>
                 <div class="row">
                     @php
                         $array_vitri = [];
                     @endphp
                     @foreach ($listTuyenDung as $key => $item)
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-4 col-md-6" onmouseover="showModal({{$key}})">
                             <div class="single-blogs mb-30 full-height">
                                 <div class="blog-img" style="height: 35%">
                                     <a href="/tuyen-dung/{{ $item -> slug}}"><img src="{{ $item->image_path }}" alt="{{ $item->image_name }}"></a>
                                 </div>
                                 <div class="blog-caption" style="height: 55%;">
-                                    <h3><a data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $key }}" style="height: 55px"><b>{{ $item -> title }}</b></a> </h3>
-                                    <p class="job" style="height: 45px">Ngành nghề: {{ $item -> nganhnghe }}</p>
+                                    <h3><a href="/tuyen-dung/{{ $item -> slug}}" style="height: 55px" class="limit-2-lines"><b>{{ $item -> title }}</b></a> </h3>
+                                    <p class="job limit-2-lines" style="height: 45px">Ngành nghề: {{ $item -> nganhnghe }}</p>
                                     <p><i class="fas fa-dollar-sign" aria-hidden="true"></i> Thu nhập: {{ $item -> mucluong }}</p>
                                     <p><i class="fa fa-users" aria-hidden="true"></i> Số lượng: {{ $item -> number_of_applicants }}</p>
                                     <p><i class="fa fa-calendar" aria-hidden="true"></i> Hạn chót: {{  (new DateTime($item -> application_deadline))->format("d-m-Y") }}</p>
                                     {{-- <a href="/san-pham-dich-vu/{{ $item -> slug}}" class="browse-btn">Xem chi tiết</a> --}}
 
-
+                                    {{-- <button style="display:none" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $key }}" id="openModal{{ $key }}">open</button> --}}
                                 </div>
                                 <div style="height: 10%">
                                     <button class="genric-btn info radius btn-recruiment" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#formModal" onclick="NopCv({{$item -> id}})">Nộp CV</button>
@@ -177,6 +179,16 @@
             selectElement.value = id;
 
         }
+        // var id_click = "";
+        // function showModal(id) {
+        //     document.getElementById('openModal' + id).click()
+        //     id_click = id;
+        // }
+
+        // document.getElementById("staticBackdrop" + id).onmouseleave = function() {
+        //     document.getElementById('close' + id).click()
+        // };
+
 
         function closeModal(id){
 

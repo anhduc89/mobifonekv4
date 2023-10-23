@@ -14,6 +14,10 @@ p {
     font-weight: 200;
 }
 
+.blog_right_sidebar{
+    padding-top: 26px;
+}
+
 /* hết reset css */
 
 /* các element dùng chung cho các page */
@@ -30,7 +34,14 @@ p {
 #copyToClipboard, #shareWithFb, #shareWithTwitter {
     cursor: pointer;
 }
-
+.limit-2-lines{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
 #Copied {
     display: flex;
     background-color: #00acee;

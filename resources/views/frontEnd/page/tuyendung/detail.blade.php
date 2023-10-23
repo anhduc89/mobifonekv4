@@ -35,9 +35,6 @@
                 <div class="row">
                     <div class="col-lg-8 posts-list">
                         <div class="single-post">
-                            <div class="feature-img">
-                                <img class="img-fluid" src="assets/img/blog/single_blog_1.jpg" alt>
-                            </div>
                             <div class="blog_details">
                                 {{-- <h2 style="color: #2d2d2d;">{{ $detailTuyenDung->name }} </h2>
                                 <img class="card-img rounded-0" src="{{ $detailTuyenDung->image_path }}" alt>
@@ -46,14 +43,6 @@
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                 </ul>
                                 <?php echo $detailTuyenDung->contents ?> --}}
-                                <style>
-                                    
-                                    
-                                </style>
-
-                                <style>
-                                  
-                                </style>
 
                                 <div class="card card-job">
                                     <div class="row" style="border-bottom: 2px solid #d8d8d8;padding-bottom:10px">
