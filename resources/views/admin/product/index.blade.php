@@ -40,12 +40,21 @@
                                             <th width="400px">Tiêu đề</th>
                                             <th>Ảnh sản phẩm - dịch vụ</th>
                                             <th>Chuyên mục</th>
+                                            <th>Sản phẩm - dịch vụ nổi bật</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $stt = 1;?>
+                                        <?php $stt = 1; ?>
                                         @foreach ($products as $item)
+                                            <?php
+                                                if($item->highlight == '1') {
+                                                    $highlight = '<td><p class="text-news"> Có </p></td>';
+                                                }
+                                                else if($item->highlight == '0'){
+                                                    $highlight = '<td><p class="text-news"> Không </p></td>';
+                                                }
+                                            ?>
                                             <tr>
                                                 <th>{{ $stt }}</th>
                                                 <td><p class="text-news" >{{ $item->name }}</p></td>
@@ -54,6 +63,7 @@
                                                 </td>
 
                                                 <td><p class="text-news"> {{ optional($item->categoriesProduct)->name }} </p></td>
+                                                <?php echo $highlight; ?>
 
                                                 <td>
                                                     <a href="{{ route('products.edit',['id' => $item->id]) }}"><button type="button" class="btn btn-outline-success btn-sm">Chỉnh sửa</button></a>

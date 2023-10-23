@@ -70,7 +70,7 @@
                                 <h4>Chia sẻ </h4>
                                 <input type="hidden" id="linkShare" value="{{ url()->current() }}">
                                 <a id="shareWithFb"><i class="fab fa-facebook-f"></i></a>
-                               
+
                                 <a id="shareWithTwitter"><i class="fab fa-twitter"></i></a>
                                 <a id="copyToClipboard"><i class="fas fa-link"></i></a>
                             </div> --}}
@@ -431,11 +431,13 @@
         </section>
 
     </main>
+
+
     <input type="hidden" id="linkShare" value="{{ url()->current() }}">
     <div class="mf-social-side-list" id="left_sidebar">
         <ul id="ul_left_sidebar">
             <li>
-                <a id="shareWithFb"><i class="fab fa-facebook-f text-white"></i></a>
+                <a id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
             </li>
             <li>
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -445,11 +447,11 @@
             </li>
 
             <li>
-                <a id="shareWithTwitter"><i class="fab fa-twitter text-white"></i></a>
+                <a id="shareWithTwitter" title="Chia sẻ X"><i class="fab fa-twitter text-white"></i></a>
             </li>
             <li>
-                <a id="copyToClipboard"><i class="fas fa-link text-white"></i></a>
-                <div id="Copied" class="copied"></div>
+                <a id="copyToClipboard" title="Sao chép link"><i class="fas fa-link text-white"></i></a>
+                <p id="Copied"></p>
             </li>
         </ul>
     </div>

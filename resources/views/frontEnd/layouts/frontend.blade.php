@@ -2,26 +2,17 @@
     session()->flush();
 
     if (!session()->has('frontend')) {
-
         // Lấy info_companies
         $info = DB::table('info_companies')->first();
 
         // lấy menu
         $menus = DB::table('menus')->get();
 
-        session( ['frontend' =>
-
-            [   'info_companies' => $info,
-
-                'menus' => $menus
-            ]
-
-        ]);
-
+        session(['frontend' => ['info_companies' => $info, 'menus' => $menus]]);
     }
 
     // Lấy thông tin công ty
-    $info_companies = session()->get('frontend')['info_companies']
+    $info_companies = session()->get('frontend')['info_companies'];
 
 @endphp
 
@@ -34,20 +25,20 @@
     @yield('title')
     @yield('meta')
 
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="robots" content="index, follow" />
-	<meta http-equiv="Content-Language" content="vi" />
-	<meta name="copyright" content="Copyright" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="DC.title" content="" />
-	<meta property="og:type" name="ogtype" content="Website" />
-	<meta property="og:title" name="ogtitle" content="" />
-	<meta property="og:image" name="ogimage" content="" />
-	<meta property="og:sitename" content="{{ Request::fullUrl() }}" />
-	<link rel="canonical" href="{{ Request::fullUrl() }}" />
-	<link rel="shortcut icon" type="image/png" href="{{ $info_companies -> image_favicon_path }}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Language" content="vi" />
+    <meta name="copyright" content="Copyright" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="DC.title" content="" />
+    <meta property="og:type" name="ogtype" content="Website" />
+    <meta property="og:title" name="ogtitle" content="" />
+    <meta property="og:image" name="ogimage" content="" />
+    <meta property="og:sitename" content="{{ Request::fullUrl() }}" />
+    <link rel="canonical" href="{{ Request::fullUrl() }}" />
+    <link rel="shortcut icon" type="image/png" href="{{ $info_companies->image_favicon_path }}" />
 
 
 
@@ -70,7 +61,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         @include('frontEnd.partials.header')
-        {{-- @include('partials.sidebar')--}}
+        {{-- @include('partials.sidebar') --}}
         @yield('content')
         @include('frontEnd.partials.footer')
     </div>
@@ -78,6 +69,7 @@
 
 
     <script src="{{ asset('frontEnd/js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    {{-- <script src="{{ asset('frontEnd/js/vendor/jquery-3.6.3.min.js') }}"></script> --}}
     <script src="{{ asset('frontEnd/js/vendor/jquery-1.12.4.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/bootstrap.min.js') }}"></script>
