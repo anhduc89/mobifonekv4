@@ -81,7 +81,7 @@
 
     <script src="{{ asset('frontEnd/js/wow.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('frontEnd/js/jquery.nice-select.min.js') }}"></script>
+    {{-- <script src="{{ asset('frontEnd/js/jquery.nice-select.min.js') }}"></script> --}}
     <script src="{{ asset('frontEnd/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/waypoints.min.js') }}"></script>
 
