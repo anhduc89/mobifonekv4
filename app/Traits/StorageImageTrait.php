@@ -44,6 +44,28 @@ trait StorageImageTrait
         return $dataUploadTrait;
 
     }
+
+    // upload cv
+    public function storageTraitUploadCV($request, $fieldName, $folderName)
+    {
+        if ($request->hasFile($fieldName)) {
+            $file = $request->$fieldName;
+            $fileNameOrigin = $file->getClientOriginalName();
+            $fileNameHash = date('dmY_hsi', time()) . '_' . str_random(10) . '.' . $file->getClientOriginalExtension();
+            $filepath = $request->file($fieldName)->storeAs(
+                'public/' . $folderName . '/CV',
+                $fileNameHash
+            );
+            $dataUploadTrait = array(
+                'file_name' => $fileNameOrigin,
+                'file_path' => Storage::url($filepath) // dùng Storage::url($filepath) để chuyển lại thành folder storage/products trong public/storage.
+                // Lưu vào db dưới dạng : storage/public/1/tên file và show ra ngoài web người dùng
+            );
+            return $dataUploadTrait;
+        } else {
+            return null;
+        }
+    }
 }
 
 ?>
