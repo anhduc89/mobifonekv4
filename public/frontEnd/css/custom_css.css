@@ -243,6 +243,7 @@ body {
 .home-blog .single-blogs .blog-caption h3 a {
     font-size: 23px;
     font-weight: 200;
+    cursor: pointer;
 }
 
 .properties__caption h3 a {
@@ -259,4 +260,63 @@ body {
     padding: 18px 10px 25px 10px;
 }
 
+
+.card-job-body .item {
+    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 32px;
+    align-items: normal;
+    color: #333;
+    padding-bottom: 2px;
+}
+
+.card-job-title h3.title {
+    font-size: 24px;
+    line-height: 24px;
+    color: #0a4874;
+    margin-bottom: 8px;
+}
+
+.employ-detail .card-job-title .job,
+.sendcv-header-info .des .job {
+    font-size: 14px;
+    line-height: 24px;
+    color: #237bd3;
+    margin-bottom: 5px;
+}
+
+.card-job-body .item span {
+    width: 20px
+}
+
+.card-job {
+    padding: 20px;
+}
+
+.job-body {
+    padding: 20px 0;
+}
+
+
+.blog_right_sidebar .post_category_widget .cat-list li ul li {
+    border-bottom: 0px solid #f0e9ff;
+    transition: all 0.3s ease 0s;
+    padding-bottom: 0px;
+}
+
+.blog_right_sidebar .post_category_widget .cat-list li ul li {
+    padding-top: 0px;
+}
+
+.blog_right_sidebar .widget_title {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+ h3.title a{
+    font-size: 18px;
+    line-height: 24px;
+    color: #0a4874;
+    margin-bottom: 8px;
+}
 /* hết tuyển dụng */

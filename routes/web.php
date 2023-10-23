@@ -74,6 +74,9 @@ Route::get('/ve-mobifone-kv4', [HomeController::class, 'aboutUs'])->name('aboutU
 // Tuyển dụng
 Route::get('/tuyen-dung', [HomeController::class, 'tuyenDung'])->name('tuyenDungFrontEnd');
 
+// Tuyển dụng
+Route::get('/tuyen-dung/{slug}', [HomeController::class, 'tuyenDungDetail'])->name('tuyenDungDetailFrontEnd');
+
 Route::post('/tuyen-dung', [HomeController::class, 'tuyenDungForm'])->name('tuyenDungFormFrontEnd');
 
 // ====================================================== Admin ===========================================

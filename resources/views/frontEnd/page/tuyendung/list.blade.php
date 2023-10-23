@@ -57,21 +57,25 @@
                     @php
                         $array_vitri = [];
                     @endphp
-                    @foreach ($listProduct as $key => $item)
+                    @foreach ($listTuyenDung as $key => $item)
                         <div class="col-lg-4 col-md-6">
                             <div class="single-blogs mb-30 full-height">
                                 <div class="blog-img" style="height: 35%">
-                                    <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
+                                    <a href="/tuyen-dung/{{ $item -> slug}}"><img src="{{ $item->image_path }}" alt="{{ $item->image_name }}"></a>
                                 </div>
-                                <div class="blog-caption">
-                                    <h3><a data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $key }}">{{ $item->name }}</a> </h3>
-                                    <p><i class="fa fa-users" aria-hidden="true"></i> Số lượng: 5</p>
-                                    <p><i class="fa fa-calendar" aria-hidden="true"></i> Hạn chót: 20/11/2023</p>
+                                <div class="blog-caption" style="height: 55%;">
+                                    <h3><a data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $key }}" style="height: 55px"><b>{{ $item -> title }}</b></a> </h3>
+                                    <p class="job" style="height: 45px">Ngành nghề: {{ $item -> nganhnghe }}</p>
+                                    <p><i class="fas fa-dollar-sign" aria-hidden="true"></i> Thu nhập: {{ $item -> mucluong }}</p>
+                                    <p><i class="fa fa-users" aria-hidden="true"></i> Số lượng: {{ $item -> number_of_applicants }}</p>
+                                    <p><i class="fa fa-calendar" aria-hidden="true"></i> Hạn chót: {{  (new DateTime($item -> application_deadline))->format("d-m-Y") }}</p>
                                     {{-- <a href="/san-pham-dich-vu/{{ $item -> slug}}" class="browse-btn">Xem chi tiết</a> --}}
 
 
                                 </div>
-                                <button class="genric-btn info radius btn-recruiment" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#formModal" onclick="NopCv({{$item -> id}})">Nộp CV</button>
+                                <div style="height: 10%">
+                                    <button class="genric-btn info radius btn-recruiment" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#formModal" onclick="NopCv({{$item -> id}})">Nộp CV</button>
+                                </div>
                             </div>
                         </div>
 
@@ -82,7 +86,7 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">{{ $item->name }}</h5>
+                                        <h5 class="modal-title" id="staticBackdropLabel">{{ $item->title }}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -100,7 +104,7 @@
                         @php
                             $array = [ 'key'    =>  $item -> id,
 
-                                       'value' =>  $item -> name];
+                                       'value' =>  $item -> title];
 
                             array_push($array_vitri, $array);
                         @endphp
@@ -123,12 +127,11 @@
                 <form action="{{route('tuyenDungFormFrontEnd')}}" name="nopcv" id="nopcv" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Vị trí:</label>
-                        <select name="vitri" id="vitriungtuyen" required>
+                        <select name="vitri" id="vitriungtuyen" class="form-control" required>
                             <option value=""> --Chọn vị trí tuyển dụng--</option>
                             @foreach ($array_vitri as $item)
                                 <option value="{{ $item['key'] }}"> {{ $item['value'] }} </option>
                             @endforeach
-
                         </select>
                     </div>
                     <div class="mb-3">
@@ -145,7 +148,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="fileCv" class="col-form-label">Cv:</label >
-                        <input type="file" name="fileCv" class="form-control" id="fileCv" required>
+                        <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf,.txt" required>
                     </div>
 
                     <div class="modal-footer">

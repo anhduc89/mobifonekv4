@@ -78,10 +78,21 @@ class HomeController extends Controller
 
     public function tuyenDung()
     {
-        $listProduct = DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
-        return view('frontEnd.page.tuyendung.list', compact('listProduct'));
+        $listTuyenDung = DB::select("SELECT * FROM `recruitments` where status = 1 ORDER BY `id` DESC");
+        return view('frontEnd.page.tuyendung.list', compact('listTuyenDung'));
     }
 
+    
+    public function tuyenDungDetail(Request $request, $slug){
+        $detailTuyenDung = collect(DB::select(" SELECT * FROM `recruitments` WHERE slug = '$slug' "))->first()  ;
+
+        if(empty($detailTuyenDung )){
+            abort(404);
+        }
+        // danh mục tin tức
+        $listTuyenDung = DB::select("SELECT * FROM `recruitments` WHERE slug <> '$slug' and status = 1");
+        return view('frontEnd.page.tuyendung.detail', compact('detailTuyenDung' , 'listTuyenDung'));
+    }
     public function tuyenDungForm(Request $request)
     {
 
