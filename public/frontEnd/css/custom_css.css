@@ -39,7 +39,7 @@ p {
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-            line-clamp: 2; 
+            line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 #Copied {
@@ -145,7 +145,7 @@ body {
 }
 
 .mf-social-side-list ul li a {
-    color: #ffffff;
+    color: #FFFFFF;
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -185,6 +185,11 @@ body {
 .mf-social-side-list ul li a[id*='shareWithTwitter'] {
     background: #00acee;
 }
+
+.mf-social-side-list ul li a[id*='backPrev'] {
+    background: #c4302b;
+}
+
 @media only screen and (max-width: 1540px) {
     .mf-social-side-list{
         left: 10px;

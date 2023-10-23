@@ -12,6 +12,10 @@ $(document).ready(function () {
         window.open("https://twitter.com/intent/tweet?url=" + linkShare + '&text=' + linkShare);
     });
 
+    $("#backPrev").click(function () {
+        window.history.back();
+    });
+
     var clipboard = new ClipboardJS('#copyToClipboard', {
         text: function () {
             return linkShare; //document.querySelector('#copyText').value;
@@ -29,7 +33,7 @@ $(document).ready(function () {
         // copied.style.backgroundColor = '#00acee';
         // copied.style.color = '#FFFFFF';
         copied.innerHTML = 'Đã sao chép';
-        setTimeout(turnOffCopied, 6000)
+        setTimeout(turnOffCopied, 4000)
         // alert('Đã sao chép: ' + e.text);
     });
 

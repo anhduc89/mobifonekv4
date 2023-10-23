@@ -453,6 +453,9 @@
                 <a id="copyToClipboard" title="Sao chép link"><i class="fas fa-link text-white"></i></a>
                 <p id="Copied"></p>
             </li>
+            <li>
+                <a id="backPrev" title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
+            </li>
         </ul>
     </div>
 @endsection
