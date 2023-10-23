@@ -56,14 +56,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item" id="{{ route('newsCategories.index') }}">
                             <a href="{{ route('newsCategories.index') }}" class="nav-link {{ (url()->current() == route('newsCategories.index')) ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>Danh mục tin bài</p>
                             </a>
                         </li>
 
                         <li class="nav-item" id="{{ route('news.index') }}">
                             <a href="{{ route('news.index') }}" class="nav-link {{ (url()->current() == route('news.index')) ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class=" nav-icon fas fa-pencil-alt"></i>&nbsp
+                                <i class=" nav-icon fas fa-pencil-alt"></i>&nbsp
                                 <p>Viết tin mới </p>
                             </a>
                         </li>
@@ -86,13 +86,13 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item" id="{{ route('productCategories.index') }}">
                             <a href="{{ route('productCategories.index') }}" class="nav-link {{ (url()->current() == route('productCategories.index')) ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>Loại danh mục</p>
                             </a>
                         </li>
                         <li class="nav-item" id="{{ route('products.index') }}">
                             <a href="{{ route('products.index') }}" class="nav-link {{ (url()->current() == route('products.index')) ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>Sản phẩm - dịch vụ</p>
                             </a>
                         </li>
@@ -102,7 +102,6 @@
 
                 <!-- Hình ảnh -->
 
-                
                 @php
                     $isMenu = ( url()->current() == route('image.index') );
                 @endphp
@@ -117,14 +116,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item" id="{{ route('image.index') }}">
                             <a href="{{ route('image.index') }}" class="nav-link {{ $isMenu ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-photo-video"></i>
+                                <i class="nav-icon fas fa-photo-video"></i>
                                 <p> Slider + Gallery </p>
                             </a>
                         </li>
 
                         {{-- <li class="nav-item">
                             <a href="pages/layout/top-nav.html" class="nav-link">
-                                &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-image"></i>
+                                <i class="nav-icon fas fa-image"></i>
                                 <p>Hình ảnh công ty</p>
                             </a>
                         </li> --}}
@@ -149,14 +148,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item" id="{{ route('productCategories.index') }}">
                             <a href="{{ route('recruitment.index') }}" class="nav-link">
-                            &nbsp&nbsp&nbsp&nbsp<i class="nav-icon far fa-newspaper"></i>&nbsp
+                            <i class="nav-icon far fa-newspaper"></i>&nbsp
                             <p>Tin tuyển dụng </p>
                             </a>
                         </li>
 
                         <li class="nav-item" id="{{ route('productCategories.index') }}">
                             <a href="{{ route('recruitment.index') }}" class="nav-link">
-                            &nbsp&nbsp&nbsp&nbsp<i class="nav-icon far fa-paper-plane"></i>&nbsp
+                            <i class="nav-icon far fa-paper-plane"></i>&nbsp
                             <p>Ứng viên liên hệ </p>
                             </a>
                         </li>
@@ -191,20 +190,20 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>Liên hệ mới</p>
                             </a>
                         </li>
 
                         {{-- <li class="nav-item">
                             <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>Không thành công</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/mailbox/compose.html" class="nav-link">
-                                &nbsp&nbsp&nbsp&nbsp<i class="far fa-circle nav-icon"></i>
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>Liên hệ thành công</p>
                             </a>
                         </li> --}}
@@ -214,7 +213,7 @@
                 <li class="nav-header">----- THÔNG TIN CÔNG TY</li>
                 <!-- THÔNG TIN CÔNG TY -->
                 @php
-                    $isMenu = ( url()->current() == route('infoCompany.aboutus') || url()->current() == route('infoCompany.infor') || route('infoCompany.socialNetwork') == url()->current() );
+                    $isMenu = ( url()->current() == route('infoCompany.aboutus') || url()->current() == route('infoCompany.infor') || route('infoCompany.socialNetwork') || route('infoCompany.branch') == url()->current() );
                 @endphp
                 <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
                     <a href="#" class="nav-link">
@@ -224,22 +223,29 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('infoCompany.aboutus') }}" class="nav-link {{ url()->current() == route('infoCompany.aboutus') ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-users"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>Về chúng tôi</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{ route('infoCompany.infor') }}" class="nav-link {{ url()->current() == route('infoCompany.infor') ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-address-card"></i>
+                                <i class="nav-icon fas fa-address-card"></i>
                                 <p>Thông tin liên hệ</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{ route('infoCompany.socialNetwork') }}" class="nav-link {{ url()->current() == route('infoCompany.socialNetwork') ? "active" : "" }}">
-                                &nbsp&nbsp&nbsp&nbsp<i class="nav-icon fas fa-share-alt"></i>
+                                <i class="nav-icon fas fa-share-alt"></i>
                                 <p>Mạng xã hội</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('infoCompany.branch') }}" class="nav-link {{ url()->current() == route('infoCompany.branch') ? "active" : "" }}">
+                                <i class="nav-icon fas fa-code-branch"></i>
+                                <p>Các chi nhánh</p>
                             </a>
                         </li>
                     </ul>
