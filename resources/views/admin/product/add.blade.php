@@ -43,6 +43,12 @@
                                     @enderror
                                     <hr width="100%" />
 
+                                    {{-- <div class="form-group">
+                                        <label>Tên tiếng Anh sản phẩm - dịch vụ </label>
+                                        <input type="text" class="form-control @error('eng_name') is-invalid @enderror"
+                                            placeholder="Nhập tên sản phẩm - dịch vụ" name="eng_name" value="{{ old('eng_name') }}">
+                                    </div> --}}
+
                                     <div class="form-group">
                                         <label>Nội dung ngắn</label>
                                         <textarea class="form-control ck-form  @error('short_content') is-invalid @enderror" name="short_content" id="short_content"

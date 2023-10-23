@@ -69,8 +69,8 @@
 
 
     <script src="{{ asset('frontEnd/js/vendor/modernizr-3.5.0.min.js') }}"></script>
-    {{-- <script src="{{ asset('frontEnd/js/vendor/jquery-3.6.3.min.js') }}"></script> --}}
-    <script src="{{ asset('frontEnd/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('frontEnd/js/vendor/jquery-3.6.3.min.js') }}"></script>
+    {{-- <script src="{{ asset('frontEnd/js/vendor/jquery-1.12.4.min.js') }}"></script> --}}
     <script src="{{ asset('frontEnd/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontEnd/js/bootstrap.min.js') }}"></script>
 

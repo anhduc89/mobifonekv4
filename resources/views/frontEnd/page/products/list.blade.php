@@ -54,15 +54,19 @@
                     </div>
                 </div>
 
-                <div class="row filters">
-                    <ul class="nav btn-group">
-                        <li data-filter="all"> Tất cả  </li>
+                <div class="row">
+                    {{-- <ul class="nav">
+                        <li data-filter="all"> Tất cả </li>
                         @foreach ($listCategories as $item)
-                            <li data-filter="{{ $item->id }}"> --  {{ $item->name }} </li>
+                            <li data-filter="{{ $item->id }}"> -- {{ $item->name }} </li>
                         @endforeach
-                    </ul>
+                    </ul> --}}
+
+
                     @foreach ($listProduct as $item)
-                        <div class="col-lg-4 col-md-4 filter" data-category="{{ $item->product_categories }}" data-sort="value">
+                        {{-- <div class="filter-container"> --}}
+                        <div class="col-lg-4 col-md-4 filter-container" data-category="{{ $item->product_categories }}"
+                            data-sort="value">
                             <div class="single-blogs mb-30 full-height">
                                 <div class="blog-img">
                                     <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
@@ -74,7 +78,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        {{-- </div> --}}
+                        {{-- <div class="filtr-item" data-category="1" data-sort="value">
+                                <img src="img/sample1.jpg" alt="sample" />
+                            </div>
+                            <div class="filtr-item" data-category="2, 1" data-sort="value">
+                                <img src="img/sample2.jpg" alt="sample" />
+                            </div>
+                            <div class="filtr-item" data-category="1, 3" data-sort="value">
+                                <img src="img/sample3.jpg" alt="sample" />
+                            </div> --}}
                     @endforeach
+
+
+
+                    {{-- @foreach ($listProduct as $item)
+                        <div class="col-lg-4 col-md-4 filter" data-category="{{ $item->product_categories }}"
+                            data-sort="value">
+                            <div class="single-blogs mb-30 full-height">
+                                <div class="blog-img">
+                                    <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
+                                </div>
+                                <div class="blog-caption">
+                                    <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
+                                    <p>{!! $item->short_content !!}</p>
+                                    <a href="/san-pham-dich-vu/{{ $item->slug }}" class="browse-btn">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach --}}
 
 
                 </div>
@@ -85,16 +118,50 @@
 @endsection
 
 @section('js-custom-frontend')
-    <script src="{{ asset('frontEnd/js/jquery.filterizr.min.js') }}"></script>
+    <script type="text/javascript"  src="{{ asset('frontEnd/js/jquery.filterizr.min.js') }}"></script>
     {{-- <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script> --}}
-    <script>
-        $(function() {
-            $('.filters').filterizr();
-            var filterSingle = $('.filter').filterizr({
-                setupControls: false,
-                animationDuration: 0.5,
-                delay: 0
-            });
-        });
+    <script type="text/javascript">
+        const options = {
+            animationDuration: 0.5, // in seconds
+            callbacks: {
+                onFilteringStart: function() {},
+                onFilteringEnd: function() {},
+                onShufflingStart: function() {},
+                onShufflingEnd: function() {},
+                onSortingStart: function() {},
+                onSortingEnd: function() {}
+            },
+            controlsSelector: '', // Selector for custom controls
+            delay: 0, // Transition delay in ms
+            delayMode: 'progressive', // 'progressive' or 'alternate'
+            easing: 'ease-out',
+            filter: 'all', // Initial filter
+            filterOutCss: { // Filtering out animation
+                opacity: 0,
+                transform: 'scale(0.5)'
+            },
+            filterInCss: { // Filtering in animation
+                opacity: 0,
+                transform: 'scale(1)'
+            },
+            gridItemsSelector: '.filtr-container',
+            gutterPixels: 0, // Items spacing in pixels
+            layout: 'sameSize', // See layouts
+            multifilterLogicalOperator: 'or',
+            searchTerm: '',
+            setupControls: true, // Should be false if controlsSelector is set
+            spinner: { // Configuration for built-in spinner
+                enabled: false,
+                fillColor: '#2184D0',
+                styles: {
+                    height: '75px',
+                    margin: '0 auto',
+                    width: '75px',
+                    'z-index': 2,
+                },
+            },
+        }
+
+        const filterizr = new Filterizr('.filter-container', options);
     </script>
 @endsection

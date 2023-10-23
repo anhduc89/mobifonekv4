@@ -36,6 +36,7 @@ class ProductController extends Controller
     {
         $dataInsert = array(
             'name' => $productsRequest->name,
+            // 'eng_name' => $productsRequest->eng_name,
             'product_categories'    => $productsRequest->product_categories,
             'contents' => $productsRequest->contents,
             'short_content' => $productsRequest->short_content,
