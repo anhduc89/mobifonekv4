@@ -46,20 +46,23 @@
                             <h2>Các sản phẩm của chúng tôi</h2>
                             {{-- <p>Maecenas felis felis, vulputate sit amet mauris et, semper aliquam ligula. Integer
                             efficitur tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et
-                            malesuada massa.</p> --}}
+                            malesuada massa.</p>
+
+                            data-multifilter="{{ $item->product_categories }}"
+                            --}}
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <ul class="nav">
-                        <li data-filter="0"> Tất cả  </li>
+                <div class="row filters">
+                    <ul class="nav btn-group">
+                        <li data-filter="all"> Tất cả  </li>
                         @foreach ($listCategories as $item)
                             <li data-filter="{{ $item->id }}"> --  {{ $item->name }} </li>
                         @endforeach
                     </ul>
                     @foreach ($listProduct as $item)
-                        <div class="col-lg-4 col-md-4 filter" data-multifilter="{{ $item->product_categories }}">
+                        <div class="col-lg-4 col-md-4 filter" data-category="{{ $item->product_categories }}" data-sort="value">
                             <div class="single-blogs mb-30 full-height">
                                 <div class="blog-img">
                                     <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
@@ -86,7 +89,7 @@
     {{-- <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script> --}}
     <script>
         $(function() {
-            $('.filter').filterizr();
+            $('.filters').filterizr();
             var filterSingle = $('.filter').filterizr({
                 setupControls: false,
                 animationDuration: 0.5,
