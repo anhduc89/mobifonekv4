@@ -120,6 +120,37 @@
                         </div>
                     </div>
                 </div>
+
+                <section class="branch-section">
+                    <div class="container">
+                        {{-- branch --}}
+                        
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class="contact-title">Các chi nhánh của chúng tôi</h2>
+                            </div>
+                            @foreach ($branches as $item)
+                                <div class="col-xs-6 col-sm-6 col-md-4 branch_card">
+
+                                    <div class="branch_head" >
+                                        <h3>
+                                            {{$item -> name}}
+                                        </h3>
+                                    </div>
+                                
+                                    <div class="branch_body limit-2-lines branch_border">
+                                        <p>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>{{$item -> address}}
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            @endforeach
+                           
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </section>
 
