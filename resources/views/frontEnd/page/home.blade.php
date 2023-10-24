@@ -159,9 +159,50 @@
             h2 a:hover {
                 color: #1f67b0
             }
+
+            .lSSlideOuter {
+                position: relative;
+            }
+
+            .content-image {
+                position: relative;
+                z-index: 1;
+            }
+
+            img {
+                vertical-align: middle;
+                border-style: none;
+            }
+
+            .box-detail-service {
+                padding: 20px;
+                margin-top: -30px;
+                position: relative;
+            }
+
+            .box-detail {
+                box-shadow: 0 20px 40px rgba(0,0,0,.06);
+                margin-top: -30px;
+                border: 1px solid #e0e0e0;
+                border: 1px solid #e0e0e0;
+                border-top: 5px solid #0a4874;
+                padding: 20px;
+                background-color: #fff;
+                position: relative;
+                z-index: 10;
+                box-shadow: 0 2px 10px rgba(0,0,0,.06);
+                border-radius: 0 0 8px 8px;
+            }
+
+            .home-blog .single-blogs {
+                border: 0px solid #D9E2E9;
+            }
+            .home-blog .single-blogs:hover {
+                border: 0px solid #D9E2E9;
+            }
         </style>
 
-        <section class="home-blog section-padding border-bottom ">
+        <section class="home-blog section-padding border-bottom clearfix">
             <div class="container" style="max-width: 95%">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8 col-md-10">
@@ -173,20 +214,23 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row lSSlideOuter">
                     @foreach ($listProduct as $item)
                         <div class="col-lg-4 col-md-4">
                             <a href="/san-pham/{{ $item->slug }}">
                                 <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
-                                    <div class="blog-img">
+                                    <div class="blog-img content-image">
                                         <img src="{{ $item->image_path }}" alt>
                                     </div>
-                                    <div class="blog-caption">
-                                        <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
-                                        <p>{!! $item->short_content !!} </p>
-                                        {{-- <p> <?php echo $item->contents; ?> </p> --}}
-                                        {{-- <a href="#" class="browse-btn">Learn More</a> --}}
+                                    <div class="box-detail-service">
+                                        <div class="blog-caption  box-detail">
+                                            <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
+                                            <p>{!! $item->short_content !!} </p>
+                                            {{-- <p> <?php echo $item->contents; ?> </p> --}}
+                                            {{-- <a href="#" class="browse-btn">Learn More</a> --}}
+                                        </div>
                                     </div>
+                                    
                                 </div>
                             </a>
                         </div>
