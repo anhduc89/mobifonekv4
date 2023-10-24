@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Models\InfoCompany;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
 use Illuminate\Http\Request;
@@ -456,6 +457,25 @@ Route::get('/homeAdmin', function () {
                 InfoCompany::class,
                 'as' => 'infoCompany.updateAboutUs',
                 'uses' => 'InfoCompanyController@updateAboutUs'
+            ]);
+
+            // chi nhánh
+            Route::get('/branch', [
+                InfoCompany::class,
+                'as' => 'infoCompany.branch',
+                'uses' => 'InfoCompanyController@branch'
+            ]);
+
+            Route::get('/createBranch', [
+                InfoCompany::class,
+                'as' => 'infoCompany.createBranch',
+                'uses' => 'InfoCompanyController@createBranch'
+            ]);
+
+            Route::post('/addBranch', [
+                InfoCompany::class,
+                'as' => 'infoCompany.addBranch',
+                'uses' => 'InfoCompanyController@addBranch'
             ]);
 
         });

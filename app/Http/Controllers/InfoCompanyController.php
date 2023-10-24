@@ -7,6 +7,7 @@ use App\Http\Requests\InforCompanyResquest;
 use App\Http\Requests\SocialNetworkRequest;
 use App\Models\AboutUs;
 use App\Models\InfoCompany;
+use App\Models\Branch;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -19,10 +20,12 @@ class InfoCompanyController extends Controller
     use StorageImageTrait;
     private $infoCompany;
     private $aboutUs;
-    public function __construct(InfoCompany $infoCompany, AboutUs $aboutUs)
+    private $branch;
+    public function __construct(InfoCompany $infoCompany, AboutUs $aboutUs, Branch $branch)
     {
         $this->infoCompany = $infoCompany;
         $this->aboutUs = $aboutUs;
+        $this->branch = $branch;
     }
     public function infor()
     {
@@ -214,5 +217,29 @@ class InfoCompanyController extends Controller
             DB::rollBack();
             Log::error("message " . $exception->getMessage() . 'Line: ' . $exception->getLine());
         }
+    }
+
+
+    // -------------------------- chi nhánh công ty -------------------------
+    public function branch()
+    {
+        $listBranch = $this->branch->all();
+        return view('admin.branch.index',compact('listBranch'));
+    }
+    public function createBranch()
+    {
+        return view('admin.branch.add');
+    }
+
+    public function addBranch(Request $request)
+    {
+        $data = array(
+            'name' => $request->name,
+            'address' => $request->address,
+            // 'phone' => $request->phone
+        );
+        $this->branch->create($data);
+
+        return redirect()->route('infoCompany.branch');
     }
 }
