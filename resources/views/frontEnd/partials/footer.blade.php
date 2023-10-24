@@ -1,7 +1,7 @@
 
 @php
 
-    // Lấy thông tin công ty    
+    // Lấy thông tin công ty
     $info_companies = session()->get('frontend')['info_companies']
 
 @endphp
@@ -24,8 +24,8 @@
                     <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle mb-10">
-                                <h4>Công ty dịch vụ Mobifone Khu vực 4</h4>
-                                <p> <i class="fa fa-map-marker" aria-hidden="true"></i> Tòa nhà MobiFone - Khu Đồng Mạ - P. Tiên Cát - TP Việt Trì - T. Phú Thọ</p>
+                                <h4>Công ty Dịch vụ MobiFone khu vực 4</h4>
+                                <p> <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp Tòa nhà MobiFone - Khu Đồng Mạ - P. Tiên Cát - TP Việt Trì - T. Phú Thọ</p>
                             </div>
                             <div class="footer-tittle">
                                 <h4>Kết nối với chúng tôi</h4>
