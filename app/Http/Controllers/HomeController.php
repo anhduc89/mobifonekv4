@@ -37,7 +37,9 @@ class HomeController extends Controller
         # echo "<pre>"; print_r($token); exit;
         // $token = csrf_token();
 
-        return view('frontEnd.page.contact');
+        $branches = DB::select("SELECT * FROM `branch`");
+
+        return view('frontEnd.page.contact', compact("branches"));
 
     }
 
@@ -99,8 +101,6 @@ class HomeController extends Controller
     public function tuyenDungForm(Request $request)
     {
 
-        $message = "Gửi Cv Thất bại, Vui lòng thử lại";
-
         $url_return_page = route("tuyenDungFrontEnd");
 
         $file_path = $destinationPath = 'uploads/CV/';
@@ -134,7 +134,7 @@ class HomeController extends Controller
 
         }
 
-        $insert = DB::table('contact')->insert([
+        $insert = DB::table('candidates_apply')->insert([
 
             'name' => $request->name,
 
@@ -146,13 +146,10 @@ class HomeController extends Controller
 
             'files' => $file_path,
 
-            'type' => 2,
-            // Tuyên dụng
-
         ]);
 
-        // $listProduct = DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
         if( $insert)    return redirect($url_return_page)->with('message',  "Gửi Cv Thành công");
+
         else return redirect($url_return_page)->with('message',  "Gửi Cv Thất bại, Vui lòng thử lại");
 
     }

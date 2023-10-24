@@ -1,7 +1,7 @@
 @extends('frontEnd.layouts.frontend')
 
 @section('title')
-    <title>Sản phẩm | Mobifone Khu Vực 4</title>
+    <title>Tuyển dụng | Mobifone Khu Vực 4</title>
 @endsection
 
 @section('css-custom-frontend')
@@ -30,9 +30,12 @@
         </div>
 
         @if(session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
+            <script>
+                alert("{{ session('message')}}")
+            </script>
+            @php
+                session()->forget('message');
+            @endphp
         @endif
 
         <section class="home-blog section-padding">

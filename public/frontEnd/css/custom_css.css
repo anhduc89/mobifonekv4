@@ -306,3 +306,32 @@ body {
     margin-bottom: 8px;
 }
 /* hết tuyển dụng */
+/* contact */
+.branch-section{
+    padding-top: 70px;
+}
+
+.branch_card{
+    cursor: pointer;
+    padding-top: 20px;
+}
+
+.branch_border{
+    border-bottom: 1px solid rgb(95, 70, 70); 
+}
+
+.branch_head h3{
+    color: #F15B43;
+    font-size: 24px;
+}
+
+.branch_body{
+    height: 60px
+}
+
+.branch_card:hover .branch_border{
+    border-bottom: 2px solid #F15B43; 
+}
+
+
+/* end contact */
