@@ -10,9 +10,16 @@ body {
     text-align: left;
     background-color: #fff;
 }
-h2, h3, h4, p, strong, a {
-    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+
+h2,
+h3,
+h4,
+p,
+strong,
+a {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
+
 p {
     font-weight: 200;
 }
@@ -82,8 +89,8 @@ p {
 .section-tittle h2 {
     /* margin-bottom: 10px;
     font-weight: 200; */
-    font-weight: 500;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 44px;
     line-height: 52px;
     color: #004390;
     /* padding-top: 120px; */
@@ -93,23 +100,44 @@ p {
     /* background: #FCF2EB; */
     background-color: #F8FBFC;
 }
+
 .home-blog {
     padding-bottom: 0px !important;
 }
-/* .visit-three {
-    background-color: #F8FBFC;
-} */
+
+.visit-three {
+    padding: 25px 0px 0px 0px;
+}
+
 .visit-three .tailor-details {
     padding: auto;
 }
-.single-slider, .content-image, .properties__img {
+
+.single-slider,
+.content-image,
+.properties__img {
 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
-.single-slider {height: 500px;}
-.content-image, .properties__img { height: 268px;}
+
+.single-slider {
+    height: 500px;
+}
+
+.content-image,
+.properties__img {
+    height: 268px;
+}
+
+.about-area {
+    background-image: url('../img/hero/about1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 /* hết trang home */
 
 /* trang sản phẩm */
@@ -258,6 +286,7 @@ body {
     line-height: 25px !important;
     font-weight: 200;
 }
+
 .blog-caption p {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -266,6 +295,7 @@ body {
     line-clamp: 3;
     -webkit-box-orient: vertical;
 }
+
 .home-blog .single-blogs .blog-caption h3 a {
     font-size: 23px;
     font-weight: 500;

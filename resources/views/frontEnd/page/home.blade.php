@@ -38,25 +38,25 @@
         </section>
 
 
-        <section class="about-area section-bg section-padding">
+        <section class="about-area section-bg section-padding" style=" ">
             <div class="container custom_container">
                 <div class="row align-items-center">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
 
-                        <div class="about-img about-img1  ">
+                        {{-- <div class="about-img about-img1  ">
                             <img src="{{ asset('frontEnd/img/hero/about1.png') }}" alt>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="offset-xl-1 offset-lg-0 offset-sm-1 col-xxl-5 col-xl-5 col-lg-6 col-md-9 col-sm-11">
                         <div class="about-caption about-caption1">
 
                             <div class="section-tittle m-0">
-                                <h2>CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h2>
+                                <h2>CÔNG TY DỊCH VỤ <br/>MOBIFONE KHU VỰC 4</h2>
                                 <p class="mb-30" style="text-align:justify">Công ty Dịch vụ MobiFone Khu vực 4 được thành lập vào ngày 10/02/2015, là
                                     đơn vị trực thuộc Tổng Công ty Viễn thông MobiFone, chịu trách nhiệm kinh doanh toàn bộ
                                     các sản phẩm dịch vụ do Tổng Công ty cung cấp trong phạm vi 13 tỉnh/thành phố bao gồm:
-                                    Vĩnh Phúc, Phú Thọ, Lào Cai, Yên Bái, Sơn La, Lai Châu, Điện Biên, Ninh Bình, Hà Nam,
-                                    Hoà Bình, Nam Định, Hà Giang, Tuyên Quang.
+                                    <span style="color:#FB1055; font-weight:bold;">Vĩnh Phúc, Phú Thọ, Lào Cai, Yên Bái, Sơn La, Lai Châu, Điện Biên, Ninh Bình, Hà Nam,
+                                    Hoà Bình, Nam Định, Hà Giang, Tuyên Quang</span>.
                                     <br/>
                                     Trụ sở của công ty được đặt tại Khu Đồng Mạ, Đường Nguyễn Tất Thành, TP Việt Trì, tỉnh
                                     Phú Thọ.
@@ -78,13 +78,13 @@
             <div class="container custom_container">
                 <div class="">
                     <div class="section-tittle mb-40">
-                        <h2><q>Giá trị cốt lõi</q></h2>
-                        <p style="text-align:justify">Đứng trước bối cảnh mới, với định hướng chuyển đổi từ kinh doanh dịch vụ viễn thông trở thành nhà
+                        <h2><i><q>Giá trị cốt lõi</q></i></h2>
+                        <i style="text-align:justify">Đứng trước bối cảnh mới, với định hướng chuyển đổi từ kinh doanh dịch vụ viễn thông trở thành nhà
                             cung cấp hạ tầng số và dịch vụ số tại Việt Nam, từng người MobiFone đồng lòng quyết tâm sẽ thực hiện
-                            theo định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <b>THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</b>.
+                            theo định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <span style="color:#FB1055; font-weight:bold;">THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</span>.
                             Với ý nghĩa, người MobiFone cần Thần tốc trong hành động, Đổi mới trong suy nghĩ, Chuyên nghiệp
                             trong công việc và Hiệu quả trong mọi hoạt động.
-                        </p>
+                        </i>
                     </div>
                 </div>
             </div>
@@ -174,24 +174,6 @@
                                         </div>
                                     </div>
 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <a href="/san-pham/{{ $item->slug }}">
-                                <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
-                                    <div class="blog-img content-image">
-                                        <img src="{{ $item->image_path }}" alt>
-                                    </div>
-                                    <div class="box-detail-service">
-                                        <div class="blog-caption  box-detail">
-                                            <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
-                                            <p>{!! $item->short_content !!} </p>
-                                            {{-- <p> <?php echo $item->contents; ?> </p> --}}
-                                            {{-- <a href="#" class="browse-btn">Learn More</a> --}}
-                                        </div>
-                                    </div>
-                                    
                                 </div>
                             </a>
                         </div>
