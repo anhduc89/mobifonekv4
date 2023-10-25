@@ -100,7 +100,53 @@
       }
     }
     mainSlider();
-
+    $('.lSSlideOuter').slick({
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+      speed: 400,
+      arrows: false,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        }
+      ]
+    }); 
   // Brand Active
   $('.brand-active').slick({
     dots: false,

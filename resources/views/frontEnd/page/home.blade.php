@@ -234,6 +234,24 @@
                                 </div>
                             </a>
                         </div>
+                        <div class="col-lg-4 col-md-4">
+                            <a href="/san-pham/{{ $item->slug }}">
+                                <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
+                                    <div class="blog-img content-image">
+                                        <img src="{{ $item->image_path }}" alt>
+                                    </div>
+                                    <div class="box-detail-service">
+                                        <div class="blog-caption  box-detail">
+                                            <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
+                                            <p>{!! $item->short_content !!} </p>
+                                            {{-- <p> <?php echo $item->contents; ?> </p> --}}
+                                            {{-- <a href="#" class="browse-btn">Learn More</a> --}}
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+                        </div>
                     @endforeach
 
                 </div>
