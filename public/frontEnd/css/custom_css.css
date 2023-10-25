@@ -21,7 +21,7 @@ a {
 }
 
 p {
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .blog_right_sidebar {
@@ -237,17 +237,25 @@ body {
     background: #c4302b;
 }
 
-@media only screen and (max-width: 1540px) {
+@media only screen and (max-width: 1280px) {
     .mf-social-side-list {
         left: 10px;
+    }
+
+    .custom_container {
+        max-width: 95%;
+    }
+}
+@media only screen and (max-width: 1600px)and (min-width: 1280px) {
+    .mf-social-side-list {
+        left: 4vw;
     }
 
     .custom_container {
         max-width: 80%;
     }
 }
-
-@media only screen and (max-width: 1760px)and (min-width: 1541px) {
+@media only screen and (max-width: 1760px)and (min-width: 1601px) {
     .mf-social-side-list {
         left: 8vw;
     }
