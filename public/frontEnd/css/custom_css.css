@@ -308,7 +308,7 @@ body {
 /* hết tuyển dụng */
 /* contact */
 .branch-section{
-    padding-top: 70px;
+    padding-top: 20px;
 }
 
 .branch_card{
@@ -317,21 +317,25 @@ body {
 }
 
 .branch_border{
-    border-bottom: 1px solid rgb(95, 70, 70); 
+    border-bottom: 1px solid rgb(95, 70, 70);
 }
 
 .branch_head h3{
-    color: #F15B43;
-    font-size: 24px;
+    color: #005db2;
+    font-size: 18px;
 }
 
 .branch_body{
-    height: 60px
+    height: 65px
 }
 
 .branch_card:hover .branch_border{
-    border-bottom: 2px solid #F15B43; 
+    border-bottom: 2px solid #F15B43;
 }
+.branch_border p {
+    font-size: 15px;
+}
+
 
 
 /* end contact */

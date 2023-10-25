@@ -29,9 +29,9 @@
             </div>
         </div>
 
-        @if(session('message'))
+        @if (session('message'))
             <script>
-                alert("{{ session('message')}}")
+                alert("{{ session('message') }}")
             </script>
             @php
                 session()->forget('message');
@@ -60,31 +60,37 @@
                     .sticky-bar {
                         position: relative;
                     }
-
-
                 </style>
                 <div class="row">
                     @php
                         $array_vitri = [];
                     @endphp
                     @foreach ($listTuyenDung as $key => $item)
-                        <div class="col-lg-4 col-md-6" onmouseover="showModal({{$key}})">
+                        <div class="col-lg-4 col-md-6" onmouseover="showModal({{ $key }})">
                             <div class="single-blogs mb-30 full-height">
                                 <div class="blog-img" style="height: 35%">
-                                    <a href="/tuyen-dung/{{ $item -> slug}}"><img src="{{ $item->image_path }}" alt="{{ $item->image_name }}"></a>
+                                    <a href="/tuyen-dung/{{ $item->slug }}"><img src="{{ $item->image_path }}"
+                                            alt="{{ $item->image_name }}"></a>
                                 </div>
                                 <div class="blog-caption" style="height: 55%;">
-                                    <h3><a href="/tuyen-dung/{{ $item -> slug}}" style="height: 55px" class="limit-2-lines"><b>{{ $item -> title }}</b></a> </h3>
-                                    <p class="job limit-2-lines" style="height: 45px">Ngành nghề: {{ $item -> nganhnghe }}</p>
-                                    <p><i class="fas fa-dollar-sign" aria-hidden="true"></i> Thu nhập: {{ $item -> mucluong }}</p>
-                                    <p><i class="fa fa-users" aria-hidden="true"></i> Số lượng: {{ $item -> number_of_applicants }}</p>
-                                    <p><i class="fa fa-calendar" aria-hidden="true"></i> Hạn chót: {{  (new DateTime($item -> application_deadline))->format("d-m-Y") }}</p>
+                                    <h3><a href="/tuyen-dung/{{ $item->slug }}" style="height: 55px"
+                                            class="limit-2-lines"><b>{{ $item->title }}</b></a> </h3>
+                                    <p class="job limit-2-lines" style="height: 45px">Ngành nghề: {{ $item->nganhnghe }}
+                                    </p>
+                                    <p><i class="fas fa-dollar-sign" aria-hidden="true"></i> Thu nhập:
+                                        {{ $item->mucluong }}</p>
+                                    <p><i class="fa fa-users" aria-hidden="true"></i> Số lượng:
+                                        {{ $item->number_of_applicants }}</p>
+                                    <p><i class="fa fa-calendar" aria-hidden="true"></i> Hạn nộp hồ sơ:
+                                        {{ (new DateTime($item->application_deadline))->format('d-m-Y') }}</p>
                                     {{-- <a href="/san-pham-dich-vu/{{ $item -> slug}}" class="browse-btn">Xem chi tiết</a> --}}
 
                                     {{-- <button style="display:none" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $key }}" id="openModal{{ $key }}">open</button> --}}
                                 </div>
                                 <div style="height: 10%">
-                                    <button class="genric-btn info radius btn-recruiment" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#formModal" onclick="NopCv({{$item -> id}})">Nộp CV</button>
+                                    <button class="genric-btn info radius btn-recruiment" style="width: 100%;"
+                                        data-bs-toggle="modal" data-bs-target="#formModal"
+                                        onclick="NopCv({{ $item->id }})">Nộp CV</button>
                                 </div>
                             </div>
                         </div>
@@ -104,17 +110,18 @@
                                         <?php echo $item->contents; ?>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close{{ $key }}">Đóng</button>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal" onclick="closeModal({{ $key }})" >Nộp CV</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                            id="close{{ $key }}">Đóng</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#formModal" onclick="closeModal({{ $key }})">Nộp
+                                            CV</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         @php
-                            $array = [ 'key'    =>  $item -> id,
-
-                                       'value' =>  $item -> title];
+                            $array = ['key' => $item->id, 'value' => $item->title];
 
                             array_push($array_vitri, $array);
                         @endphp
@@ -127,53 +134,56 @@
             </div>
         </section>
         <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="formModalLabel">Nộp CV</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="{{route('tuyenDungFormFrontEnd')}}" name="nopcv" id="nopcv" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Vị trí:</label>
-                        <select name="vitri" id="vitriungtuyen" class="form-control" required>
-                            <option value=""> --Chọn vị trí tuyển dụng--</option>
-                            @foreach ($array_vitri as $item)
-                                <option value="{{ $item['key'] }}"> {{ $item['value'] }} </option>
-                            @endforeach
-                        </select>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="formModalLabel">Nộp CV</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Họ tên:</label>
-                        <input type="text" name="name" class="form-control" id="name" required >
-                    </div>
-                    <div class="mb-3">
-                        <label for="number_phone" class="col-form-label">Số điện thoại:</label>
-                        <input type="text" name="number_phone" class="form-control" id="number_phone" required >
-                    </div>
-                    <div class="mb-3">
-                        <label for="mail" class="col-form-label">Email:</label>
-                        <input type="text" name="mail" class="form-control" id="mail" required >
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="col-form-label">Địa chỉ:</label required>
-                        <input type="text" name="address" class="form-control" id="address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="fileCv" class="col-form-label">Cv:</label >
-                        <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf" required>
+                    <div class="modal-body">
+                        <form action="{{ route('tuyenDungFormFrontEnd') }}" name="nopcv" id="nopcv" method="post"
+                            enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Vị trí:</label>
+                                <select name="vitri" id="vitriungtuyen" class="form-control" required>
+                                    <option value=""> --Chọn vị trí tuyển dụng--</option>
+                                    @foreach ($array_vitri as $item)
+                                        <option value="{{ $item['key'] }}"> {{ $item['value'] }} </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Họ tên:</label>
+                                <input type="text" name="name" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="number_phone" class="col-form-label">Số điện thoại:</label>
+                                <input type="text" name="number_phone" class="form-control" id="number_phone"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mail" class="col-form-label">Email:</label>
+                                <input type="text" name="mail" class="form-control" id="mail" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="col-form-label">Địa chỉ:</label required>
+                                <input type="text" name="address" class="form-control" id="address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fileCv" class="col-form-label">Cv:</label>
+                                <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf"
+                                    required>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="btn btn-primary">Gửi CV</button>
+                            </div>
+                        </form>
                     </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="submit" class="btn btn-primary">Gửi CV</button>
-                    </div>
-                </form>
+                </div>
             </div>
-
-            </div>
-        </div>
         </div>
 
     </main>
@@ -181,8 +191,7 @@
 
 
     <script>
-
-        function NopCv(id){
+        function NopCv(id) {
 
             // alert(id);
             // Get the select element
@@ -203,11 +212,10 @@
         // };
 
 
-        function closeModal(id){
+        function closeModal(id) {
 
             document.getElementById('close' + id).click()
 
         }
-
     </script>
 @endsection

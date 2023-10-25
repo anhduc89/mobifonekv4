@@ -57,12 +57,9 @@
                             <div class="section-tittle m-0">
                                 <h2>CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h2>
                                 <p class="mb-30">Có trụ sở chính tại Phú Thọ, chịu trách nhiệm kinh doanh toàn bộ các dịch
-                                    vụ do
-                                    Tổng công ty cung cấp đối với tất cả các nhóm khách hàng theo mục tiêu, quy hoạch và kế
-                                    hoạch
-                                    phát triển của Tổng Công ty trên địa bàn các tỉnh: Lào Cai, Lai Châu, Điện Biên, Yên
-                                    Bái, Sơn La,
-                                    Phú Thọ, Hòa Bình, Hà Nam, Nam Định, Ninh Bình, Vĩnh Phúc, Hà Giang, Tuyên Quang.
+                                    vụ do Tổng công ty cung cấp đối với tất cả các nhóm khách hàng theo mục tiêu, quy hoạch và kế
+                                    hoạch phát triển của Tổng Công ty trên địa bàn các tỉnh: Lào Cai, Lai Châu, Điện Biên, Yên
+                                    Bái, Sơn La, Phú Thọ, Hòa Bình, Hà Nam, Nam Định, Ninh Bình, Vĩnh Phúc, Hà Giang, Tuyên Quang.
                                 </p>
                                 <p>Địa chỉ: Đường Nguyễn Tất Thành, khu Đồng Mạ, phường Tiên Cát, TP. Việt Trì, tỉnh Phú Thọ
                                 </p>
@@ -75,9 +72,7 @@
         </section>
 
         <style>
-            .visit-three .visit-team {
-                background-image: url({{ asset('frontEnd/img/elements/e1.jpg') }});
-            }
+
         </style>
         {{-- Giá trị cốt lõi --}}
         <section class="visit-three fix">
@@ -86,13 +81,13 @@
                 <div class="section-tittle mb-40">
                     <h2>Giá trị cốt lõi</h2>
                     <p>Đứng trước bối cảnh mới, với định hướng chuyển đổi từ kinh doanh dịch vụ viễn thông trở thành nhà
-                        cung
-                        cấp hạ tầng số và dịch vụ số tại Việt Nam, từng người MobiFone đồng lòng quyết tâm sẽ thực hiện theo
-                        định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <b>Thần tốc - Đổi mới - Chuyên
-                            nghiệp - Hiệu quả </b>.</p>
+                        cung cấp hạ tầng số và dịch vụ số tại Việt Nam, từng người MobiFone đồng lòng quyết tâm sẽ thực hiện theo
+                        định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <b>THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</b>.
+                        Với ý nghĩa, người MobiFone cần Thần tốc trong hành động, Đổi mới trong suy nghĩ, Chuyên nghiệp trong công việc và Hiệu quả trong mọi hoạt động.
+                    </p>
                 </div>
 
-                <div class="single-gallery mb-15">
+                {{-- <div class="single-gallery mb-15">
                     <div class="thumb-content-box d-flex">
                         <div class="thumb-content">
                             <div class="capt">
@@ -144,7 +139,7 @@
                             <a href="/gioi-thieu-cong-ty"><i class="ti-angle-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
 
@@ -257,7 +252,7 @@
                 </div>
             </div>
         </section>
-        
+
         {{-- Tin tức --}}
         <section class="class-offer-area section-padding border-bottom">
             <div class="container-fluid">
