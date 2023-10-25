@@ -1,6 +1,7 @@
 /* reset css */
 body {
     margin: 0;
+    /* font-family: "Calibri"; */
     /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
     font-size: 1rem;
     font-weight: 400;
@@ -9,12 +10,14 @@ body {
     text-align: left;
     background-color: #fff;
 }
-
+h2, h3, h4, p, strong, a {
+    font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+}
 p {
     font-weight: 200;
 }
 
-.blog_right_sidebar{
+.blog_right_sidebar {
     padding-top: 26px;
 }
 
@@ -31,17 +34,21 @@ p {
     font-size: 52px;
 }
 
-#copyToClipboard, #shareWithFb, #shareWithTwitter {
+#copyToClipboard,
+#shareWithFb,
+#shareWithTwitter {
     cursor: pointer;
 }
-.limit-2-lines{
+
+/* .limit-2-lines {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-            line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
-}
+} */
+
 #Copied {
     display: flex;
     background-color: #00acee;
@@ -52,6 +59,7 @@ p {
     padding: 0px 6px;
     border-radius: 4px;
 }
+
 /* hết phần element dùng chung */
 
 
@@ -74,8 +82,8 @@ p {
 .section-tittle h2 {
     /* margin-bottom: 10px;
     font-weight: 200; */
-    font-weight: 200;
-    font-size: 35px;
+    font-weight: 500;
+    font-size: 30px;
     line-height: 52px;
     color: #004390;
     /* padding-top: 120px; */
@@ -85,14 +93,23 @@ p {
     /* background: #FCF2EB; */
     background-color: #F8FBFC;
 }
-
+.home-blog {
+    padding-bottom: 0px !important;
+}
 /* .visit-three {
     background-color: #F8FBFC;
 } */
 .visit-three .tailor-details {
     padding: auto;
 }
+.single-slider, .content-image, .properties__img {
 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.single-slider {height: 500px;}
+.content-image, .properties__img { height: 268px;}
 /* hết trang home */
 
 /* trang sản phẩm */
@@ -114,13 +131,14 @@ p {
 .blog_details p img {
     width: 100% !important;
 }
+
 .blog_details .blog-head {
     font-size: 22px;
     font-weight: 200;
     text-transform: uppercase;
 }
-    -- Mạng xã hội
-*,
+
+/* Mạng xã hội *, */
 *::before,
 *::after {
     box-sizing: border-box;
@@ -133,7 +151,7 @@ body {
 .mf-social-side-list {
     position: fixed;
     top: 30vh;
-    left: 10vw ;
+    left: 10vw;
     z-index: 100;
 }
 
@@ -192,18 +210,32 @@ body {
 }
 
 @media only screen and (max-width: 1540px) {
-    .mf-social-side-list{
+    .mf-social-side-list {
         left: 10px;
     }
-  }
+
+    .custom_container {
+        max-width: 80%;
+    }
+}
+
 @media only screen and (max-width: 1760px)and (min-width: 1541px) {
-.mf-social-side-list{
-    left: 8vw;
+    .mf-social-side-list {
+        left: 8vw;
+    }
+
+    .custom_container {
+        max-width: 80%;
+    }
 }
-}
+
 @media only screen and (min-width: 1760px) {
-    .mf-social-side-list{
+    .mf-social-side-list {
         left: 12vw;
+    }
+
+    .custom_container {
+        max-width: 80%;
     }
 }
 
@@ -226,16 +258,24 @@ body {
     line-height: 25px !important;
     font-weight: 200;
 }
-
+.blog-caption p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
 .home-blog .single-blogs .blog-caption h3 a {
     font-size: 23px;
-    font-weight: 200;
+    font-weight: 500;
     cursor: pointer;
 }
 
 .properties__caption h3 a {
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: 500;
+    font-size: 23px;
 }
 
 /* tuyển dụng */
@@ -300,39 +340,41 @@ body {
     margin-bottom: 0px;
 }
 
- h3.title a{
+h3.title a {
     font-size: 18px;
     line-height: 24px;
     color: #0a4874;
     margin-bottom: 8px;
 }
+
 /* hết tuyển dụng */
 /* contact */
-.branch-section{
+.branch-section {
     padding-top: 20px;
 }
 
-.branch_card{
+.branch_card {
     cursor: pointer;
     padding-top: 20px;
 }
 
-.branch_border{
+.branch_border {
     border-bottom: 1px solid rgb(95, 70, 70);
 }
 
-.branch_head h3{
+.branch_head h3 {
     color: #005db2;
     font-size: 18px;
 }
 
-.branch_body{
+.branch_body {
     height: 65px
 }
 
-.branch_card:hover .branch_border{
+.branch_card:hover .branch_border {
     border-bottom: 2px solid #F15B43;
 }
+
 .branch_border p {
     font-size: 15px;
 }

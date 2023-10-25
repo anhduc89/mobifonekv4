@@ -36,7 +36,7 @@
 
                                     <div class="form-group">
                                         <label>Nội dung</label>
-                                        <textarea class="form-control ckeditor_form  @error('contents') is-invalid @enderror" name="content" id="contents"
+                                        <textarea class="form-control ck-form  @error('contents') is-invalid @enderror" name="content" id="contents"
                                             cols="30" rows="15"><?php if(!empty($aboutUs)) { echo $aboutUs['content']; }?></textarea>
                                     </div>
                                     @error('content')

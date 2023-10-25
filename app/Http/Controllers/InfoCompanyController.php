@@ -193,7 +193,7 @@ class InfoCompanyController extends Controller
         }
     }
 
-    public function updateAboutUs(AboutUsRequest $aboutUsRequest, $id)
+    public function updateAboutUs(Request $aboutUsRequest, $id)
     {
         try {
             DB::beginTransaction();

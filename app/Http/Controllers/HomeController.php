@@ -18,14 +18,16 @@ class HomeController extends Controller
 
         $listNews = DB::select("SELECT * FROM `news` ORDER BY `id` DESC LIMIT 0,3");
 
-        $listProduct = DB::select("SELECT * FROM `products` WHERE highlight = 1 ORDER BY `id` DESC LIMIT 0,3");
+        $listProduct = DB::select("SELECT * FROM `products` WHERE highlight = 1 ORDER BY `id` DESC LIMIT 0,5");
+
+        $listSlider = DB::select("SELECT * FROM `image` WHERE type = 1 ORDER BY `id`");
 
         $path = public_path() . '/frontEnd/img/partner/';
 
         $files = File::allFiles($path);
 
 
-        return view('frontEnd.page.home', compact('listNews', 'listProduct', 'files'));
+        return view('frontEnd.page.home', compact('listNews', 'listProduct', 'files', 'listSlider'));
 
     }
 
@@ -107,7 +109,7 @@ class HomeController extends Controller
 
         // Tạo thư mục
         if (!file_exists($destinationPath))     mkdir($destinationPath, 0755, true);
-        
+
         // Upload file
         if ($request->hasFile('fileCv')) {
 
