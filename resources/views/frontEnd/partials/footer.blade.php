@@ -65,7 +65,7 @@
                                 <ul>
                                     <li><a href="#">Giới thiệu MobiFone</a></li>
                                     <li><a href="#">Hợp tác MobiFone</a></li>
-                                    <li><a href="#">Tuyển dụng</a></li>
+                                    <li><a href="/tuyen-dung">Tuyển dụng</a></li>
                                 </ul>
                             </div>
                         </div>

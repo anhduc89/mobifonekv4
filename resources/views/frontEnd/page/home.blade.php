@@ -11,39 +11,35 @@
 
 @section('content')
     <main>
-
-        <style>
-            .slider-bg1 {
-                background-image: url({{ asset('frontEnd/img/hero//slider-9.jpg ') }});
-            }
-        </style>
-
         <section class="slider-area position-relative">
             <div class="slider-active">
-
-                <div class="single-slider slider-height hero-overly slider-bg1 d-flex  align-items-center">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-sm-12">
-                                <div class="hero-caption">
-                                    {{-- <span data-animation="fadeInUp" data-delay=".2s" style="color: red">Chúng tôi là</span>
+                @foreach ($listSlider as $item)
+                    <div class="single-slider slider-height hero-overly slider-bg1 d-flex  align-items-center"
+                        style="background-image: url({{ $item->path }});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 col-sm-12">
+                                    <div class="hero-caption">
+                                        {{-- <span data-animation="fadeInUp" data-delay=".2s" style="color: red">Chúng tôi là</span>
                                 <h1 data-animation="fadeInUp" data-delay=".2s" style="color: blue">CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h1> --}}
-                                    {{-- <P data-animation="fadeInUp" data-delay=".4s">Lorem ipsum dolor sit amet,
+                                        {{-- <P data-animation="fadeInUp" data-delay=".4s">Lorem ipsum dolor sit amet,
                                     consectetur adipiscing elit.
                                     Suspendisse varius enim in eros elementum tristique.</P> --}}
-                                    {{-- <a href="programs.html" class="btn_1 hero-btn" data-animation="fadeInUp"
+                                        {{-- <a href="programs.html" class="btn_1 hero-btn" data-animation="fadeInUp"
                                     data-delay=".8s">Liên Hệ ngay</a> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+
             </div>
         </section>
 
 
         <section class="about-area section-bg section-padding">
-            <div class="container">
+            <div class="container custom_container">
                 <div class="row align-items-center">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12">
 
@@ -56,13 +52,16 @@
 
                             <div class="section-tittle m-0">
                                 <h2>CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h2>
-                                <p class="mb-30">Có trụ sở chính tại Phú Thọ, chịu trách nhiệm kinh doanh toàn bộ các dịch
-                                    vụ do Tổng công ty cung cấp đối với tất cả các nhóm khách hàng theo mục tiêu, quy hoạch và kế
-                                    hoạch phát triển của Tổng Công ty trên địa bàn các tỉnh: Lào Cai, Lai Châu, Điện Biên, Yên
-                                    Bái, Sơn La, Phú Thọ, Hòa Bình, Hà Nam, Nam Định, Ninh Bình, Vĩnh Phúc, Hà Giang, Tuyên Quang.
+                                <p class="mb-30" style="text-align:justify">Công ty Dịch vụ MobiFone Khu vực 4 được thành lập vào ngày 10/02/2015, là
+                                    đơn vị trực thuộc Tổng Công ty Viễn thông MobiFone, chịu trách nhiệm kinh doanh toàn bộ
+                                    các sản phẩm dịch vụ do Tổng Công ty cung cấp trong phạm vi 13 tỉnh/thành phố bao gồm:
+                                    Vĩnh Phúc, Phú Thọ, Lào Cai, Yên Bái, Sơn La, Lai Châu, Điện Biên, Ninh Bình, Hà Nam,
+                                    Hoà Bình, Nam Định, Hà Giang, Tuyên Quang.
+                                    <br/>
+                                    Trụ sở của công ty được đặt tại Khu Đồng Mạ, Đường Nguyễn Tất Thành, TP Việt Trì, tỉnh
+                                    Phú Thọ.
                                 </p>
-                                <p>Địa chỉ: Đường Nguyễn Tất Thành, khu Đồng Mạ, phường Tiên Cát, TP. Việt Trì, tỉnh Phú Thọ
-                                </p>
+
                                 <a href="#" class="browse-btn mt-20">Tìm hiểu thêm</a>
                             </div>
                         </div>
@@ -74,76 +73,23 @@
         <style>
 
         </style>
-        {{-- Giá trị cốt lõi --}}
+        {{-- Giá trị cốt lõi  tailor-details --}}
         <section class="visit-three fix">
-
-            <div class="tailor-details">
-                <div class="section-tittle mb-40">
-                    <h2>Giá trị cốt lõi</h2>
-                    <p>Đứng trước bối cảnh mới, với định hướng chuyển đổi từ kinh doanh dịch vụ viễn thông trở thành nhà
-                        cung cấp hạ tầng số và dịch vụ số tại Việt Nam, từng người MobiFone đồng lòng quyết tâm sẽ thực hiện theo
-                        định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <b>THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</b>.
-                        Với ý nghĩa, người MobiFone cần Thần tốc trong hành động, Đổi mới trong suy nghĩ, Chuyên nghiệp trong công việc và Hiệu quả trong mọi hoạt động.
-                    </p>
-                </div>
-
-                {{-- <div class="single-gallery mb-15">
-                    <div class="thumb-content-box d-flex">
-                        <div class="thumb-content">
-                            <div class="capt">
-                                <h3>Giá trị “Thần tốc”</h3>
-                                <p>Có thể khẳng định một cách chắc chắn rằng trong lĩnh vực công nghệ số,<br> tốc độ là yếu
-                                    tố quyết định.
-                                    Trong không gian số không hề... </p>
-                            </div>
-                            <a href="/gioi-thieu-cong-ty"><i class="ti-angle-right"></i></a>
-                        </div>
+            <div class="container custom_container">
+                <div class="">
+                    <div class="section-tittle mb-40">
+                        <h2><q>Giá trị cốt lõi</q></h2>
+                        <p style="text-align:justify">Đứng trước bối cảnh mới, với định hướng chuyển đổi từ kinh doanh dịch vụ viễn thông trở thành nhà
+                            cung cấp hạ tầng số và dịch vụ số tại Việt Nam, từng người MobiFone đồng lòng quyết tâm sẽ thực hiện
+                            theo định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <b>THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</b>.
+                            Với ý nghĩa, người MobiFone cần Thần tốc trong hành động, Đổi mới trong suy nghĩ, Chuyên nghiệp
+                            trong công việc và Hiệu quả trong mọi hoạt động.
+                        </p>
                     </div>
                 </div>
-
-                <div class="single-gallery mb-15">
-                    <div class="thumb-content-box d-flex">
-                        <div class="thumb-content">
-                            <div class="capt">
-                                <h3>Giá trị “Đổi mới”</h3>
-                                <p>Để MobiFone có thể hiện thực hóa tầm nhìn của mình, chúng ta cần phải <br>
-                                    ĐỔI MỚI. Đây không chỉ là khẩu hiệu mà còn là mệnh lệnh...</p>
-                            </div>
-                            <a href="/gioi-thieu-cong-ty"><i class="ti-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-gallery mb-15">
-                    <div class="thumb-content-box d-flex">
-                        <div class="thumb-content">
-                            <div class="capt">
-                                <h3>Giá trị “Chuyên nghiệp”</h3>
-                                <p>Không thể thực hiện giá trị “Đổi mới” hay “Thần tốc” nếu thiếu đi nền <br>tảng của giá
-                                    trị “Chuyên nghiệp”...</p>
-                            </div>
-                            <a href="/gioi-thieu-cong-ty"><i class="ti-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="single-gallery mb-15">
-                    <div class="thumb-content-box d-flex">
-                        <div class="thumb-content">
-                            <div class="capt">
-                                <h3>Giá trị “Hiệu quả”</h3>
-                                <p>“Hiệu quả” là giá trị cốt lõi thể hiện nét văn hóa nổi bật của MobiFone<br>
-                                    trong suốt chiều dài lịch sử hình thành và phát triển...</p>
-                            </div>
-                            <a href="/gioi-thieu-cong-ty"><i class="ti-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div> --}}
-
             </div>
 
-            <div class="visit-team"></div>
+
         </section>
 
 
@@ -176,7 +122,7 @@
             }
 
             .box-detail {
-                box-shadow: 0 20px 40px rgba(0,0,0,.06);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, .06);
                 margin-top: -30px;
                 border: 1px solid #e0e0e0;
                 border: 1px solid #e0e0e0;
@@ -185,20 +131,21 @@
                 background-color: #fff;
                 position: relative;
                 z-index: 10;
-                box-shadow: 0 2px 10px rgba(0,0,0,.06);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
                 border-radius: 0 0 8px 8px;
             }
 
             .home-blog .single-blogs {
                 border: 0px solid #D9E2E9;
             }
+
             .home-blog .single-blogs:hover {
                 border: 0px solid #D9E2E9;
             }
         </style>
 
         <section class="home-blog section-padding border-bottom clearfix">
-            <div class="container" style="max-width: 95%">
+            <div class="container custom_container">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8 col-md-10">
 
@@ -209,23 +156,24 @@
                     </div>
                 </div>
 
-                <div class="row lSSlideOuter">
+                <div class="row lSSlideOuter ">
                     @foreach ($listProduct as $item)
                         <div class="col-lg-4 col-md-4">
                             <a href="/san-pham/{{ $item->slug }}">
                                 <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
-                                    <div class="blog-img content-image">
-                                        <img src="{{ $item->image_path }}" alt>
+                                    <div class="blog-img content-image"
+                                        style="background-image: url({{ $item->image_path }});">
+                                        {{-- <img src="{{ $item->image_path }}" alt> --}}
                                     </div>
                                     <div class="box-detail-service">
                                         <div class="blog-caption  box-detail">
                                             <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
-                                            <p>{!! $item->short_content !!} </p>
-                                            {{-- <p> <?php echo $item->contents; ?> </p> --}}
+                                            {!! $item->short_content !!}
+                                            {{-- <p class="limit-2-lines"> <?php #echo $item->short_content; ?> </p> --}}
                                             {{-- <a href="#" class="browse-btn">Learn More</a> --}}
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </a>
                         </div>
@@ -237,7 +185,7 @@
 
         {{-- Tin tức --}}
         <section class="class-offer-area section-padding border-bottom">
-            <div class="container-fluid">
+            <div class="container-fluid custom_container">
                 <div class="row">
                     <div class="col-xl-12">
 
@@ -249,13 +197,17 @@
                 </div>
                 <div class="row">
                     @foreach ($listNews as $item)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="properties pb-30">
                                 <div class="properties__card">
-                                    <div class="properties__img">
-                                        <a href="/tin-tuc/chi-tiet/{{ $item->slug }}"><img src="{{ $item->image_path }}"
-                                                alt></a>
-                                    </div>
+                                    <a href="/tin-tuc/chi-tiet/{{ $item->slug }}">
+                                        <div class="properties__img"
+                                            style="background-image: url({{ $item->image_path }});">
+
+                                            {{-- <img src="{{ $item->image_path }}" alt> --}}
+
+                                        </div>
+                                    </a>
                                     <div class="properties__caption text-center">
                                         <h3><a href="/tin-tuc/chi-tiet/{{ $item->slug }}">{{ $item->title }}</a></h3>
                                     </div>
@@ -269,7 +221,7 @@
 
 
         <section class="brand-area section-padding">
-            <div class="container">
+            <div class="container custom_container">
                 <div class="row justify-content-center">
                     <div class="col-xl-8 col-lg-8 col-md-10">
 
@@ -286,8 +238,7 @@
                             @foreach ($files as $item)
                                 {{-- {{ asset( 'frontEnd/img/partner/' ) .  $item -> getFilename() }} --}}
                                 <div class="single-brand">
-                                    <img src="{{ asset('frontEnd/img/partner') . '/' . $item->getFilename() }}" alt
-                                        width="90%">
+                                    <img src="{{ asset('frontEnd/img/partner') . '/' . $item->getFilename() }}" alt style="width:60%; height: 60%">
                                 </div>
                             @endforeach
                         </div>

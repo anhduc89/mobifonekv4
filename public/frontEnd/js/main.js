@@ -1,6 +1,6 @@
 (function ($)
   { "use strict"
-  
+
 
 /* 1. sticky And Scroll UP */
     $(window).on('scroll', function () {
@@ -21,7 +21,7 @@
         scrollTop: 0
       }, 800);
       return false;
-    });  
+    });
 
 /* 2. slick Nav */
 // mobile_menu
@@ -48,10 +48,10 @@
       });
       BasicSlider.slick({
         autoplay: true,
-        autoplaySpeed: 8000,
+        autoplaySpeed: 3000,
         dots: true,
         fade: true,
-        arrows: false, 
+        arrows: false,
         dots:false,
         prevArrow: '<button type="button" class="slick-prev"><i class="ti-angle-left"></i></button>',
         nextArrow: '<button type="button" class="slick-next"><i class="ti-angle-right"></i></button>',
@@ -106,6 +106,7 @@
     dots: false,
     infinite: true,
     autoplay: true,
+    autoplaySpeed:1500,
     prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
     speed: 400,
@@ -150,6 +151,57 @@
     ]
   });
 
+
+  // product
+  $('.lSSlideOuter').slick({
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+    speed: 400,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false
+        }
+      }
+    ]
+  });
+
+
 /* 6. Nice Selectorp  */
   var nice_Select = $('select');
     if(nice_Select.length){
@@ -164,7 +216,7 @@
 /* 10. WOW active */
     new WOW().init();
 
-// 11. ---- Mailchimp js --------//  
+// 11. ---- Mailchimp js --------//
     function mailChimp() {
       $('#mc_embed_signup').find('form').ajaxChimp();
     }
@@ -196,7 +248,7 @@
       time: 3000
     });
 
-    
+
   /*---  CountDown----*/
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -212,7 +264,7 @@
     }
     var timerdate = mm + '/' + dd + '/' + yyyy;
     // For demo preview end
-    
+
     // Use this for real timer date
     /*  var timerdate = "2020/01/01"; */
 

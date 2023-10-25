@@ -45,10 +45,10 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Về chúng tôi - Công ty dịch vụ MobiFone Khu vực 4</h2>
+                        <h2 class="contact-title">Công ty Dịch vụ MobiFone khu vực 4</h2>
                     </div>
                     <div class="col-lg-12">
-                        <?php echo $aboutUs->content; ?>
+                        {!! $aboutUs->content !!}
                     </div>
 
                 </div>
