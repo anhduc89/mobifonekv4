@@ -16,8 +16,12 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"></a>
-                {{ session('email') }}
+                <a href="#" class="d-block">
+
+                    {{ session() -> get('name') }}
+
+                </a>
+                
             </div>
         </div>
 
