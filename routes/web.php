@@ -1,5 +1,5 @@
 <?php
-
+// namespace App\Http\Middleware;
 use App\Http\Controllers\AdminController;
 use App\Models\InfoCompany;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FrontendProductController;
 use App\Http\Controllers\FrontendNewsController;
-
+use App\Http\Middleware\CheckLogin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -94,7 +94,7 @@ Route::post('/login-user', [AdminController::class, 'postLogin'])->name('login-u
 // logout
 Route::get('/logout', [AdminController::class, 'postLogout'])->name('logout');
 
-//Route::middleware('auth')->group(function () {
+Route::middleware('checkLogin')->group(function () {
 Route::get('/homeAdmin', function () {
     return view('homeAdmin');
 })->name('homeAdmin');
@@ -568,4 +568,4 @@ Route::get('/homeAdmin', function () {
         // });
 
     });
-// });
+});
