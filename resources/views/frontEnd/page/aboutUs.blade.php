@@ -45,7 +45,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title">Công ty Dịch vụ MobiFone khu vực 4</h2>
+                        <h2 class="contact-title">CÔNG TY DỊCH VỤ MOBIFONE KHU VỰC 4</h2>
                     </div>
                     <div class="col-lg-12">
                         {!! $aboutUs->content !!}
