@@ -138,6 +138,19 @@ p {
     background-repeat: no-repeat;
 }
 
+
+@media only screen and (max-width: 675px) {
+    .about-area {
+        background-image: url('../img/Map.png');
+    }
+    .section-tittle p {
+        color: #1c1c1c;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+}
+
 /* hết trang home */
 
 /* trang sản phẩm */

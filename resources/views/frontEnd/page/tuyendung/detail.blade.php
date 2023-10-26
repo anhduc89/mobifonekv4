@@ -208,8 +208,8 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                <button type="submit" class="btn btn-primary">Gửi CV</button>
+                                <button type="button" class="genric-btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                <button type="submit" class="genric-btn btn-primary">Gửi CV</button>
                             </div>
                         </form>
                     </div>
