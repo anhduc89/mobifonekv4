@@ -54,15 +54,23 @@ class HomeController extends Controller
 
         // echo $request->name;
 
+        $name =  preg_replace('/[><" ";]/', '', $request->name);
+        
+        $email =  preg_replace('/[><" ";]/', '', $request->email);
+
+        $number_phone =  preg_replace('/[><" ";]/', '', $request->number_phone);
+
+        $message =  preg_replace('/[><" ";]/', '', $request->message);
+
         $insert = DB::table('contact')->insert([
 
-            'name' => $request->name,
+            'name' => $name,
 
-            'email' => $request->email,
+            'email' => $email,
 
-            'number_phone' => $request->number_phone,
+            'number_phone' => $number_phone,
 
-            'message' => $request->message,
+            'message' => $message,
 
             'type' => 1,
             // Liên hệ
@@ -70,8 +78,9 @@ class HomeController extends Controller
         ]);
 
         // dd($insert);
+        $branches = DB::select("SELECT * FROM `branch`");
 
-        return view('frontEnd.page.contact', compact('insert'));
+        return view('frontEnd.page.contact', compact('insert', 'branches'));
 
     }
 
@@ -96,17 +105,27 @@ class HomeController extends Controller
         if (empty($detailTuyenDung)) {
             abort(404);
         }
+
         // danh mục tin tức
         $listTuyenDung = DB::select("SELECT * FROM `recruitments` WHERE slug <> '$slug' and status = 1");
+
         return view('frontEnd.page.tuyendung.detail', compact('detailTuyenDung', 'listTuyenDung'));
     }
     public function tuyenDungForm(Request $request)
     {
-
+        // dd($request);
         $url_return_page = route("tuyenDungFrontEnd");
 
         $file_path = $destinationPath = 'uploads/CV/';
+        
+        $name =  preg_replace('/[><" ";]/', '', $request->name);
+        
+        $email =  preg_replace('/[><" ";]/', '', $request->mail);
 
+        $number_phone =  preg_replace('/[><" ";]/', '', $request->number_phone);
+
+        $vitri =  preg_replace('/[><" ";]/', '', $request->vitri);
+        
         // Tạo thư mục
         if (!file_exists($destinationPath))     mkdir($destinationPath, 0755, true);
 
@@ -115,14 +134,14 @@ class HomeController extends Controller
 
             $extension = $request->file('fileCv')->getClientOriginalExtension();
 
-            $name = $request->file('fileCv')->getClientOriginalName();
+            
 
             // Valid extensions
             $validextensions = array("pdf");
 
             if (in_array(strtolower($extension), $validextensions)) {
 
-                $fileName = time() . "_" . $request->name . ".pdf";
+                $fileName = time() . "_" . $name . ".pdf";
 
                 $request->file('fileCv')->move($destinationPath, $fileName);
 
@@ -138,13 +157,13 @@ class HomeController extends Controller
 
         $insert = DB::table('candidates_apply')->insert([
 
-            'name' => $request->name,
+            'name' => $name,
 
-            'email' => $request->mail,
+            'email' => $email,
 
-            'number_phone' => $request->number_phone,
+            'number_phone' => $number_phone,
 
-            'vitri' => $request->vitri,
+            'vitri' => $vitri,
 
             'files' => $file_path,
 
