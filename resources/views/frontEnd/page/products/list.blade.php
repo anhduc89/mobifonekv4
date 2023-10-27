@@ -61,13 +61,13 @@
                         <li data-filter="all"> Tất cả </li>
                         @foreach ($listCategories as $key => $item)
                             <li data-filter="{{$item->id}}"> {{ $item->name }} </li>
-                           
+
                         @endforeach
                     </ul>
                     <div class="wrapper">
                         <div class="filter row">
                             @foreach ($listProduct as $key =>  $item)
-                                
+
 
                                 <div class="col-lg-4 col-md-4 filtr-item" data-category="{{$item->id}}" data-sort="{{$key}}">
                                     <a href="/san-pham/{{ $item->slug }}">
@@ -79,17 +79,17 @@
                                             <div class="box-detail-service">
                                                 <div class="blog-caption  box-detail">
                                                     <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
-                                                    {!! $item->short_content !!}
+                                                    {{-- {!! $item->short_content !!} --}}
                                                     {{-- <p class="limit-2-lines"> <?php #echo $item->short_content; ?> </p> --}}
                                                     {{-- <a href="#" class="browse-btn">Learn More</a> --}}
                                                 </div>
                                             </div>
-        
+
                                         </div>
                                     </a>
                                 </div>
                             @endforeach
-                            
+
                         </div>
                     </div>
                 </div>
