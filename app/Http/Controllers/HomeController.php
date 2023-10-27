@@ -174,4 +174,7 @@ class HomeController extends Controller
         else return redirect($url_return_page)->with('message',  "Gửi Cv Thất bại, Vui lòng thử lại");
 
     }
+
+
+    
 }

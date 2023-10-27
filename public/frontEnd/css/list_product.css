@@ -1,0 +1,75 @@
+h2 a:hover {
+    color: #1f67b0
+}
+
+.lSSlideOuter {
+    position: relative;
+}
+
+.content-image {
+    position: relative;
+    z-index: 1;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.box-detail-service {
+    padding: 20px;
+    margin-top: -30px;
+    position: relative;
+}
+
+.box-detail {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .06);
+    margin-top: -30px;
+    border: 1px solid #e0e0e0;
+    border: 1px solid #e0e0e0;
+    border-top: 5px solid #0a4874;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+    border-radius: 0 0 8px 8px;
+}
+
+.home-blog .single-blogs {
+    border: 0px solid #D9E2E9;
+}
+
+.home-blog .single-blogs:hover {
+    border: 0px solid #D9E2E9;
+}
+
+.nav {
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+    padding: 0;
+}
+.nav li {
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    margin: 3px;
+    padding: 10px 20px;
+    list-style: none;
+    cursor: pointer;
+    transition: all .5s;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #005db2;
+}
+.nav li:hover {
+    background-color: #ec3a40;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+}
