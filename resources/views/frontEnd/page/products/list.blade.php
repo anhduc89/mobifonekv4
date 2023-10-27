@@ -67,10 +67,8 @@
                     <div class="wrapper">
                         <div class="filter row">
                             @foreach ($listProduct as $key =>  $item)
-
-
-                                <div class="col-lg-4 col-md-4 filtr-item" data-category="{{$item->id}}" data-sort="{{$key}}">
-                                    <a href="/san-pham/{{ $item->slug }}">
+                                <div class="col-lg-4 col-md-4 filtr-item" data-category="{{$item->product_categories}}">
+                                    <a href="/san-pham-dich-vu/{{ $item->slug }}">
                                         <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
                                             <div class="blog-img content-image"
                                                 style="background-image: url({{ $item->image_path }});">
