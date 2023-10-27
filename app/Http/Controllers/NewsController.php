@@ -30,7 +30,7 @@ class NewsController extends Controller
     }
     public function index()
     {
-        $listNews = $this->news->latest()->paginate(5); //
+        $listNews = $this->news->orderBy('id', 'desc')->paginate(10); //
        //  echo "<pre>"; print_r($listNews); exit;
         return view('admin.news.index', compact('listNews'));
     }

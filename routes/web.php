@@ -1,7 +1,15 @@
 <?php
 // namespace App\Http\Middleware;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\MenusController;
+use App\Http\Controllers\NewsCategoriesController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductCategoriesController;
+use App\Http\Controllers\ProductController;
 use App\Models\InfoCompany;
+use App\Http\Controllers\LadingPageController;
+use App\Models\Recruitment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
 use Illuminate\Http\Request;
@@ -396,7 +404,7 @@ Route::get('/homeAdmin', function () {
             ]);
 
             Route::post('/updateLandingPage/{id}', [
-                LandingPage::class,
+                LadingPage::class,
                 'as' => 'landingpage.updateLandingPage',
                 'uses' => 'LadingPageController@updateLandingPage'
             ]);
