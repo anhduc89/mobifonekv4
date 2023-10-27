@@ -6,6 +6,7 @@
 
 @section('css-custom-frontend')
     <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontEnd/css/list_product.css') }}">
 @endsection
 
 <style>
@@ -55,113 +56,65 @@
                 </div>
 
                 <div class="row">
-                    {{-- <ul class="nav">
+                    <ul class="nav">
+                        <!-- Filter by referring to "data-category" of items with the value of "data-filter". -->
                         <li data-filter="all"> Tất cả </li>
-                        @foreach ($listCategories as $item)
-                            <li data-filter="{{ $item->id }}"> -- {{ $item->name }} </li>
+                        @foreach ($listCategories as $key => $item)
+                            <li data-filter="{{$item->id}}"> {{ $item->name }} </li>
+                           
                         @endforeach
-                    </ul> --}}
+                    </ul>
+                    <div class="wrapper">
+                        <div class="filter row">
+                            @foreach ($listProduct as $key =>  $item)
+                                
 
-
-                    @foreach ($listProduct as $item)
-                        {{-- <div class="filter-container"> --}}
-                        <div class="col-lg-4 col-md-4 filter-container" data-category="{{ $item->product_categories }}"
-                            data-sort="value">
-                            <div class="single-blogs mb-30 full-height">
-                                <div class="blog-img">
-                                    <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
+                                <div class="col-lg-4 col-md-4 filtr-item" data-category="{{$item->id}}" data-sort="{{$key}}">
+                                    <a href="/san-pham/{{ $item->slug }}">
+                                        <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
+                                            <div class="blog-img content-image"
+                                                style="background-image: url({{ $item->image_path }});">
+                                                {{-- <img src="{{ $item->image_path }}" alt> --}}
+                                            </div>
+                                            <div class="box-detail-service">
+                                                <div class="blog-caption  box-detail">
+                                                    <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
+                                                    {!! $item->short_content !!}
+                                                    {{-- <p class="limit-2-lines"> <?php #echo $item->short_content; ?> </p> --}}
+                                                    {{-- <a href="#" class="browse-btn">Learn More</a> --}}
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="blog-caption">
-                                    <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
-                                    <p>{!! $item->short_content !!}</p>
-                                    <a href="/san-pham-dich-vu/{{ $item->slug }}" class="browse-btn">Xem chi tiết</a>
-                                </div>
-                            </div>
+                            @endforeach
+                            
                         </div>
-
-                        {{-- </div> --}}
-                        {{-- <div class="filtr-item" data-category="1" data-sort="value">
-                                <img src="img/sample1.jpg" alt="sample" />
-                            </div>
-                            <div class="filtr-item" data-category="2, 1" data-sort="value">
-                                <img src="img/sample2.jpg" alt="sample" />
-                            </div>
-                            <div class="filtr-item" data-category="1, 3" data-sort="value">
-                                <img src="img/sample3.jpg" alt="sample" />
-                            </div> --}}
-                    @endforeach
-
-
-
-                    {{-- @foreach ($listProduct as $item)
-                        <div class="col-lg-4 col-md-4 filter" data-category="{{ $item->product_categories }}"
-                            data-sort="value">
-                            <div class="single-blogs mb-30 full-height">
-                                <div class="blog-img">
-                                    <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}">
-                                </div>
-                                <div class="blog-caption">
-                                    <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
-                                    <p>{!! $item->short_content !!}</p>
-                                    <a href="/san-pham-dich-vu/{{ $item->slug }}" class="browse-btn">Xem chi tiết</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach --}}
-
-
+                    </div>
                 </div>
             </div>
         </section>
-
     </main>
 @endsection
 
 @section('js-custom-frontend')
-    <script type="text/javascript"  src="{{ asset('frontEnd/js/jquery.filterizr.min.js') }}"></script>
-    {{-- <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script> --}}
-    <script type="text/javascript">
-        const options = {
-            animationDuration: 0.5, // in seconds
-            callbacks: {
-                onFilteringStart: function() {},
-                onFilteringEnd: function() {},
-                onShufflingStart: function() {},
-                onShufflingEnd: function() {},
-                onSortingStart: function() {},
-                onSortingEnd: function() {}
-            },
-            controlsSelector: '', // Selector for custom controls
-            delay: 0, // Transition delay in ms
-            delayMode: 'progressive', // 'progressive' or 'alternate'
-            easing: 'ease-out',
-            filter: 'all', // Initial filter
-            filterOutCss: { // Filtering out animation
-                opacity: 0,
-                transform: 'scale(0.5)'
-            },
-            filterInCss: { // Filtering in animation
-                opacity: 0,
-                transform: 'scale(1)'
-            },
-            gridItemsSelector: '.filtr-container',
-            gutterPixels: 0, // Items spacing in pixels
-            layout: 'sameSize', // See layouts
-            multifilterLogicalOperator: 'or',
-            searchTerm: '',
-            setupControls: true, // Should be false if controlsSelector is set
-            spinner: { // Configuration for built-in spinner
-                enabled: false,
-                fillColor: '#2184D0',
-                styles: {
-                    height: '75px',
-                    margin: '0 auto',
-                    width: '75px',
-                    'z-index': 2,
-                },
-            },
-        }
 
-        const filterizr = new Filterizr('.filter-container', options);
+    <script src="{{ asset('frontEnd/js/jquery.filterizr.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.filter').filterizr();
+            var filterSingle = $('.filter').filterizr({
+                setupControls: false,
+                animationDuration: 0.5,
+                delay: 0
+            });
+            $('.shuffle').click(function () {
+                filterSingle.filterizr('shuffle');
+            });
+            $('.sort').click(function () {
+                filterSingle.filterizr('sort');
+            });
+            });
     </script>
 @endsection

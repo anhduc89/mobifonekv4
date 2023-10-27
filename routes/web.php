@@ -37,6 +37,8 @@ Route::get('/token', function (Request $request) {
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('homeFrontEnd');
+
+Route::get('/crawl', [HomeController::class, 'crawler'])->name('crawlerGDPL');
 Route::get('/trang-chu', [HomeController::class, 'index'])->name('homeFrontEnd');
 
 // Newss

@@ -174,8 +174,8 @@ p {
 }
 
 .blog_details .blog-head {
+    font-weight: 500;
     font-size: 22px;
-    font-weight: 200;
     text-transform: uppercase;
 }
 
