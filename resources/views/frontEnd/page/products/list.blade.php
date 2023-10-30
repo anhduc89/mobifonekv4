@@ -67,15 +67,12 @@
                     <div class="wrapper">
                         <div class="filter row">
                             @foreach ($listProduct as $key =>  $item)
-                                <div class="col-lg-4 col-md-4 filtr-item" data-category="{{$item->product_categories}}">
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 filtr-item" data-category="{{$item->product_categories}}">
                                     <a href="/san-pham-dich-vu/{{ $item->slug }}">
                                         <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
-                                            <div class="blog-img content-image"
-                                                style="background-image: url({{ $item->image_path }});">
-                                                {{-- <img src="{{ $item->image_path }}" alt> --}}
-                                            </div>
+                                            <div class="blog-img content-image" style="background-image: url({{ $item->image_path }});"> </div>
                                             <div class="box-detail-service">
-                                                <div class="blog-caption  box-detail">
+                                                <div class="blog-caption box-detail">
                                                     <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
                                                     {{-- {!! $item->short_content !!} --}}
                                                     {{-- <p class="limit-2-lines"> <?php #echo $item->short_content; ?> </p> --}}

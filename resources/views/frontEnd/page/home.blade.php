@@ -159,7 +159,7 @@
                 <div class="row lSSlideOuter ">
                     @foreach ($listProduct as $item)
                         <div class="col-lg-4 col-md-4">
-                            <a href="/san-pham/{{ $item->slug }}">
+                            <a href="/san-pham-dich-vu/{{ $item->slug }}">
                                 <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
                                     <div class="blog-img content-image"
                                         style="background-image: url({{ $item->image_path }});">

@@ -29,6 +29,13 @@ use App\Http\Middleware\CheckLogin;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:cache');
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('view:clear');
+    #$exitCode = Artisan::call('route:cache');
+});
+
 
 // ====================================================== Frontend ===========================================
 

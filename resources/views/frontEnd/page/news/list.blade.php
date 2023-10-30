@@ -36,7 +36,7 @@
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
                                 <h2>Tin tức</h2>
-                                <p>Thông tin về Công ty dịch vụ Mobifone Khu vực 4.</p>
+                                <p>TThông tin liên quan đến sản phẩm - dịch vụ,<br/>các hoạt động của Công ty Dịch vụ MobiFone Khu vực 4</p>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             @endforeach
 
                             {{-- Phân trang --}}
-
+                            {!! $listNews->links('pagination::bootstrap-4') !!}
                             {{-- <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">

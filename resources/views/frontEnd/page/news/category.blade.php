@@ -91,7 +91,7 @@
 
 
                             {{-- Phân trang --}}
-
+                            {!! $listNews->links('pagination::bootstrap-4') !!}
                             {{-- <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">

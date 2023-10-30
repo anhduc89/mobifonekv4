@@ -116,7 +116,6 @@ p {
 .single-slider,
 .content-image,
 .properties__img {
-
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -318,9 +317,11 @@ body {
 }
 
 .home-blog .single-blogs .blog-caption h3 a {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
+    line-height: 35px;
+    margin-bottom: 0px !important;
 }
 
 .properties__caption h3 a {
@@ -336,6 +337,7 @@ body {
 
 .home-blog .single-blogs .blog-caption {
     padding: 18px 10px 25px 10px;
+    height: 100%;
 }
 
 
