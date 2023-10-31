@@ -51,6 +51,16 @@
                                     <hr width="100%" />
 
                                     <div class="form-group">
+                                        <label>Ngành nghề</label>
+                                        <textarea class="form-control @error('nganhnghe') is-invalid @enderror" name="nganhnghe" id="nganhnghe"
+                                            cols="10" rows="15">{{ old('nganhnghe') }}</textarea>
+                                    </div>
+                                    @error('nganhnghe')
+                                        <div class="alert alert-warning text-error">{{ $message }}</div>
+                                    @enderror
+
+                                    <hr width="100%" />
+                                    <div class="form-group">
                                         <label>Hình ảnh đại diện bài viết</label>
                                         <input type="file"
                                             class="form-control-file @error('image_path') is-invalid @enderror"

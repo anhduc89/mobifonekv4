@@ -40,6 +40,7 @@ class RecruitmentController extends Controller
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
+                'nganhnghe' => $recruimentRequest->nganhnghe,
                 'status' => 1, // 1 là cho hiển thị ra ngoài. 0 là ẩn
                 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
@@ -78,6 +79,7 @@ class RecruitmentController extends Controller
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
+                'nganhnghe' => $recruimentRequest->nganhnghe,
                 'status' => $recruimentRequest->status,// 1 là cho hiển thị ra ngoài. 0 là ẩn
                 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );

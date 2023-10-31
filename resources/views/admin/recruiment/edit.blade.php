@@ -53,6 +53,17 @@
                                     <hr width="100%" />
 
                                     <div class="form-group">
+                                        <label>Ngành nghề</label>
+                                        <textarea class="form-control @error('nganhnghe') is-invalid @enderror" name="nganhnghe" id="nganhnghe"
+                                            cols="30" rows="15">{{ $dataUpdate->nganhnghe }}</textarea>
+                                    </div>
+                                    @error('nganhnghe')
+                                        <div class="alert alert-warning text-error">{{ $message }}</div>
+                                    @enderror
+
+                                    <hr width="100%" />
+
+                                    <div class="form-group">
                                         <label>Hình ảnh đại diện bài viết</label>
                                         <input type="file" class="form-control-file" name="image_path">
 
