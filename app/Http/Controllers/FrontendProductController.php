@@ -12,7 +12,7 @@ class FrontendProductController extends Controller
     public function index()
     {
 
-        $listProduct =  DB::select("SELECT * FROM `products` ORDER BY `id` DESC");
+        $listProduct =  DB::select("SELECT * FROM `products` WHERE status = 1 ORDER BY `id` DESC");
         $listCategories = DB::select("SELECT * FROM `product_categories` ");
         return view('frontEnd.page.products.list',  compact('listProduct','listCategories'));
 

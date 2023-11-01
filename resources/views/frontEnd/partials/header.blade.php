@@ -43,7 +43,9 @@
                                                         }
                                                     @endphp
                                                 @endforeach
-
+                                                    @php
+                                                         $submenu .= '<li><a href="/hinh-anh-cong-ty">Hình ảnh công ty </a></li>';
+                                                    @endphp
                                                 @if ($count > 0)
                                                     <ul class="submenu">
                                                         @php
@@ -51,6 +53,8 @@
                                                         @endphp
                                                     </ul>
                                                 @endif
+
+
 
                                             </li>
                                             @php

@@ -18,7 +18,7 @@ class HomeController extends Controller
 
         $listNews = DB::select("SELECT * FROM `news` ORDER BY `id` DESC LIMIT 0,3");
 
-        $listProduct = DB::select("SELECT * FROM `products` WHERE highlight = 1 ORDER BY `id` DESC LIMIT 0,5");
+        $listProduct = DB::select("SELECT * FROM `products` WHERE highlight = 1 AND status = 1 ORDER BY `id` DESC LIMIT 0,5");
 
         $listSlider = DB::select("SELECT * FROM `image` WHERE type = 1 ORDER BY `id`");
 
@@ -55,7 +55,7 @@ class HomeController extends Controller
         // echo $request->name;
 
         $name =  preg_replace('/[><" ";]/', '', $request->name);
-        
+
         $email =  preg_replace('/[><" ";]/', '', $request->email);
 
         $number_phone =  preg_replace('/[><" ";]/', '', $request->number_phone);
@@ -117,15 +117,15 @@ class HomeController extends Controller
         $url_return_page = route("tuyenDungFrontEnd");
 
         $file_path = $destinationPath = 'uploads/CV/';
-        
+
         $name =  preg_replace('/[><" ";]/', '', $request->name);
-        
+
         $email =  preg_replace('/[><" ";]/', '', $request->mail);
 
         $number_phone =  preg_replace('/[><" ";]/', '', $request->number_phone);
 
         $vitri =  preg_replace('/[><" ";]/', '', $request->vitri);
-        
+
         // Tạo thư mục
         if (!file_exists($destinationPath))     mkdir($destinationPath, 0755, true);
 
@@ -134,7 +134,7 @@ class HomeController extends Controller
 
             $extension = $request->file('fileCv')->getClientOriginalExtension();
 
-            
+
 
             // Valid extensions
             $validextensions = array("pdf");
@@ -175,6 +175,12 @@ class HomeController extends Controller
 
     }
 
+    // hình ảnh công ty
+    public function gallery()
+    {
+        $listImage = DB::select('SELECT * FROM `image` WHERE type = 2');
+        #echo "<pre>"; print_r($listImage); exit;
+        return view('frontEnd.page.gallery', compact("listImage"));
+    }
 
-    
 }

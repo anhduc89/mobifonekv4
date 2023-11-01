@@ -1,7 +1,7 @@
 @extends('frontEnd.layouts.frontend')
 
 @section('title')
-    <title>Về chúng tôi | Mobifone Khu Vực 4</title>
+    <title>Về chúng tôi | MobiFone Khu Vực 4</title>
 @endsection
 
 @section('css-custom-frontend')

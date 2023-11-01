@@ -1,7 +1,7 @@
 @extends('frontEnd.layouts.frontend')
 
 @section('title')
-    <title>Liên hệ | Mobifone Khu Vực 4</title>
+    <title>Liên hệ | MobiFone Khu Vực 4</title>
 @endsection
 
 @section('css-custom-frontend')
@@ -37,7 +37,14 @@
             </div>
         </div>
 
-
+        <style>
+            .contact-section {
+                padding: 100px 0px 0px 0px;
+            }
+            .branch-section {
+                padding: 0px 0px 100px 0px;
+            }
+        </style>
 
         <section class="contact-section">
             <div class="container">
@@ -121,32 +128,33 @@
                     </div>
                 </div>
                 <hr style="border-bottom: 2px solid #F15B43; width: 20%">
-                <section class="branch-section">
-                    <div class="container">
-                        {{-- branch --}}
 
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="contact-title">Các chi nhánh của chúng tôi</h2>
+            </div>
+        </section>
+
+        <section class="branch-section">
+            <div class="container">
+                {{-- branch --}}
+
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title">Các chi nhánh của chúng tôi</h2>
+                    </div>
+                    @foreach ($branches as $item)
+                        <div class="col-xs-6 col-sm-6 col-md-4 branch_card">
+
+                            <div class="branch_head">
+                                <h3> {{ $item->name }} </h3>
                             </div>
-                            @foreach ($branches as $item)
-                                <div class="col-xs-6 col-sm-6 col-md-4 branch_card">
 
-                                    <div class="branch_head">
-                                        <h3> {{ $item->name }} </h3>
-                                    </div>
-
-                                    <div class="branch_body limit-2-lines branch_border">
-                                        <p> <i class="fa fa-map-marker" aria-hidden="true" style="color:#F15B43"></i>&nbsp {{ $item->address }} </p>
-                                    </div>
-
-                                </div>
-                            @endforeach
+                            <div class="branch_body limit-2-lines branch_border">
+                                <p> <i class="fa fa-map-marker" aria-hidden="true" style="color:#F15B43"></i>&nbsp {{ $item->address }} </p>
+                            </div>
 
                         </div>
-                    </div>
-                </section>
+                    @endforeach
 
+                </div>
             </div>
         </section>
 

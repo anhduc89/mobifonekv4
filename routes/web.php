@@ -97,6 +97,10 @@ Route::get('/tuyen-dung/{slug}', [HomeController::class, 'tuyenDungDetail'])->na
 
 Route::post('/tuyen-dung', [HomeController::class, 'tuyenDungForm'])->name('tuyenDungFormFrontEnd');
 
+Route::get('/hinh-anh-cong-ty',[HomeController::class, 'gallery']);
+
+
+
 // ====================================================== Admin ===========================================
 
 // dùng cái này để làm chức năng login logout

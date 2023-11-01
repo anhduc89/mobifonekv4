@@ -21,9 +21,11 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->products->latest()->paginate(10);
+        $products = $this->products->where('status','1')->latest()->paginate(10);
+        $productsHidden = $this->products->where('status','0')->latest()->paginate(10);
         // dd($products);
-        return view('admin.product.index',compact('products'));
+        #echo "<pre>"; print_r($productsHidden); exit;
+        return view('admin.product.index',compact('products','productsHidden'));
     }
 
     public function create()
@@ -77,6 +79,7 @@ class ProductController extends Controller
             'contents' => $request->contents,
             'short_content' => $request->short_content,
             'highlight' => $request->highlight,
+            'status' => $request->status,
             'slug' => str_slug($request->name) . '-' . date("dmY", time()) . time() . '.html'
         );
 

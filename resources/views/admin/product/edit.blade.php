@@ -97,6 +97,18 @@
                                         </select>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Ẩn/hiện sản phẩm - dịch vụ</label>
+                                        <select name="status" class="form-control">
+                                                <?php
+                                                    if($dataProduct->status == 1) { echo '<option value="1">Đang hiển thị</option>'; }
+                                                    else {echo '<option value="0">Đang ẩn</option>'; }
+                                                ?>
+                                                <option value="1">Hiển thị</option>
+                                                <option value="0">Ẩn</option>
+                                        </select>
+                                    </div>
+
                                     {{-- Bài viết có cho lên app không? Để mặc định là "có". --}}
                                     {{-- <div class="form-group">
                                         <label>Hiển thị lên app</label>
