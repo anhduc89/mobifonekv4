@@ -43,9 +43,9 @@
                                                         }
                                                     @endphp
                                                 @endforeach
-                                                    @php
+                                                    {{-- @php
                                                          $submenu .= '<li><a href="/hinh-anh-cong-ty">Hình ảnh công ty </a></li>';
-                                                    @endphp
+                                                    @endphp --}}
                                                 @if ($count > 0)
                                                     <ul class="submenu">
                                                         @php
