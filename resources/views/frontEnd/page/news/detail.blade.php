@@ -274,7 +274,7 @@
                         <div class="blog_right_sidebar">
 
                             {{-- form Search --}}
-                            <aside class="single_sidebar_widget search_widget">
+                            {{-- <aside class="single_sidebar_widget search_widget">
                                 <form action="#">
                                     <div class="form-group m-0">
                                         <div class="input-group">
@@ -285,7 +285,7 @@
                                         </div>
                                     </div>
                                 </form>
-                            </aside>
+                            </aside> --}}
 
                             <style>
                                 a.active {

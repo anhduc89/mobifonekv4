@@ -19,6 +19,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FrontendProductController;
 use App\Http\Controllers\FrontendNewsController;
 use App\Http\Middleware\CheckLogin;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,11 +30,11 @@ use App\Http\Middleware\CheckLogin;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('config:cache');
-    $exitCode = Artisan::call('cache:clear');
-    $exitCode = Artisan::call('view:clear');
-    #$exitCode = Artisan::call('route:cache');
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return "Cleared!";
 });
 
 
@@ -53,20 +54,28 @@ Route::get('/trang-chu', [HomeController::class, 'index'])->name('homeFrontEnd')
 Route::prefix('tin-tuc')->group(function () {
 
     Route::get('/', [
-        FrontendNewsController::class, 'index'])
-    ->name('newsFrontEnd');
+        FrontendNewsController::class,
+        'index'
+    ])
+        ->name('newsFrontEnd');
 
     Route::get('/danh-muc/{slug}', [
-        FrontendNewsController::class, 'category'])
-    ->name('newsFrontEnd.category');
+        FrontendNewsController::class,
+        'category'
+    ])
+        ->name('newsFrontEnd.category');
 
     Route::get('/chi-tiet/{slug}', [
-        FrontendNewsController::class, 'detail'])
-    ->name('newsFrontEnd.detail');
+        FrontendNewsController::class,
+        'detail'
+    ])
+        ->name('newsFrontEnd.detail');
 
     Route::get('/tags/{slug}', [
-        FrontendNewsController::class, 'tags'])
-    ->name('newsFrontEnd.tags');
+        FrontendNewsController::class,
+        'tags'
+    ])
+        ->name('newsFrontEnd.tags');
 
 });
 
@@ -97,7 +106,7 @@ Route::get('/tuyen-dung/{slug}', [HomeController::class, 'tuyenDungDetail'])->na
 
 Route::post('/tuyen-dung', [HomeController::class, 'tuyenDungForm'])->name('tuyenDungFormFrontEnd');
 
-Route::get('/hinh-anh-cong-ty',[HomeController::class, 'gallery']);
+Route::get('/hinh-anh-cong-ty', [HomeController::class, 'gallery']);
 
 
 
@@ -116,12 +125,12 @@ Route::post('/login-user', [AdminController::class, 'postLogin'])->name('login-u
 Route::get('/logout', [AdminController::class, 'postLogout'])->name('logout');
 
 Route::middleware('checkLogin')->group(function () {
-Route::get('/homeAdmin', function () {
-    return view('homeAdmin');
-})->name('homeAdmin');
-//});
+    Route::get('/homeAdmin', function () {
+        return view('homeAdmin');
+    })->name('homeAdmin');
+    //});
 
-// Route::middleware(['checkLogin'])->group(function () {
+    // Route::middleware(['checkLogin'])->group(function () {
     Route::prefix('admin')->group(function () {
 
         // ------------------------------------------------------------------------------------------
