@@ -73,13 +73,13 @@
 
                             {{-- Danh mục tin tức --}}
                             <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title" style="color: #2d2d2d;">Sản phẩm liên quan</h4>
+                                <h4 class="widget_title products_other" style="color: #2d2d2d;">Sản phẩm khác</h4>
                                 <ul class="list cat-list">
                                     @foreach ($listProduct as $item)
                                         <li>
                                             <a href="/san-pham-dich-vu/{{ $item->slug}}" class="d-flex ">
-                                                <img src="{{ $item->image_path }}" alt="{{ $item-> name}}" width="30%">
-                                                <p>{{ $item->name }}</p>
+                                                <img src="{{ $item->image_path }}" alt="{{ $item-> name}}" width="30%" style="height: fit-content;">
+                                                <p class="products_other_name">{{ $item->name }}</p>
                                             </a>
                                         </li>
                                     @endforeach

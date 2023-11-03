@@ -306,6 +306,21 @@
                                         </li>
                                     @endforeach
 
+                                </ul>
+                            </aside>
+
+                            {{-- Các bài tin khác --}}
+                            <aside class="single_sidebar_widget post_category_widget">
+                                <h4 class="widget_title" style="color: #2d2d2d;">Bài viết khác</h4>
+                                <ul class="list cat-list">
+                                    @foreach ($listNewsOther as $item)
+                                        <li>
+                                            <a href="/tin-tuc/chi-tiet/{{ $item->slug }}" class="d-flex ">
+                                                <img src="{{ $item->image_path }}" alt="{{ $item->image_name}}" width="30%" style="height: fit-content;">
+                                                <p class="products_other_name">{{ $item->title }}</p>
+                                            </a>
+                                        </li>
+                                    @endforeach
 
                                 </ul>
                             </aside>

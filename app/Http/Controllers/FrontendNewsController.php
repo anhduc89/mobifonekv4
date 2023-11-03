@@ -106,7 +106,11 @@ class FrontendNewsController extends Controller
                                     ON a.id = b.category_id
                                     GROUP BY a.id;");
 
-        return view('frontEnd.page.news.detail', compact('detailNews', 'listNewsCategory'));
+        // lấy ra 5 bài tin khác để gợi ý
+        $listNewsOther = DB::select("SELECT * FROM `news` WHERE `category_id` = ( SELECT category_id FROM `news` WHERE slug = '$slug' )
+                                    AND slug != '$slug' limit 5");
+
+        return view('frontEnd.page.news.detail', compact('detailNews', 'listNewsCategory', 'listNewsOther'));
 
     }
 }

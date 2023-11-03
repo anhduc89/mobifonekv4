@@ -27,10 +27,13 @@ class FrontendProductController extends Controller
             abort(404);
         }
 
-        // danh mục tin tức
-        $listProduct = DB::select(" SELECT * FROM `products`WHERE `product_categories` = 1 AND slug != '$slug' limit 5");
+        // lấy ra danh sách 5 sản phẩm khác để gợi ý. Lấy random loại sản phẩm
+        $listProduct = DB::select(" SELECT * FROM `products` WHERE `product_categories` = ( SELECT id FROM `product_categories` ORDER BY RAND() LIMIT 1 )
+                                    AND status = 1 AND slug != '$slug' limit 5");
 
         // dd($listProduct) ;
+        // SELECT * FROM `products`WHERE `product_categories` = 1
+        // AND status = 1 AND slug != '$slug' limit 5
 
         return view('frontEnd.page.products.detail',  compact('detailProduct', 'listProduct'));
 

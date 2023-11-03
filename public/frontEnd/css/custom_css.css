@@ -157,6 +157,14 @@ p {
     padding-top: 50px;
 }
 
+.products_other, .widget_title {
+    margin-bottom: 14px !important;
+    text-transform: uppercase;
+}
+.products_other_name {
+    margin-left: 15px;
+}
+
 /* hết trang sản phẩm */
 
 /* trang news */
