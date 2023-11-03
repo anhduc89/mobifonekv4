@@ -73,13 +73,13 @@
 
                             {{-- Danh mục tin tức --}}
                             <aside class="single_sidebar_widget post_category_widget">
-                                <h4 class="widget_title" style="color: #2d2d2d;">Danh mục tin tức</h4>
+                                <h4 class="widget_title" style="color: #2d2d2d;">Sản phẩm liên quan</h4>
                                 <ul class="list cat-list">
-                                    @foreach ($listNewsCategory as $item)
+                                    @foreach ($listProduct as $item)
                                         <li>
-                                            <a href="/tin-tuc/danh-muc/{{ $item->slug_name }}" class="d-flex ">
+                                            <a href="/san-pham-dich-vu/{{ $item->slug}}" class="d-flex ">
+                                                <img src="{{ $item->image_path }}" alt="{{ $item-> name}}" width="30%">
                                                 <p>{{ $item->name }}</p>
-                                                <p>({{ $item->total_news }})</p>
                                             </a>
                                         </li>
                                     @endforeach

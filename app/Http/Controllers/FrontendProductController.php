@@ -28,13 +28,11 @@ class FrontendProductController extends Controller
         }
 
         // danh mục tin tức
-        $listNewsCategory = DB::select(" SELECT a.*, COUNT(b.id) total_news
-                        FROM `news_categories` a
-                        LEFT JOIN news b
-                        ON a.id = b.category_id
-                        GROUP BY a.id;");
+        $listProduct = DB::select(" SELECT * FROM `products`WHERE `product_categories` = 1 AND slug != '$slug' limit 5");
 
-        return view('frontEnd.page.products.detail',  compact('detailProduct', 'listNewsCategory'));
+        // dd($listProduct) ;
+
+        return view('frontEnd.page.products.detail',  compact('detailProduct', 'listProduct'));
 
     }
 }
