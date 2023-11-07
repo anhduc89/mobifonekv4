@@ -29,7 +29,7 @@ class AdminController extends Controller
 
         $name = preg_replace('/[><" ";]/', '', $request->name);
 
-        $userLogin = collect(DB::select("SELECT * FROM USERS WHERE NAME= '" . $name . "'"))->first();
+        $userLogin = collect(DB::select("SELECT * FROM `users` WHERE NAME= '" . $name . "'"))->first();
 
         // Kiểm tra xem mật khẩu
         if ($userLogin) {

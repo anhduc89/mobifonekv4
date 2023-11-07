@@ -30,11 +30,11 @@ use App\Http\Middleware\CheckLogin;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/clear-cache', function () {
-    Artisan::call('cache:clear');
-    Artisan::call('config:cache');
-    Artisan::call('view:clear');
-    return "Cleared!";
+Route::get('/table', function () {
+    $tables = \DB::select("SHOW TABLES");
+    foreach ($tables as $table) {
+      echo head($table). '<br/>';
+    }
 });
 
 

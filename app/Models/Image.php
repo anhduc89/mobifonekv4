@@ -9,5 +9,6 @@ class Image extends Model
 {
     use HasFactory;
     protected $table = 'image';
-    protected $guarded = [];
+    // protected $guarded = [];
+    protected $fillable = ['name','file_name','path','type','status'];
 }

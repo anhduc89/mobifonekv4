@@ -162,7 +162,7 @@
                             <a href="/san-pham-dich-vu/{{ $item->slug }}">
                                 <div class="single-blogs mb-30 full-height" style="height: 100% !important;">
                                     <div class="blog-img content-image"
-                                        style="background-image: url({{ $item->image_path }});">
+                                        style="background-image: url({{ $item->image_path }}); border-radius: 10px;">
                                         {{-- <img src="{{ $item->image_path }}" alt> --}}
                                     </div>
                                     <div class="box-detail-service">

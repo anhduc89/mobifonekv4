@@ -136,7 +136,22 @@ p {
     background-position: center center;
     background-repeat: no-repeat;
 }
+.class-offer-area .properties__caption {
+    padding: 15px 0px 8px 0px;
+}
 
+.class-offer-area .properties__caption h3 {
+    font-size: 24px;
+    text-align: justify;
+    font-weight: 400;
+    margin-bottom: 10px;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    transition: all .4s ease-out 0s;
+    line-height: 1;
+}
 
 @media only screen and (max-width: 675px) {
     .about-area {
@@ -322,6 +337,7 @@ body {
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
+    text-align: justify;
 }
 
 .home-blog .single-blogs .blog-caption h3 a {
@@ -333,9 +349,8 @@ body {
 }
 
 .properties__caption h3 a {
-    text-transform: uppercase;
     font-weight: 500;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 /* tuyển dụng */
