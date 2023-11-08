@@ -65,6 +65,7 @@ $data = $pre;
 // reverse map
 // we prefill the extensions with some preferences for content-types
 $exts = [
+    'webp' => ['image/webp'],
     'asice' => ['application/vnd.etsi.asic-e+zip'],
     'bz2' => ['application/x-bz2'],
     'csv' => ['text/csv'],

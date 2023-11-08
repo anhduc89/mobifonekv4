@@ -72,16 +72,18 @@ class ImageController extends Controller
             $dataUpdate = array(
                 'name' => $request->name,
                 'type' => $request->type,
+                'file_name' => date('dmY_hsi', time()) . '_' . str_random(10) . '.' . $request->name,
+                'path'  => $request->path,
                 'status' => $request->status,
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($request, 'path', 'image');
+            // $dataUploadImage = $this->storageTraitUpload($request, 'path', 'image');
 
-            if (!empty($dataUploadImage)) {
-                $dataUpdate['image_name'] = $dataUploadImage['file_name'];
-                $dataUpdate['path'] = $dataUploadImage['file_path'];
-            }
+            // if (!empty($dataUploadImage)) {
+            //     $dataUpdate['image_name'] = $dataUploadImage['file_name'];
+            //     $dataUpdate['path'] = $dataUploadImage['file_path'];
+            // }
             $this->image->find($id)->update($dataUpdate);
 
             DB::commit();

@@ -84,7 +84,7 @@ class ProductController extends Controller
             'short_content' => $request->short_content,
             'highlight' => $request->highlight,
             'status' => $request->status,
-            'slug' => str_slug($request->name) . '-' . date("dmY", time()) . time() . '.html'
+            // 'slug' => str_slug($request->name) . '-' . date("dmY", time()) . time() . '.html'
         );
 
         // $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'products');

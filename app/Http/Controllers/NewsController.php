@@ -126,7 +126,7 @@ class NewsController extends Controller
                 'show_app' => $request->show_app,
                 'status' => 1,
                 'user_id' => auth()->id(),
-                'slug'  => str_slug($request->title).'-'.date("dmY", time()).time().'.html'
+                //'slug'  => str_slug($request->title).'-'.date("dmY", time()).time().'.html'
             );
 
             //upload image

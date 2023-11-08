@@ -56,12 +56,12 @@
                             <div class="blog_details">
                                 <h2 style="color: #2d2d2d;">{{ $detailNews->title }} </h2>
                                 <ul class="blog-info-link mt-3 mb-4">
-                                    <li><i
-                                            class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}
+                                    <li><i class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}
                                     </li>
                                     {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailNews->user_id }}</a></li> --}}
                                     {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
                                 </ul>
+                                <img class="card-img rounded-0" src="{{ $detailNews->image_path }}" alt> <br/>
                                 <?php echo $detailNews->content; ?>
                             </div>
 

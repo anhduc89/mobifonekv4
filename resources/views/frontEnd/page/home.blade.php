@@ -81,7 +81,7 @@
                         <h2><i><q>Giá trị cốt lõi</q></i></h2>
                         <i style="text-align:justify">Đứng trước bối cảnh mới, với định hướng chuyển đổi từ kinh doanh dịch vụ viễn thông trở thành nhà
                             cung cấp hạ tầng số và dịch vụ số tại Việt Nam, từng người MobiFone đồng lòng quyết tâm sẽ thực hiện
-                            theo định hướng văn hóa mới kể từ năm 2021, bao gồm 04 giá trị cốt lõi là: <span style="color:#FB1055; font-weight:bold;">THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</span>.
+                            theo định hướng văn hóa mới bao gồm 04 giá trị cốt lõi là: <span style="color:#FB1055; font-weight:bold;">THẦN TỐC - ĐỔI MỚI - CHUYÊN NGHIỆP - HIỆU QUẢ</span>.
                             Với ý nghĩa, người MobiFone cần Thần tốc trong hành động, Đổi mới trong suy nghĩ, Chuyên nghiệp
                             trong công việc và Hiệu quả trong mọi hoạt động.
                         </i>
@@ -191,7 +191,7 @@
 
                         <div class="section-tittle d-flex justify-content-between align-items-center">
                             <h2>TIN TỨC</h2>
-                            <a href="#" class="browse-btn mb-20">Xem thêm</a>
+                            <a href="/tin-tuc" class="browse-btn mb-20">Xem thêm</a>
                         </div>
                     </div>
                 </div>
