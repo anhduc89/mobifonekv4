@@ -32,8 +32,8 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['licenseName'] = '10.14.10.158';
-$config['licenseKey']  = 'LDHD8N9LLTBN9M3S594WSKGBN2NFM';
+$config['licenseName'] = 'mobifonekv4.vn';
+$config['licenseKey']  = 'UWJWPPETCAKWGDB5N7V8ZQJN9AYFY';
 
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -66,10 +66,10 @@ $config['images'] = array(
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => '/ckfinder/userfiles/',
+    'baseUrl'      => '/ckfinder/userfiles',
 //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
-    'chmodFolders' => 0755,
+    'chmodFolders' => 0777,
     'filesystemEncoding' => 'UTF-8',
 );
 

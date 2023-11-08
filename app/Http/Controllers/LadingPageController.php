@@ -39,15 +39,17 @@ class LadingPageController extends Controller
                 'content' => $landingPageRequest->content,
                 'advantage' => $landingPageRequest->advantage,
                 'feature' => $landingPageRequest->feature,
+                'avatar' => date('dmY', time()) . $landingPageRequest->name,
+                'avatar_path' => $landingPageRequest->avatar_path,
                 'slug' => str_slug($landingPageRequest->name) . '.html'
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($landingPageRequest, 'avatar_path', 'landing_page');
-            if (!empty($dataUploadImage)) {
-                $dataInsertLDP['avatar'] = $dataUploadImage['file_name'];
-                $dataInsertLDP['avatar_path'] = $dataUploadImage['file_path'];
-            }
+            // $dataUploadImage = $this->storageTraitUpload($landingPageRequest, 'avatar_path', 'landing_page');
+            // if (!empty($dataUploadImage)) {
+            //     $dataInsertLDP['avatar'] = $dataUploadImage['file_name'];
+            //     $dataInsertLDP['avatar_path'] = $dataUploadImage['file_path'];
+            // }
             #echo "<pre>"; print_r($dataInsertLDP); exit;
             $this->landingPage->create($dataInsertLDP);
 
@@ -65,14 +67,14 @@ class LadingPageController extends Controller
     {
         $itemLDP = $this->landingPage->find($id);
         // echo "<pre>"; print_r($itemLDP);
-        return view('admin.landingpage.edit',compact('itemLDP'));
+        return view('admin.landingpage.edit', compact('itemLDP'));
     }
 
     public function updateLandingPage(Request $landingPageRequest, $id)
     {
         $dataOld = $this->landingPage->find($id);
-        $image_name_old = $dataOld->avatar;
-        $image_path_old = $dataOld->avatar_path;
+        // $image_name_old = $dataOld->avatar;
+        // $image_path_old = $dataOld->avatar_path;
 
         try {
             DB::beginTransaction();
@@ -81,21 +83,21 @@ class LadingPageController extends Controller
                 'content' => $landingPageRequest->content,
                 'advantage' => $landingPageRequest->advantage,
                 'feature' => $landingPageRequest->feature,
-                'slug'  => str_slug($landingPageRequest->name) . '.html'
+                'avatar' => date('dmY', time()) . $landingPageRequest->name,
+                'avatar_path' => $landingPageRequest->avatar_path,
+                'slug' => str_slug($landingPageRequest->name) . '.html'
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($landingPageRequest, 'avatar_path', 'landing_page');
+            // $dataUploadImage = $this->storageTraitUpload($landingPageRequest, 'avatar_path', 'landing_page');
 
-            if (!empty($dataUploadImage)) {
-                $dataUpdate['avatar'] = $dataUploadImage['file_name'];
-                $dataUpdate['avatar_path'] = $dataUploadImage['file_path'];
-            }
-            else
-            {
-                $dataUpdate['avatar'] = $image_name_old;
-                $dataUpdate['avatar_path'] = $image_path_old;
-            }
+            // if (!empty($dataUploadImage)) {
+            //     $dataUpdate['avatar'] = $dataUploadImage['file_name'];
+            //     $dataUpdate['avatar_path'] = $dataUploadImage['file_path'];
+            // } else {
+            //     $dataUpdate['avatar'] = $image_name_old;
+            //     $dataUpdate['avatar_path'] = $image_path_old;
+            // }
 
             #echo "<pre>"; print_r($dataUpdate); exit;
             $this->landingPage->find($id)->update($dataUpdate);

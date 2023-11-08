@@ -50,6 +50,8 @@ class NewsController extends Controller
                 'short_content' => $request->short_content,
                 'content' => $request->contents,
                 'date' => date("Y-m-d H:s:i", time()),
+                'image_name' => date("Y-m-d H:s:i", time()). $request->image_path,
+                'image_path'=> $request->image_path,
                 'category_id' => $request->category_id,
                 'show_app' => 1, //$request->show_app,
                 'status' => 1,
@@ -58,11 +60,11 @@ class NewsController extends Controller
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'news');
-            if (!empty($dataUploadImage)) {
-                $dataInsertNews['image_name'] = $dataUploadImage['file_name'];
-                $dataInsertNews['image_path'] = $dataUploadImage['file_path'];
-            }
+            // $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'news');
+            // if (!empty($dataUploadImage)) {
+            //     $dataInsertNews['image_name'] = $dataUploadImage['file_name'];
+            //     $dataInsertNews['image_path'] = $dataUploadImage['file_path'];
+            // }
             #echo "<pre>"; print_r($dataInsertNews); exit;
             $news = $this->news->create($dataInsertNews);
 
@@ -118,6 +120,8 @@ class NewsController extends Controller
                 'short_content' => $request->short_content,
                 'content' => $request->contents,
                 'date' => date("Y-m-d H:s:i", time()),
+                'image_name' => date("Y-m-d H:s:i", time()). $request->image_path,
+                'image_path'=> $request->image_path,
                 'category_id' => $request->category_id,
                 'show_app' => $request->show_app,
                 'status' => 1,
@@ -126,12 +130,12 @@ class NewsController extends Controller
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'news');
+            // $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'upload');
 
-            if (!empty($dataUploadImage)) {
-                $dataUpdate['image_name'] = $dataUploadImage['file_name'];
-                $dataUpdate['image_path'] = $dataUploadImage['file_path'];
-            }
+            // if (!empty($dataUploadImage)) {
+            //     $dataUpdate['image_name'] = $dataUploadImage['file_name'];
+            //     $dataUpdate['image_path'] = $dataUploadImage['file_path'];
+            // }
 
             $this->news->find($id)->update($dataUpdate);
             $news = $this->news->find($id);

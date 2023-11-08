@@ -69,8 +69,12 @@
 
                                     <div class="form-group">
                                         <label>Hình ảnh bài viết</label>
-                                        <input type="file" class="form-control-file" name="image_path">
+                                        {{-- <input type="file" class="form-control-file" name="image_path"> --}}
+                                        <input type="text" class="form-control" placeholder="Chọn ảnh"
+                                            name="image_path" value="" id="image_path" onclick="openPopupImg2('image_path')"
+                                            ondblclick="view('image_path')">
                                     </div>
+
                                     <hr width="100%" />
 
                                     <div class="form-group">

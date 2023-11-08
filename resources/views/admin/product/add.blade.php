@@ -72,7 +72,10 @@
 
                                     <div class="form-group">
                                         <label>Hình ảnh bài viết</label>
-                                        <input type="file" class="form-control-file @error('image_path') is-invalid @enderror" name="image_path">
+                                        {{-- <input type="file" class="form-control-file @error('image_path') is-invalid @enderror" name="image_path"> --}}
+                                        <input type="text" class="form-control" placeholder="Chọn ảnh"
+                                            name="image_path" value="" id="image_path" onclick="openPopupImg2('image_path')"
+                                            ondblclick="view('image_path')">
                                     </div>
                                     @error('image_path')
                                         <div class="alert alert-warning text-error">{{ $message }}</div>
@@ -135,5 +138,4 @@
     <script src="{{ asset('asset/ckfinder/ckfinder.js') }}"></script>
     <script src="{{ asset('asset/custom_ckeditor.js') }}"></script>
     <script src="{{ asset('admins/news/news.js') }}"></script>
-
 @endsection

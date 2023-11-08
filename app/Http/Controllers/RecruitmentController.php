@@ -37,6 +37,8 @@ class RecruitmentController extends Controller
             DB::beginTransaction();
             $dataInsert = array(
                 'title' => $recruimentRequest->title,
+                'image_name' => date("dmY", time()).time() . $recruimentRequest->title,
+                'image_path' => $recruimentRequest->image_path,
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
@@ -45,11 +47,11 @@ class RecruitmentController extends Controller
                 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
 
-            $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
-            if (!empty($dataUploadImage)) {
-                $dataInsert['image_name'] = $dataUploadImage['file_name'];
-                $dataInsert['image_path'] = $dataUploadImage['file_path'];
-            }
+            // $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
+            // if (!empty($dataUploadImage)) {
+            //     $dataInsert['image_name'] = $dataUploadImage['file_name'];
+            //     $dataInsert['image_path'] = $dataUploadImage['file_path'];
+            // }
 
             $this->recruiment->create($dataInsert);
             DB::commit();
@@ -76,6 +78,8 @@ class RecruitmentController extends Controller
             DB::beginTransaction();
             $dataUpdate = array(
                 'title' => $recruimentRequest->title,
+                'image_name' => date("dmY", time()).time() . $recruimentRequest->title,
+                'image_path' => $recruimentRequest->image_path,
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
@@ -85,17 +89,17 @@ class RecruitmentController extends Controller
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
+            // $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
 
-            if (!empty($dataUploadImage)) {
-                $dataUpdate['image_name'] = $dataUploadImage['file_name'];
-                $dataUpdate['image_path'] = $dataUploadImage['file_path'];
-            }
-            else
-            {
-                $dataUpdate['image_name'] = $image_name_old;
-                $dataUpdate['image_path'] = $image_path_old;
-            }
+            // if (!empty($dataUploadImage)) {
+            //     $dataUpdate['image_name'] = $dataUploadImage['file_name'];
+            //     $dataUpdate['image_path'] = $dataUploadImage['file_path'];
+            // }
+            // else
+            // {
+            //     $dataUpdate['image_name'] = $image_name_old;
+            //     $dataUpdate['image_path'] = $image_path_old;
+            // }
 
             $this->recruiment->find($id)->update($dataUpdate);
             DB::commit();

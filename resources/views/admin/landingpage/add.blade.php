@@ -71,7 +71,9 @@
 
                                     <div class="form-group">
                                         <label>Hình ảnh bài viết</label>
-                                        <input type="file" class="form-control-file" name="avatar_path">
+                                        {{-- <input type="file" class="form-control-file" name="avatar_path"> --}}
+                                        <input type="text" class="form-control" placeholder="Chọn ảnh"
+                                            name="avatar_path" value="" id="avatar_path" onclick="openPopupImg2('avatar_path')" ondblclick="view('avatar_path')">
                                     </div>
                                     @error('avatar_path')
                                     <div class="alert alert-warning text-error">{{ $message }}</div>
@@ -99,4 +101,5 @@
     <script src="{{ asset('asset/ckeditor/build/ckeditor.js') }}"></script>
     <script src="{{ asset('asset/ckfinder/ckfinder.js') }}"></script>
     <script src="{{ asset('asset/custom_ckeditor.js') }}"></script>
+    <script src="{{ asset('admins/news/news.js') }}"></script>
 @endsection

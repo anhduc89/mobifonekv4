@@ -44,7 +44,10 @@
 
                                     <div class="form-group">
                                         <label>Chọn ảnh</label>
-                                        <input type="file" class="form-control-file" name="path" @error('path') is-invalid @enderror>
+                                        {{-- <input type="file" class="form-control-file" name="path" @error('path') is-invalid @enderror> --}}
+                                        <input type="text" class="form-control" placeholder="Chọn ảnh"
+                                            name="path" value="" id="image_slide" onclick="openPopupImg2('image_slide')"
+                                            ondblclick="view('dxnv')">
                                     </div>
                                     @error('path')
                                         <div class="alert alert-warning text-error">{{ $message }}</div>
@@ -75,4 +78,30 @@
 
     </div>
 @endsection
+
+@section('js-custom-admin')
+    <script src="{{ asset('asset/ckeditor/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('asset/ckfinder/ckfinder.js') }}"></script>
+    <script src="{{ asset('asset/custom_ckeditor.js') }}"></script>
+    <script>
+        function openPopupImg2(id) {
+        CKFinder.popup({
+            chooseFiles: true,
+            onInit: function(finder) {
+                finder.on('files:choose', function(evt) {
+                    var file = evt.data.files.first();
+                    console.log(evt.data.files);
+
+                    document.getElementById(id).value = file.getUrl();
+
+                });
+                finder.on('file:choose:resizedImage', function(evt) {
+                    document.getElementById(id).value = evt.data.resizedUrl;
+                });
+            }
+        });
+    }
+    </script>
+@endsection
+
 

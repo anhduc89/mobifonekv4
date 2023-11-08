@@ -65,7 +65,9 @@
 
                                     <div class="form-group">
                                         <label>Hình ảnh đại diện bài viết</label>
-                                        <input type="file" class="form-control-file" name="image_path">
+                                        {{-- <input type="file" class="form-control-file" name="image_path"> --}}
+                                        <input type="text" class="form-control" placeholder="Chọn ảnh"
+                                            name="image_path" value="{{ $dataUpdate->image_path }}" id="image_path" onclick="openPopupImg2('image_path')" ondblclick="view('image_path')">
 
                                         <img src="{{ $dataUpdate->image_path }}" class="image-list" style="margin-top:10px">
                                     </div>

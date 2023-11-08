@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ImageRequest;
-use App\Models\image;
+use App\Models\Image;
 use App\Traits\StorageImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -38,15 +38,17 @@ class ImageController extends Controller
             $dataInsertImage = array(
                 'name' => $imageRequest->name,
                 'type'  => $imageRequest->type,
+                'file_name' => date('dmY_hsi', time()) . '_' . str_random(10) . '.' . $imageRequest->name,
+                'path'  => $imageRequest->path,
                 'status' => 1,
             );
 
             //upload image
-            $dataUploadImage = $this->storageTraitUpload($imageRequest, 'path', 'image');
-            if (!empty($dataUploadImage)) {
-                $dataInsertImage['file_name'] = $dataUploadImage['file_name'];
-                $dataInsertImage['path'] = $dataUploadImage['file_path'];
-            }
+            // $dataUploadImage = $this->storageTraitUpload($imageRequest, 'path', 'image');
+            // if (!empty($dataUploadImage)) {
+            //     $dataInsertImage['file_name'] = $dataUploadImage['file_name'];
+            //     $dataInsertImage['path'] = $dataUploadImage['file_path'];
+            // }
             #echo "<pre>"; print_r($dataInsertImage); exit;
             $this->image->create($dataInsertImage);
             DB::commit();

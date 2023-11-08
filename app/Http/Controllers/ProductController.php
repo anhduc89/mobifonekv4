@@ -39,6 +39,8 @@ class ProductController extends Controller
         $dataInsert = array(
             'name' => $productsRequest->name,
             // 'eng_name' => $productsRequest->eng_name,
+            'image_name' =>  date("dmY", time()) . time(). $productsRequest->image_path,
+            'image_path'   => $productsRequest->image_path,
             'product_categories'    => $productsRequest->product_categories,
             'contents' => $productsRequest->contents,
             'short_content' => $productsRequest->short_content,
@@ -46,11 +48,11 @@ class ProductController extends Controller
             'slug' => str_slug($productsRequest->name) . '-' . date("dmY", time()) . time() . '.html'
         );
         // echo "<pre>"; print_r($dataInsert); exit;
-        $dataUploadImage = $this->storageTraitUpload($productsRequest, 'image_path', 'products');
-        if (!empty($dataUploadImage)) {
-            $dataInsert['image_name'] = $dataUploadImage['file_name'];
-            $dataInsert['image_path'] = $dataUploadImage['file_path'];
-        }
+        // $dataUploadImage = $this->storageTraitUpload($productsRequest, 'image_path', 'products');
+        // if (!empty($dataUploadImage)) {
+        //     $dataInsert['image_name'] = $dataUploadImage['file_name'];
+        //     $dataInsert['image_path'] = $dataUploadImage['file_path'];
+        // }
 
         $this->products->create($dataInsert);
 
@@ -75,6 +77,8 @@ class ProductController extends Controller
 
         $dataUpdate = array(
             'name' => $request->name,
+            'image_name' =>  date("dmY", time()) . time(). $request->image_path,
+            'image_path'   => $request->image_path,
             'product_categories'    => $request->product_categories,
             'contents' => $request->contents,
             'short_content' => $request->short_content,
@@ -83,16 +87,16 @@ class ProductController extends Controller
             'slug' => str_slug($request->name) . '-' . date("dmY", time()) . time() . '.html'
         );
 
-        $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'products');
-        if (!empty($dataUploadImage)) {
-            $dataUpdate['image_name'] = $dataUploadImage['file_name'];
-            $dataUpdate['image_path'] = $dataUploadImage['file_path'];
-        }
-        else
-        {
-            $dataUpdate['image_name'] = $image_name_old;
-            $dataUpdate['image_path'] = $image_path_old;
-        }
+        // $dataUploadImage = $this->storageTraitUpload($request, 'image_path', 'products');
+        // if (!empty($dataUploadImage)) {
+        //     $dataUpdate['image_name'] = $dataUploadImage['file_name'];
+        //     $dataUpdate['image_path'] = $dataUploadImage['file_path'];
+        // }
+        // else
+        // {
+        //     $dataUpdate['image_name'] = $image_name_old;
+        //     $dataUpdate['image_path'] = $image_path_old;
+        // }
 
         $this->products->find($id)->update($dataUpdate);
 
