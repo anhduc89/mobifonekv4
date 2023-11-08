@@ -62,7 +62,7 @@
                                     Phú Thọ.
                                 </p>
 
-                                <a href="#" class="browse-btn mt-20">Tìm hiểu thêm</a>
+                                <a href="/gioi-thieu-cong-ty" class="browse-btn mt-20">Tìm hiểu thêm</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                     <div class="col-xl-8 col-lg-8 col-md-10">
 
                         <div class="section-tittle text-center mb-40">
-                            <h2><a href="/san-pham">Sản phẩm - Dịch vụ</a></h2>
+                            <h2><a href="/san-pham-dich-vu">Sản phẩm - Dịch vụ</a></h2>
                             {{-- <p>Công ty dịch vụ Mobifone Khu vực 4</p> --}}
                         </div>
                     </div>

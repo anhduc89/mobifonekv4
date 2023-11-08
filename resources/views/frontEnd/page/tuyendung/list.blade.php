@@ -73,8 +73,7 @@
                                             alt="{{ $item->image_name }}"></a>
                                 </div>
                                 <div class="blog-caption" style="height: 55%;">
-                                    <h3><a href="/tuyen-dung/{{ $item->slug }}" style="height: 55px"
-                                            class="limit-2-lines"><b>{{ $item->title }}</b></a> </h3>
+                                    <h3><a href="/tuyen-dung/{{ $item->slug }}" style="height: 55px; font-size: 16px;" class="limit-2-lines"><b>{{ $item->title }}</b></a> </h3>
                                     <p class="job limit-2-lines" style="height: 45px">Ngành nghề: {!! $item->nganhnghe !!}
                                     </p>
                                     <p><i class="fas fa-dollar-sign" aria-hidden="true"></i> Thu nhập:

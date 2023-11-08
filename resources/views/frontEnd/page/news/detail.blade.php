@@ -61,7 +61,7 @@
                                     {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailNews->user_id }}</a></li> --}}
                                     {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
                                 </ul>
-                                <img class="card-img rounded-0" src="{{ $detailNews->image_path }}" alt> <br/>
+                                {{-- <img class="card-img rounded-0" src="{{ $detailNews->image_path }}" alt> <br/> --}}
                                 <?php echo $detailNews->content; ?>
                             </div>
 

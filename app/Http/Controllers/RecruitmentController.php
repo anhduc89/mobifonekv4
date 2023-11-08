@@ -85,7 +85,7 @@ class RecruitmentController extends Controller
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
                 'nganhnghe' => $recruimentRequest->nganhnghe,
                 'status' => $recruimentRequest->status,// 1 là cho hiển thị ra ngoài. 0 là ẩn
-                'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
+                // 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
 
             //upload image
