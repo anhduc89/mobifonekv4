@@ -4,6 +4,16 @@
     <title>Mobifone Khu Vực 4 | {{ $detailTuyenDung->title }}</title>
 @endsection
 
+@section('meta')
+    <?php $url = url()->full(); ?>
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:type" name="ogtype" content="website" />
+    <meta property="og:title" name="ogtitle" content="{{ $detailTuyenDung->title }}" />
+    {{-- <meta property="og:description" content="{{ $detailNews->short_content }}" /> --}}
+    <meta property="og:image" content="{{ $detailTuyenDung->image_path }}" />
+@endsection
+
+
 @section('css-custom-frontend')
     <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
@@ -42,7 +52,7 @@
                                     <li><a href="#"><i class="fa fa-user"></i>{{ $detailTuyenDung -> user_id }}</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                 </ul>
-                                <?php echo $detailTuyenDung->contents ?> --}}
+                                <?php echo $detailTuyenDung->contents; ?> --}}
 
                                 <div class="card card-job">
                                     <div class="row" style="border-bottom: 2px solid #d8d8d8;padding-bottom:10px">
@@ -53,24 +63,25 @@
                                         <div class="col-12">
                                             <div class="card-job-top-right">
                                                 <div class="card-job-title">
-                                                    <h3 class="title"><b>{{ $detailTuyenDung -> title }}</b></h3>
-                                                    <p class="job">Ngành nghề: {{ $detailTuyenDung -> nganhnghe }}</p>
+                                                    <h3 class="title"><b>{{ $detailTuyenDung->title }}</b></h3>
+                                                    <p class="job">Ngành nghề: {{ $detailTuyenDung->nganhnghe }}</p>
                                                 </div>
                                                 <ul class="card-job-body">
 
                                                     <li class="item">
                                                         <span class="fas fa-dollar-sign"></span>
-                                                        Thu nhập: {{ $detailTuyenDung -> mucluong }}
+                                                        Thu nhập: {{ $detailTuyenDung->mucluong }}
                                                     </li>
 
                                                     <li class="item">
                                                         <span class="fa fa-users"></span>
-                                                        Số lượng: {{ $detailTuyenDung -> number_of_applicants }}
+                                                        Số lượng: {{ $detailTuyenDung->number_of_applicants }}
                                                     </li>
 
                                                     <li class="item">
                                                         <span class="fa fa-calendar"></span>
-                                                        Ngày hết hạn: {{  (new DateTime($detailTuyenDung -> application_deadline))->format("d-m-Y") }}
+                                                        Ngày hết hạn:
+                                                        {{ (new DateTime($detailTuyenDung->application_deadline))->format('d-m-Y') }}
                                                     </li>
                                                 </ul>
                                                 <div style="float: right">
@@ -122,37 +133,39 @@
                                 <h4 class="widget_title" style="color: #2d2d2d;">Có thể bạn quan tâm</h4>
 
                                 @if (count($listTuyenDung) > 0)
-                                <ul class="list cat-list">
-                                    @foreach ($listTuyenDung as $item)
-
-                                        <li>
-                                            {{-- <a href="/tin-tuc/danh-muc/{{ $item->slug_name }}" class="d-flex ">
+                                    <ul class="list cat-list">
+                                        @foreach ($listTuyenDung as $item)
+                                            <li>
+                                                {{-- <a href="/tin-tuc/danh-muc/{{ $item->slug_name }}" class="d-flex ">
                                                 <p>{{ $item->name }}</p>
                                                 <p>({{ $item->total_news }})</p>
                                             </a> --}}
-                                            <div class="card-job-title">
-                                                <h3 class="title"><a href="/tuyen-dung/{{$item -> slug}}">{{$item -> title}} </a></h3>
-                                            </div>
-                                            <ul class="card-job-body">
+                                                <div class="card-job-title">
+                                                    <h3 class="title"><a
+                                                            href="/tuyen-dung/{{ $item->slug }}">{{ $item->title }}
+                                                        </a></h3>
+                                                </div>
+                                                <ul class="card-job-body">
 
-                                                <li class="item">
-                                                    <span class="fas fa-dollar-sign"></span>
-                                                    Thu nhập: {{$item -> mucluong}}
-                                                </li>
+                                                    <li class="item">
+                                                        <span class="fas fa-dollar-sign"></span>
+                                                        Thu nhập: {{ $item->mucluong }}
+                                                    </li>
 
-                                                <li class="item">
-                                                    <span class="fa fa-users"></span>
-                                                    Số lượng: {{ $item -> number_of_applicants }}
-                                                </li>
+                                                    <li class="item">
+                                                        <span class="fa fa-users"></span>
+                                                        Số lượng: {{ $item->number_of_applicants }}
+                                                    </li>
 
-                                                <li class="item">
-                                                    <span class="fa fa-calendar"></span>
-                                                    Ngày hết hạn: {{  (new DateTime($item -> application_deadline))->format("d-m-Y") }}
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                                                    <li class="item">
+                                                        <span class="fa fa-calendar"></span>
+                                                        Ngày hết hạn:
+                                                        {{ (new DateTime($item->application_deadline))->format('d-m-Y') }}
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 @else
                                     <div class="text-center" style="margin-top: 20px">
                                         Hiện không có tuyển dụng vị trí khác
@@ -179,12 +192,12 @@
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Vị trí:</label>
                                 <select name="vitri" id="vitriungtuyen" class="form-control" required>
-                                <option value="{{ $detailTuyenDung -> id }}">{{ $detailTuyenDung -> title }}</option>
-                                {{-- @foreach ($array_vitri as $item)
+                                    <option value="{{ $detailTuyenDung->id }}">{{ $detailTuyenDung->title }}</option>
+                                    {{-- @foreach ($array_vitri as $item)
                                     <option value="{{ $item['key'] }}"> {{ $item['value'] }} </option>
                                 @endforeach --}}
 
-                            </select>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="recipient-name" class="col-form-label">Họ tên:</label>
@@ -192,11 +205,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="number_phone" class="col-form-label">Số điện thoại:</label>
-                                <input type="text" name="number_phone" class="form-control" id="number_phone" required>
+                                <input type="text" name="number_phone" class="form-control" id="number_phone"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label for="mail" class="col-form-label">Email:</label>
-                                <input type="text" name="mail" class="form-control" id="mail" required >
+                                <input type="text" name="mail" class="form-control" id="mail" required>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="col-form-label">Địa chỉ:</label required>
@@ -204,11 +218,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="fileCv" class="col-form-label">Cv:</label>
-                                <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf" required>
+                                <input type="file" name="fileCv" class="form-control" id="fileCv" accept=".pdf"
+                                    required>
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="genric-btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                <button type="button" class="genric-btn btn-secondary"
+                                    data-bs-dismiss="modal">Đóng</button>
                                 <button type="submit" class="genric-btn btn-primary">Gửi CV</button>
                             </div>
                         </form>

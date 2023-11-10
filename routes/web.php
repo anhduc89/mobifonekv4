@@ -109,6 +109,10 @@ Route::post('/tuyen-dung', [HomeController::class, 'tuyenDungForm'])->name('tuye
 Route::get('/hinh-anh-cong-ty', [HomeController::class, 'gallery']);
 
 
+// chính sách của FB để share bài viết
+Route::get('/chinh-sach-fb',[HomeController::class, 'policies_fb']);
+
+
 
 // ====================================================== Admin ===========================================
 

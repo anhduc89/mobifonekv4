@@ -4,9 +4,21 @@
     <title>Mobifone Khu Vực 4 | {{ $detailNews->title }}</title>
 @endsection
 
+@section('meta')
+    <?php $url = url()->full(); ?>
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:type" name="ogtype" content="website" />
+    <meta property="og:title" name="ogtitle" content="{{ $detailNews->title }}" />
+    {{-- <meta property="og:description" content="{{ $detailNews->short_content }}" /> --}}
+    <meta property="og:image" content="{{ $detailNews->image_path }}" />
+@endsection
+
 @section('css-custom-frontend')
     <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection
+
+
+
 
 @php
     // Chuỗi tháng
@@ -56,7 +68,8 @@
                             <div class="blog_details">
                                 <h2 style="color: #2d2d2d;">{{ $detailNews->title }} </h2>
                                 <ul class="blog-info-link mt-3 mb-4">
-                                    <li><i class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}
+                                    <li><i
+                                            class="fas fa-calendar-minus"></i>{{ date('d/m/Y H:i', strtotime($detailNews->date)) }}
                                     </li>
                                     {{-- <li><a href="#"><i class="fa fa-user"></i>{{ $detailNews->user_id }}</a></li> --}}
                                     {{-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> --}}
@@ -316,7 +329,8 @@
                                     @foreach ($listNewsOther as $item)
                                         <li>
                                             <a href="/tin-tuc/chi-tiet/{{ $item->slug }}" class="d-flex ">
-                                                <img src="{{ $item->image_path }}" alt="{{ $item->image_name}}" width="30%" style="height: fit-content;">
+                                                <img src="{{ $item->image_path }}" alt="{{ $item->image_name }}"
+                                                    width="30%" style="height: fit-content;">
                                                 <p class="products_other_name">{{ $item->title }}</p>
                                             </a>
                                         </li>
@@ -452,7 +466,8 @@
     <div class="mf-social-side-list" id="left_sidebar">
         <ul id="ul_left_sidebar">
             <li>
-                <a id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
+                <a href="javascript:void(0)" onclick="fb_share('{{ $url }}', '{{ $detailNews->title }}')"
+                    id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
             </li>
             <li>
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -472,10 +487,34 @@
                 <a id="backPrev" title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
             </li>
         </ul>
+        <div id="fb-root"></div>
     </div>
 @endsection
 
 @section('js-custom-frontend')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script src="{{ asset('frontEnd/js/custom_js.js') }}"></script>
+    {{-- <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id))
+                return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "/connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=720198576693059";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function fb_share(link, title) {
+            var app_id = '720198576693059';
+            var pageURL = 'https://www.facebook.com/dialog/feed?app_id=' + app_id + '&link=' + link + '';
+            var w = 600;
+            var h = 400;
+            var left = (screen.width / 2) - (w / 2);
+            var top = (screen.height / 2) - (h / 2);
+            window.open(pageURL, title,
+                'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=' +
+                800 + ',height=' + 650 + ',top=' + top + ',left=' + left + '');
+        }
+    </script> --}}
 @endsection

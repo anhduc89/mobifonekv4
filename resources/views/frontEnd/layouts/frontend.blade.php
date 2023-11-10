@@ -33,12 +33,12 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="DC.title" content="" />
-    <meta property="og:url" content="http://www.mobifonekv4.vn" />
+    {{-- <meta property="og:url" content="http://www.mobifonekv4.vn" />
     <meta property="og:type" name="ogtype" content="Website" />
     <meta property="og:title" name="ogtitle" content="MobiFone kv4" />
     <meta property="og:sitename" content="{{ Request::fullUrl() }}" />
     <meta property="og:description" content="Công ty Dịch vụ MobiFone Kv4" />
-    <meta property="og:image" content="{{ $info_companies->image_favicon_path }}" />
+    <meta property="og:image" content="{{ $info_companies->image_favicon_path }}" /> --}}
     <link rel="canonical" href="{{ Request::fullUrl() }}" />
     <link rel="shortcut icon" type="image/png" href="{{ $info_companies->image_favicon_path }}" />
 

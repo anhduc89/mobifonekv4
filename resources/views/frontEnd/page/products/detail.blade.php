@@ -4,6 +4,15 @@
     <title>Mobifone Khu Vực 4 | {{ $detailProduct->name }}</title>
 @endsection
 
+@section('meta')
+    <?php $url = url()->full(); ?>
+    <meta property="og:url" content="{{ $url }}" />
+    <meta property="og:type" name="ogtype" content="website" />
+    <meta property="og:title" name="ogtitle" content="{{ $detailProduct->name }}" />
+    {{-- <meta property="og:description" content="{{ $detailNews->short_content }}" /> --}}
+    <meta property="og:image" content="{{ $detailProduct->image_path }}" />
+@endsection
+
 @section('css-custom-frontend')
     <link rel="stylesheet" href="{{ asset('frontEnd/css/custom_css.css') }}">
 @endsection

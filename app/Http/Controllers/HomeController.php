@@ -183,4 +183,11 @@ class HomeController extends Controller
         return view('frontEnd.page.gallery', compact("listImage"));
     }
 
+
+    // chính sách fb
+    public function policies_fb()
+    {
+        return view('policies_fb');
+    }
+
 }
