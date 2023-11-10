@@ -30,9 +30,10 @@ class NewsController extends Controller
     }
     public function index()
     {
-        $listNews = $this->news->orderBy('id', 'desc')->paginate(10); //
+        $listNews = $this->news->where('status',1)->orderBy('id', 'desc')->paginate(5); // bài viết đang hiển thị lên web
+        $listNewsHidden = $this->news->where('status',0)->orderBy('id', 'desc')->paginate(5); // bài viết ẩn
        //  echo "<pre>"; print_r($listNews); exit;
-        return view('admin.news.index', compact('listNews'));
+        return view('admin.news.index', compact('listNews','listNewsHidden'));
     }
 
     public function create()
@@ -55,6 +56,7 @@ class NewsController extends Controller
                 'category_id' => $request->category_id,
                 'show_app' => 1, //$request->show_app,
                 'status' => 1,
+                'highlight' => $request->highlight,
                 'user_id' => auth()->id(),
                 'slug'  => str_slug($request->title).'-'.date("dmY", time()).time().'.html'
             );
@@ -124,7 +126,8 @@ class NewsController extends Controller
                 'image_path'=> $request->image_path,
                 'category_id' => $request->category_id,
                 'show_app' => $request->show_app,
-                'status' => 1,
+                'status' => $request->status,
+                'highlight' => $request->highlight,
                 'user_id' => auth()->id(),
                 //'slug'  => str_slug($request->title).'-'.date("dmY", time()).time().'.html'
             );

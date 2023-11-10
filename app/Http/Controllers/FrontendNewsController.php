@@ -24,6 +24,7 @@ class FrontendNewsController extends Controller
             ->leftJoin('news_categories','news_categories.id','=','news.category_id')
             ->leftJoin('users','users.id','=','news.user_id' )
             ->select('news.*','news_categories.name as category_name','news_categories.slug_name as category_slug','users.name as user_name')
+            ->where("news.status",1)
             ->orderBy('news.id','desc')
             ->paginate(10);
 
@@ -68,6 +69,7 @@ class FrontendNewsController extends Controller
             ->leftJoin('users','users.id','=','news.user_id' )
             ->orderBy('news.id','desc')
             ->select('news.*','news_categories.name as category_name','news_categories.slug_name as category_slug','users.name as user_name')
+            ->where("news.status",1)
             ->where("news_categories.slug_name",$slug)
             ->paginate(5);
 
@@ -79,6 +81,7 @@ class FrontendNewsController extends Controller
                 `news_categories` a
             LEFT JOIN
                 news b ON a.id = b.category_id
+            WHERE b.status = 1
             GROUP BY a.id;"
         );
 

@@ -93,6 +93,15 @@
                                     @enderror
                                     <hr width="100%" />
 
+                                    <div class="form-group">
+                                        <label>Thu nhập (mức lương)</label>
+                                        <input type="text" class="form-control"
+                                            placeholder="Thu nhập 1 năm (hoặc mức lương)" name="mucluong" value="{{ old('mucluong') }}">
+                                    </div>
+                                    {{-- @error('number_of_applicants')
+                                        <div class="alert alert-warning text-error">{{ $message }}</div>
+                                    @enderror --}}
+
                                 </div>
 
                                 <div class="card-footer">

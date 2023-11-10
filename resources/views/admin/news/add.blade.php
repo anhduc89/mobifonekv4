@@ -97,6 +97,14 @@
                                         </select>
                                     </div> --}}
 
+                                    <div class="form-group">
+                                        <label>Bài viết nổi bật</label>
+                                        <select name="highlight" class="form-control">
+                                            <option value="1"> Có </option>
+                                            <option value="0"> Không </option>
+                                        </select>
+                                    </div>
+
                                     <hr width="100%" />
                                     <div class="form-group">
                                         <label>Tags bài viết</label>

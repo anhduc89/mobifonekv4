@@ -117,6 +117,13 @@
                                     </div>
                                     <hr width="100%" />
 
+
+                                    <div class="form-group">
+                                        <label>Thu nhập (mức lương)</label>
+                                        <input type="text" class="form-control"
+                                            placeholder="Thu nhập 1 năm (hoặc mức lương)" name="mucluong" value="{{  $dataUpdate->mucluong }}">
+                                    </div>
+
                                 </div>
 
                                 <div class="card-footer">

@@ -80,6 +80,7 @@
                                         </select>
                                     </div>
 
+                                    <hr width="100%" />
                                     {{-- Bài viết có cho lên app không? Để mặc định là "có". --}}
                                     <div class="form-group">
                                         <label>Hiển thị lên app</label>
@@ -88,6 +89,34 @@
                                             <option value="0">Không</option>
                                         </select>
                                     </div>
+
+                                    <hr width="100%" />
+                                    <div class="form-group">
+                                        <label>Ẩn/hiện bài tin</label>
+                                        <select name="status" class="form-control">
+                                            <?php
+                                                if($itemNews->status == 1) { echo '<option value="1"> Đang hiển thị</option>';}
+                                                else if($itemNews->status == 0) {echo '<option value="0">Đang ẩn</option>';}
+                                            ?>
+                                            <option value="1"> -- Hiển thị bài viết</option>
+                                            <option value="0"> -- Ẩn bài viết</option>
+                                        </select>
+                                    </div>
+
+                                    <hr width="100%" />
+                                    <div class="form-group">
+                                        <label>Bài viết nổi bật</label>
+                                        <select name="highlight" class="form-control">
+                                            <?php
+                                                if($itemNews->highlight == 1) { echo '<option value="1"> Bài viết nổi bật </option>
+                                                                                    <option value="0"> -- Không phải bài viết nổi bật </option>';}
+
+                                                else if($itemNews->highlight == 0) {echo '<option value="0">Không phải bài viết nổi bật </option>
+                                                                                    <option value="1"> -- Bài viết nổi bật </option>';}
+                                            ?>
+                                        </select>
+                                    </div>
+
 
                                     <hr width="100%" />
                                     <div class="form-group">

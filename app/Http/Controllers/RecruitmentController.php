@@ -31,7 +31,7 @@ class RecruitmentController extends Controller
         return view('admin.recruiment.add');
     }
 
-    public function addRecruitment(RecruimentRequest $recruimentRequest)
+    public function addRecruitment(Request $recruimentRequest)
     {
         try {
             DB::beginTransaction();
@@ -42,11 +42,13 @@ class RecruitmentController extends Controller
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
+                'mucluong' => $recruimentRequest->mucluong,
                 'nganhnghe' => $recruimentRequest->nganhnghe,
                 'status' => 1, // 1 là cho hiển thị ra ngoài. 0 là ẩn
                 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
 
+            # echo "<pre>"; print_r($dataInsert);exit;
             // $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
             // if (!empty($dataUploadImage)) {
             //     $dataInsert['image_name'] = $dataUploadImage['file_name'];
@@ -70,9 +72,9 @@ class RecruitmentController extends Controller
     }
     public function updateRecruitment(Request $recruimentRequest, $id)
     {
-        $dataOld = $this->recruiment->find($id);
-        $image_name_old = $dataOld->image_name;
-        $image_path_old = $dataOld->image_path;
+        // $dataOld = $this->recruiment->find($id);
+        // $image_name_old = $dataOld->image_name;
+        // $image_path_old = $dataOld->image_path;
 
         try {
             DB::beginTransaction();
@@ -83,11 +85,12 @@ class RecruitmentController extends Controller
                 'contents' => $recruimentRequest->contents,
                 'number_of_applicants' => $recruimentRequest->number_of_applicants,
                 'application_deadline' => date('Y-m-d', strtotime($recruimentRequest->application_deadline)) . ' 00:00:00',
+                'mucluong' => $recruimentRequest->mucluong,
                 'nganhnghe' => $recruimentRequest->nganhnghe,
                 'status' => $recruimentRequest->status,// 1 là cho hiển thị ra ngoài. 0 là ẩn
                 // 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
-
+            // echo "<pre>"; print_r($dataUpdate);exit;
             //upload image
             // $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
 
