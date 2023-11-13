@@ -136,6 +136,7 @@ p {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
 .class-offer-area .properties__caption {
     padding: 15px 0px 8px 0px;
 }
@@ -157,6 +158,7 @@ p {
     .about-area {
         background-image: url('../img/Map.png');
     }
+
     .section-tittle p {
         color: #1c1c1c;
         font-size: 18px;
@@ -170,12 +172,15 @@ p {
 /* trang sản phẩm */
 .section-padding {
     padding-top: 50px;
+    padding-bottom: 20px;
 }
 
-.products_other, .widget_title {
+.products_other,
+.widget_title {
     margin-bottom: 14px !important;
     text-transform: uppercase;
 }
+
 .products_other_name {
     margin-left: 15px;
 }
@@ -281,6 +286,7 @@ body {
         max-width: 95%;
     }
 }
+
 @media only screen and (max-width: 1600px)and (min-width: 1280px) {
     .mf-social-side-list {
         left: 4vw;
@@ -290,6 +296,7 @@ body {
         max-width: 80%;
     }
 }
+
 @media only screen and (max-width: 1760px)and (min-width: 1601px) {
     .mf-social-side-list {
         left: 8vw;

@@ -1,8 +1,7 @@
-
 @php
 
     // Lấy thông tin công ty
-    $info_companies = session()->get('frontend')['info_companies']
+    $info_companies = session()->get('frontend')['info_companies'];
 
 @endphp
 
@@ -16,7 +15,8 @@
                         <div class="single-footer-caption mb-50">
                             <div class="single-footer-caption mb-20">
                                 <div class="footer-logo mb-35">
-                                    <a href=""><img src="{{ $info-> image_logo_path }}" alt="Mobifone" width="100%" ></a>
+                                    <a href=""><img src="{{ $info->image_logo_path }}" alt="Mobifone"
+                                            width="100%"></a>
                                 </div>
                             </div>
                         </div>
@@ -25,7 +25,8 @@
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle mb-10">
                                 <h4>Công ty Dịch vụ MobiFone khu vực 4</h4>
-                                <p> <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp Tòa nhà MobiFone - Khu Đồng Mạ - P. Tiên Cát - TP Việt Trì - T. Phú Thọ</p>
+                                <p> <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp Tòa nhà MobiFone - Khu Đồng
+                                    Mạ - P. Tiên Cát - TP Việt Trì - T. Phú Thọ</p>
                             </div>
                             <div class="footer-tittle">
                                 <h4>Kết nối với chúng tôi</h4>
@@ -49,12 +50,18 @@
                             </div> --}}
 
                             <div class="footer-social mt-30">
-                                <a href="tel:{{ $info-> phone }}" title="Hostline" target="_blank"><i class="fas fa-phone-alt"></i></a>
-                                <a href="mailto:{{ $info-> email }}" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
-                                <a href="{{ $info-> facebook }}" title="Facebook" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                                <a href="{{ $info-> tiktok }}" title="Tiktok"  target="_blank"><i class="fab fa-tiktok"></i></a>
-                                <a href="{{ $info-> zalo }}" title="Zalo"  target="_blank"><i class="fas fa-sms"></i></a>
-                                <a href="{{ $info-> youtube }}" title="Youtube"  target="_blank"><i class="fab fa-youtube-square"></i></a>
+                                <a href="tel:{{ $info->phone }}" title="Hostline" target="_blank"><i
+                                        class="fas fa-phone-alt"></i></a>
+                                <a href="mailto:{{ $info->email }}" title="Email" target="_blank"><i
+                                        class="fas fa-envelope"></i></a>
+                                <a href="{{ $info->facebook }}" title="Facebook" target="_blank"><i
+                                        class="fab fa-facebook-square"></i></a>
+                                <a href="{{ $info->tiktok }}" title="Tiktok" target="_blank"><i
+                                        class="fab fa-tiktok"></i></a>
+                                <a href="{{ $info->zalo }}" title="Zalo" target="_blank"><i
+                                        class="fas fa-sms"></i></a>
+                                <a href="{{ $info->youtube }}" title="Youtube" target="_blank"><i
+                                        class="fab fa-youtube-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -63,8 +70,8 @@
                             <div class="footer-tittle">
                                 <h4>Giới thiệu</h4>
                                 <ul>
-                                    <li><a href="#">Giới thiệu MobiFone</a></li>
-                                    <li><a href="#">Hợp tác MobiFone</a></li>
+                                    <li><a href="https://www.mobifone.vn/gioi-thieu" target="_blank">Giới thiệu MobiFone</a></li>
+                                    <li><a href="https://www.mobifone.vn/gioi-thieu/hop-tac-voi-mobifone" target="_blank">Hợp tác MobiFone</a></li>
                                     <li><a href="/tuyen-dung">Tuyển dụng</a></li>
                                 </ul>
                             </div>
@@ -75,9 +82,9 @@
                             <div class="footer-tittle">
                                 <h4>Hỗ trợ khách hàng</h4>
                                 <ul>
-                                    <li><a href="#">Gửi phản ánh </a></li>
-                                    <li><a href="#">Câu hỏi thường gặp</a></li>
-                                    <li><a href="#">Tìm kiếm khách hàng</a></li>
+                                    <li><a href="/lien-he">Gửi phản ánh </a></li>
+                                    <li><a href="https://www.mobifone.vn/ho-tro-khach-hang/cau-hoi-thuong-gap" target="_blank">Câu hỏi thường gặp</a></li>
+                                    <li><a href="/lien-he">Tìm kiếm cửa hàng</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -96,7 +103,10 @@
                             <div class="footer-copy-right text-center">
                                 <p> Bản quyền &copy;
 
-                                    <script>document.write(new Date().getFullYear());</script> Phòng Sản phẩm - Trung tâm Kinh doanh Công nghệ số - Công ty Dịch vụ MobiFone khu vực 4
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script> Phòng Sản phẩm - Trung tâm Kinh doanh Công nghệ số - Công
+                                    ty Dịch vụ MobiFone khu vực 4
                                 </p>
                             </div>
                         </div>
