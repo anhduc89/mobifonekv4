@@ -231,6 +231,19 @@ body {
     margin: 0
 }
 
+@media only screen and (max-width: 576px) {
+    .mf-social-side-list {
+        text-align: center;
+        position: static;
+    }
+    .mf-social-side-list ul {
+        display:-webkit-inline-box;
+    }
+    .mf-social-side-list ul li{
+        padding: 0 5px;
+    }
+}
+
 .mf-social-side-list ul li a {
     color: #FFFFFF;
     border-radius: 50%;

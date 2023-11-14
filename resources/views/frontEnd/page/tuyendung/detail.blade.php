@@ -102,6 +102,34 @@
                             </div>
                             <hr />
 
+                            <input type="hidden" id="linkShare" value="{{ url()->current() }}">
+                            <div class="mf-social-side-list" id="left_sidebar">
+                                <ul >
+                                    <li>
+                                        <a href="javascript:void(0)" onclick="fb_share('{{ $url }}', '{{ $detailTuyenDung->title }}')"
+                                            id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
+                                    </li>
+                                    {{-- <li>
+                                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+                                    </li> --}}
+
+                                    <li>
+                                        <a id="shareWithTwitter" title="Chia sẻ X"><i class="fab fa-twitter text-white"></i></a>
+                                    </li>
+                                    <li>
+                                        <a id="copyToClipboard" title="Sao chép link"><i class="fas fa-link text-white"></i></a>
+                                        <p id="Copied" style="display:none;"></p>
+                                    </li>
+                                    <li>
+                                        <a id="backPrev" title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
+                                    </li>
+                                </ul>
+                                <div id="fb-root"></div>
+                            </div>
+
                         </div>
 
                     </div>
