@@ -21,7 +21,7 @@
                     {{ session() -> get('name') }}
 
                 </a>
-                
+
             </div>
         </div>
 
@@ -139,7 +139,7 @@
                 <li class="nav-header">----- TUYỂN DỤNG </li>
 
                 @php
-                    $isMenu = (url()->current() == route('recruitment.index') || url()->current() == route('recruitment.index') );
+                    $isMenu = (url()->current() == route('recruitment.index') || url()->current() == route('candidates.index') );
                 @endphp
 
                 <li class="nav-item {{ $isMenu ? "menu-is-opening menu-open" : "" }}">
@@ -150,15 +150,15 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item" id="{{ route('productCategories.index') }}">
-                            <a href="{{ route('recruitment.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('recruitment.index') }}">
+                            <a href="{{ route('recruitment.index') }}" class="nav-link {{ (url()->current() == route('recruitment.index')) ? "active" : "" }}">
                             <i class="nav-icon far fa-newspaper"></i>&nbsp
                             <p>Tin tuyển dụng </p>
                             </a>
                         </li>
 
-                        <li class="nav-item" id="{{ route('productCategories.index') }}">
-                            <a href="{{ route('recruitment.index') }}" class="nav-link">
+                        <li class="nav-item" id="{{ route('candidates.index') }}">
+                            <a href="{{ route('candidates.index') }}" class="nav-link {{ (url()->current() == route('candidates.index')) ? "active" : "" }}">
                             <i class="nav-icon far fa-paper-plane"></i>&nbsp
                             <p>Ứng viên liên hệ </p>
                             </a>

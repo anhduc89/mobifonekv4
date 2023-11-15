@@ -7,9 +7,12 @@ use App\Http\Controllers\NewsCategoriesController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductCategoriesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CandidatesController;
+
 use App\Models\InfoCompany;
 use App\Http\Controllers\LadingPageController;
 use App\Models\Recruitment;
+use App\Models\Candidates;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CKEditorController;
 use Illuminate\Http\Request;
@@ -400,6 +403,29 @@ Route::middleware('checkLogin')->group(function () {
                 'uses' => 'RecruitmentController@updateRecruitment'
             ]);
         });
+
+        // ------------------------------------------------------------------------------------------
+        // route ứng viên liên hệ ứng tuyển
+        Route::prefix('candidates')->group(function () {
+            Route::get('/', [
+                Candidates::class,
+                'as' => 'candidates.index',
+                'uses' => 'CandidatesController@index'
+            ]);
+
+            Route::get('/edit/{id}', [
+                Candidates::class,
+                'as' => 'candidates.edit',
+                'uses' => 'CandidatesController@edit'
+            ]);
+
+            Route::post('/updateCandidates/{id}', [
+                Candidates::class,
+                'as' => 'candidates.updateCandidates',
+                'uses' => 'CandidatesController@updateCandidates'
+            ]);
+        });
+
 
         // ------------------------------------------------------------------------------------------
         // route landing page
