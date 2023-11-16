@@ -25,7 +25,7 @@ class FrontendNewsController extends Controller
             ->leftJoin('users','users.id','=','news.user_id' )
             ->select('news.*','news_categories.name as category_name','news_categories.slug_name as category_slug','users.name as user_name')
             ->where("news.status",1)
-            ->orderBy('news.id','desc')
+            ->orderBy('news.date','desc')
             ->paginate(10);
 
         #echo "<pre>"; print_r($listNews); exit;

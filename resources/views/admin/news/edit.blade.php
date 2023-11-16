@@ -8,6 +8,7 @@
 
 @section('css-custom-admin')
     <link href="{{ asset('asset/select2/select2.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link href="{{ asset('admins/news/news.css') }}" rel="stylesheet" />
 @endsection
 
@@ -120,6 +121,15 @@
 
                                     <hr width="100%" />
                                     <div class="form-group">
+                                        <label>Ngày đăng bài</label>
+                                        <input type="text" id='datepicker'
+                                            class="form-control datepicker @error('application_deadline') is-invalid @enderror"
+                                            placeholder="Nhập thời hạn" name="date"
+                                            value="{{ date('d-m-Y', strtotime($itemNews->date)) }}">
+                                    </div>
+
+                                    </hr/>
+                                    <div class="form-group">
                                         <label>Tags bài viết</label>
                                         <select class="form-control tag-news" multiple="multiple" name="tags[]">
                                             @foreach ($itemNews->tags as $item)
@@ -153,4 +163,15 @@
     <script src="{{ asset('asset/ckfinder/ckfinder.js') }}"></script>
     <script src="{{ asset('asset/custom_ckeditor.js') }}"></script>
     <script src="{{ asset('admins/news/news.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#datepicker").datepicker({
+                dateFormat: "dd-mm-yy",
+                autoclose: true,
+                todayHighlight: true
+            });
+        });
+    </script>
 @endsection

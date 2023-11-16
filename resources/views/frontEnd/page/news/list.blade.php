@@ -13,7 +13,7 @@
     $array_month = [
         1 => 'Jan',
         2 => 'Feb',
-        3 => 'Mat',
+        3 => 'Mar',
         4 => 'Apr',
         5 => 'May',
         6 => 'Jun',
@@ -36,7 +36,7 @@
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
                                 <h2>Tin tức</h2>
-                                <p>TThông tin liên quan đến sản phẩm - dịch vụ,<br/>các hoạt động của Công ty Dịch vụ MobiFone Khu vực 4</p>
+                                <p>các hoạt động của Công ty Dịch vụ MobiFone Khu vực 4</p>
                             </div>
                         </div>
                     </div>
@@ -57,8 +57,8 @@
                                     <div class="blog_item_img">
                                         <img class="card-img rounded-0" src="{{ $item->image_path }}" alt>
                                         <a href="/tin-tuc/chi-tiet/{{ $item->slug }}" class="blog_item_date">
-                                            <h3>{{ substr($item->created_at, 8, 2) }}</h3>
-                                            <p>{{ $array_month[substr($item->created_at, 5, 2) * 1.0] }}</p>
+                                            <h3>{{ substr($item->date, 8, 2) }}</h3>
+                                            <p>{{ $array_month[substr($item->date, 5, 2) * 1.0] }}</p>
                                         </a>
                                     </div>
                                     <div class="blog_details">

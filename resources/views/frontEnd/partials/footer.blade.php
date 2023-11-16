@@ -101,11 +101,7 @@
                     <div class="row">
                         <div class="col-xl-12 ">
                             <div class="footer-copy-right text-center">
-                                <p> Bản quyền &copy;
-
-                                    <script>
-                                        document.write(new Date().getFullYear());
-                                    </script> Công ty Dịch vụ MobiFone khu vực 4
+                                <p> Bản quyền &copy; <?php echo date("Y"); ?> Công ty Dịch vụ MobiFone khu vực 4
                                 </p>
                             </div>
                         </div>

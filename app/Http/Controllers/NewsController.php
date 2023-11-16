@@ -121,7 +121,7 @@ class NewsController extends Controller
                 'title' => $request->title,
                 'short_content' => $request->short_content,
                 'content' => $request->contents,
-                'date' => date("Y-m-d H:s:i", time()),
+                'date' =>  date('Y-m-d', strtotime($request->date)) . ' 00:00:00', //date("Y-m-d H:s:i", time()),
                 'image_name' => date("Y-m-d H:s:i", time()). $request->image_path,
                 'image_path'=> $request->image_path,
                 'category_id' => $request->category_id,

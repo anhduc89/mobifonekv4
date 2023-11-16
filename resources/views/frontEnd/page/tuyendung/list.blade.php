@@ -19,9 +19,7 @@
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
                                 <h2>Tuyển dụng</h2>
-                                <p>Bạn đang tìm kiếm một môi trường làm việc chuyên nghiệp, năng động, hiện đại,
-                                    sáng tạo nơi bạn được trao cơ hội, được cống hiến và được ghi nhận? <br>
-                                    Hãy gia nhập Công ty dịch vụ Mobifone Khu Vực 4 ngay hôm nay</p>
+                                <p> Trang thông tin tuyển dụng chính thức của công ty dịch vụ mobifone khu vực 4</p>
                             </div>
                         </div>
                     </div>

@@ -72,10 +72,6 @@ class RecruitmentController extends Controller
     }
     public function updateRecruitment(Request $recruimentRequest, $id)
     {
-        // $dataOld = $this->recruiment->find($id);
-        // $image_name_old = $dataOld->image_name;
-        // $image_path_old = $dataOld->image_path;
-
         try {
             DB::beginTransaction();
             $dataUpdate = array(
@@ -90,7 +86,7 @@ class RecruitmentController extends Controller
                 'status' => $recruimentRequest->status,// 1 là cho hiển thị ra ngoài. 0 là ẩn
                 // 'slug'  => str_slug($recruimentRequest->title) .'-'.date("dmY", time()).time().'.html'
             );
-            // echo "<pre>"; print_r($dataUpdate);exit;
+            #echo "<pre>"; print_r($dataUpdate);exit;
             //upload image
             // $dataUploadImage = $this->storageTraitUpload($recruimentRequest, 'image_path', 'recruiment');
 
