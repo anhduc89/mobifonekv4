@@ -58,7 +58,7 @@
                 <div class="row">
                     <ul class="nav">
                         <!-- Filter by referring to "data-category" of items with the value of "data-filter". -->
-                        <li data-filter="all"> Tất cả </li>
+                        {{-- <li data-filter="all"> Tất cả </li> --}}
                         @foreach ($listCategories as $key => $item)
                             <li data-filter="{{$item->id}}"> {{ $item->name }} </li>
 

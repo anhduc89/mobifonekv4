@@ -24,12 +24,14 @@ class CandidatesController extends Controller
                             ->join('recruitments','candidates_apply.vitri','=','recruitments.id')
                             ->select('candidates_apply.*','recruitments.title')
                             ->where("candidates_apply.status",0)
+                            ->orderBy('candidates_apply.id','desc')
                             ->paginate(5);
 
         $list_candidates_in =  DB::table('candidates_apply')
                                 ->join('recruitments','candidates_apply.vitri','=','recruitments.id')
                                 ->select('candidates_apply.*','recruitments.title')
                                 ->where("candidates_apply.status",1)
+                                ->orderBy('candidates_apply.id','desc')
                                 ->paginate(5);
 
 
@@ -37,6 +39,7 @@ class CandidatesController extends Controller
                                 ->join('recruitments','candidates_apply.vitri','=','recruitments.id')
                                 ->select('candidates_apply.*','recruitments.title')
                                 ->where("candidates_apply.status",2)
+                                ->orderBy('candidates_apply.id','desc')
                                 ->paginate(5);
 
         #echo "<pre>"; print_r($list_candidates);

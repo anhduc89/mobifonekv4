@@ -113,15 +113,15 @@
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                             <div class="media-body">
-                                <h3>{{ $info_companies->phone }}</h3>
-                                <p>Thứ 2 đến thứ 6 giờ hành chính</p>
+                                <h3>Hotline </h3>
+                                <p>{{ $info_companies->phone }}</p>
                             </div>
                         </div>
                         <div class="media contact-info">
                             <span class="contact-info__icon"><i class="ti-email"></i></span>
                             <div class="media-body">
                                 <h3><a href="mailto: {{ $info_companies->email }}" class="__cf_email__"
-                                        data-cfemail="b7c4c2c7c7d8c5c3f7d4d8dbd8c5dbded599d4d8da">[Email:]</a>
+                                        data-cfemail="b7c4c2c7c7d8c5c3f7d4d8dbd8c5dbded599d4d8da">Email</a>
                                 </h3>
                                 <p>{{ $info_companies->email }}</p>
                             </div>

@@ -105,8 +105,7 @@
 
                                     <script>
                                         document.write(new Date().getFullYear());
-                                    </script> Phòng Sản phẩm - Trung tâm Kinh doanh Công nghệ số - Công
-                                    ty Dịch vụ MobiFone khu vực 4
+                                    </script> Công ty Dịch vụ MobiFone khu vực 4
                                 </p>
                             </div>
                         </div>
