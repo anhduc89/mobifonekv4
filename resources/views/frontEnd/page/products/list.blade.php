@@ -22,7 +22,7 @@
     <main>
 
         <div class="slider-area">
-            <div class="slider-height2 slider-bg2 hero-overly d-flex align-items-center">
+            <div class="banner-slider slider-height2 slider-bg2 hero-overly d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
@@ -58,7 +58,7 @@
                 <div class="row">
                     <ul class="nav">
                         <!-- Filter by referring to "data-category" of items with the value of "data-filter". -->
-                        {{-- <li data-filter="all"> Tất cả </li> --}}
+                        <li data-filter="all"> Tất cả </li>
                         @foreach ($listCategories as $key => $item)
                             <li data-filter="{{$item->id}}"> {{ $item->name }} </li>
 

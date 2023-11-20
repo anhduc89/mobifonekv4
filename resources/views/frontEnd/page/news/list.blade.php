@@ -30,7 +30,7 @@
     <main>
 
         <div class="slider-area">
-            <div class="slider-height2 slider-bg2 d-flex hero-overly align-items-center">
+            <div class="banner-slider slider-height2 slider-bg2 d-flex hero-overly align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">

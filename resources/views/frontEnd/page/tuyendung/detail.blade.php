@@ -9,7 +9,7 @@
     <meta property="og:url" content="{{ $url }}" />
     <meta property="og:type" name="ogtype" content="website" />
     <meta property="og:title" name="ogtitle" content="{{ $detailTuyenDung->title }}" />
-    {{-- <meta property="og:description" content="{{ $detailNews->short_content }}" /> --}}
+    {{-- <meta property="og:description" content="{{ $detailTuyenDung ->short_content }}" /> --}}
     <meta property="og:image" content="{{ $detailTuyenDung->image_path }}" />
 @endsection
 
@@ -25,7 +25,7 @@
     <main>
 
         <div class="slider-area">
-            <div class="slider-height2 slider-bg2 d-flex hero-overly align-items-center">
+            <div class="banner-slider slider-height2 slider-bg2 d-flex hero-overly align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
@@ -117,14 +117,14 @@
                                     </li> --}}
 
                                     <li>
-                                        <a id="shareWithTwitter" title="Chia sẻ X"><i class="fab fa-twitter text-white"></i></a>
+                                        <a id="shareWithTwitter" onclick="tw_share('{{ $url }}')"  title="Chia sẻ X"><i class="fab fa-twitter text-white"></i></a>
                                     </li>
                                     <li>
                                         <a id="copyToClipboard" title="Sao chép link"><i class="fas fa-link text-white"></i></a>
                                         <p id="Copied" style="display:none;"></p>
                                     </li>
                                     <li>
-                                        <a id="backPrev" title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
+                                        <a id="backPrev" onclick="back()" title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
                                     </li>
                                 </ul>
                                 <div id="fb-root"></div>
@@ -266,7 +266,7 @@
     <div class="mf-social-side-list d-none d-sm-block" id="left_sidebar">
         <ul id="ul_left_sidebar">
             <li>
-                <a id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
+                <a  href="javascript:void(0)" onclick="fb_share('{{ $url }}', '{{ $detailTuyenDung ->title }}')" id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
             </li>
             {{-- <li>
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -276,14 +276,14 @@
             </li> --}}
 
             <li>
-                <a id="shareWithTwitter" title="Chia sẻ X"><i class="fab fa-twitter text-white"></i></a>
+                <a id="shareWithTwitter" onclick="tw_share('{{ $url }}')"  title="Chia sẻ X"><i class="fab fa-twitter text-white"></i></a>
             </li>
             <li>
                 <a id="copyToClipboard" title="Sao chép link"><i class="fas fa-link text-white"></i></a>
                 <p id="Copied"></p>
             </li>
             <li>
-                <a id="backPrev" title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
+                <a id="backPrev"  onclick="back()"  title="Quay lại trang trước"><i class="fas fa-arrow-left text-white"></i></a>
             </li>
         </ul>
     </div>

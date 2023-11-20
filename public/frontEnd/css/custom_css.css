@@ -38,7 +38,7 @@ p {
 }
 
 .slider-area .hero-caption.hero-caption2 h2 {
-    font-size: 52px;
+    font-size: 39px;
 }
 
 #copyToClipboard,
@@ -66,7 +66,7 @@ p {
     padding: 0px 6px;
     border-radius: 4px;
 }
-.slider-height2 {
+.banner-slider {
     height: 170px !important;
 }
 /* hết phần element dùng chung */
