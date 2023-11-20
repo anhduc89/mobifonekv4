@@ -196,7 +196,7 @@ class HomeController extends Controller
     // Hàm kiểm tra số điện thoại
     function validatePhoneNumber($phoneNumber)
     {
-        $regex = '/^[0-9]{9}$/';
+        $regex = '/^[0-9]{9,10}$/';
         return preg_match($regex, $phoneNumber);
     }
 
