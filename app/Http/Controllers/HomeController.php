@@ -46,20 +46,24 @@ class HomeController extends Controller
 
     public function contactForm(Request $request)
     {
+        $url_return_page = route("contactFrontEnd");
 
-        // $token = $request->session()->token();
+        $name =  $request->name;
 
-        // $token = csrf_token();
+        $email = $request->email;
 
-        // echo $request->name;
-
-        $name = preg_replace('/[><" ";]/', '', $request->name);
-
-        $email = preg_replace('/[><" ";]/', '', $request->email);
-
-        $number_phone = preg_replace('/[><" ";]/', '', $request->number_phone);
+        $number_phone =  $request->number_phone;
 
         $message = preg_replace('/[><" ";]/', '', $request->message);
+
+        // list $branches
+        $branches = DB::select("SELECT * FROM `branch`");
+
+        if (!$this->validatePhoneNumber($number_phone)) return redirect($url_return_page)->with('message', "Gửi thông tin thất bại, Vui lòng kiểm tra lại 'SỐ ĐIỆN THOẠI'");
+
+        if (!$this->validateEmail($email)) return redirect($url_return_page)->with('message', "Gửi thông tin thất bại, Vui lòng kiểm tra lại 'EMAIL'");
+
+        if (!$this->validateFullName($name)) return redirect($url_return_page)->with('message', "Gửi thông tin thất bại, Vui lòng kiểm tra lại 'HỌ TÊN'");
 
         $insert = DB::table('contact')->insert([
 
@@ -75,9 +79,6 @@ class HomeController extends Controller
             // Liên hệ
 
         ]);
-
-        // dd($insert);
-        $branches = DB::select("SELECT * FROM `branch`");
 
         return view('frontEnd.page.contact', compact('insert', 'branches'));
 
@@ -118,13 +119,20 @@ class HomeController extends Controller
         $file_path = $destinationPath = 'uploads/CV/';
 
         $real_name = $request->name;
-        $name = preg_replace('/[><" ";]/', '', $request->name);
+        
+        $name = $request->name;
 
-        $email = preg_replace('/[><" ";]/', '', $request->mail);
+        $email =  $request->mail;
 
-        $number_phone = preg_replace('/[><" ";]/', '', $request->number_phone);
+        $number_phone =  $request->number_phone;
 
         $vitri = preg_replace('/[><" ";]/', '', $request->vitri);
+
+        if (!$this->validatePhoneNumber($number_phone)) return redirect($url_return_page)->with('message', "Gửi Cv thất bại, Vui lòng kiểm tra lại 'SỐ ĐIỆN THOẠI'");
+
+        if (!$this->validateEmail($email)) return redirect($url_return_page)->with('message', "Gửi Cv thất bại, Vui lòng kiểm tra lại 'EMAIL'");
+
+        if (!$this->validateFullName($name)) return redirect($url_return_page)->with('message', "Gửi Cv thất bại, Vui lòng kiểm tra lại 'HỌ TÊN'");
 
         // Tạo thư mục
         if (!file_exists($destinationPath))
@@ -183,6 +191,27 @@ class HomeController extends Controller
     public function policies_fb()
     {
         return view('policies_fb');
+    }
+
+    // Hàm kiểm tra số điện thoại
+    function validatePhoneNumber($phoneNumber)
+    {
+        $regex = '/^[0-9]{9}$/';
+        return preg_match($regex, $phoneNumber);
+    }
+
+    // Hàm kiểm tra email
+    function validateEmail($email)
+    {
+        $regex = '/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-\.]+)\.([a-zA-Z]{2,6})$/';
+        return preg_match($regex, $email);
+    }
+
+    // Hàm kiểm tra họ tên
+    function validateFullName($fullName)
+    {
+        $regex = '/^[a-zA-Z\s]+$/';
+        return preg_match($regex, $fullName);
     }
 
 }

@@ -42,7 +42,7 @@
                     <div class="col-xl-8 col-lg-8 col-md-10">
 
                         <div class="section-tittle text-center mb-40">
-                            <h2>TÌM VIỆC HAY ĐẾN NGAY MOBIFONE</h2>
+                            <h2>TÌM VIỆC HÃY ĐẾN NGAY MOBIFONE</h2>
                             {{-- <p>Maecenas felis felis, vulputate sit amet mauris et, semper aliquam ligula. Integer
                             efficitur tellus metus, sed feugiat leo posuere ac. Morbi vitae tincidunt mi, et
                             malesuada massa.</p> --}}

@@ -36,7 +36,14 @@
                 </div>
             </div>
         </div>
-
+        @if (session('message'))
+            <script>
+                alert("{{ session('message') }}")
+            </script>
+            @php
+                session()->forget('message');
+            @endphp
+        @endif
         <style>
             .contact-section {
                 padding: 100px 0px 0px 0px;
