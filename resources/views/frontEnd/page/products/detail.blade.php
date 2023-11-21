@@ -9,7 +9,7 @@
     <meta property="og:url" content="{{ $url }}" />
     <meta property="og:type" name="ogtype" content="website" />
     <meta property="og:title" name="ogtitle" content="{{ $detailProduct->name }}" />
-    {{-- <meta property="og:description" content="{{ $detailNews->short_content }}" /> --}}
+    {{-- <meta property="og:description" content="{{ $detailProduct->short_content }}" /> --}}
     <meta property="og:image" content="{{ $detailProduct->image_path }}" />
 @endsection
 
@@ -138,7 +138,7 @@
     <div class="mf-social-side-list d-none d-sm-block" id="left_sidebar">
         <ul id="ul_left_sidebar">
             <li>
-                <a href="javascript:void(0)" onclick="fb_share('{{ $url }}', '{{ $detailNews->title }}')" id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
+                <a href="javascript:void(0)" onclick="fb_share('{{ $url }}', '{{ $detailProduct->name }}')" id="shareWithFb" title="Chia sẻ Facebook"><i class="fab fa-facebook-f text-white"></i></a>
             </li>
             {{-- <li>
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>

@@ -77,7 +77,7 @@
                             @endforeach
 
                             {{-- Phân trang --}}
-                            {!! $listNews->links('pagination::bootstrap-4') !!}
+                            {!! $listNews->onEachSide(5)->links('pagination::bootstrap-5') !!}
                             {{-- <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 <li class="page-item">
