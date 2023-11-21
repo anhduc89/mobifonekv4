@@ -77,27 +77,91 @@
                             @endforeach
 
                             {{-- Phân trang --}}
-                            {!! $listNews->links('pagination::bootstrap-4') !!}
-                            {{-- <nav class="blog-pagination justify-content-center d-flex">
+                            {{-- {!! $listNews->links('pagination::bootstrap-4') !!} --}}
+                            <nav class="blog-pagination justify-content-center d-flex">
+                                @php
+                                    $current = $listNews -> currentPage();
+                                    $last = $listNews -> lastPage();
+                                @endphp
                             <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
+                                {{-- Nếu page hiện tại(current) > 1 thì cho phép về page trước --}}
+                                @if ($current > 1)
+                                    <li class="page-item">
+                                        <a href="?page={{$current - 1}}" class="page-link" aria-label="Previous">
+                                            <i class="ti-angle-left"></i>
+                                        </a>
+                                    </li>
+                                @endif
+                                @if ($last < 6)
+
+                                    @for ($i = 1; $i <= $last; $i++)
+                                        <li class="page-item">
+                                            <a href="?page={{$i}}" class="page-link {{($i == $current) ? 'active' : '' }}" aria-label="Previous">
+                                            {{$i}}
+                                            </a>
+                                        </li>
+                                    @endfor
+
+                                @else
+                                    @if ($current > 2)
+                                        <li class="page-item">
+                                            <a href="?page=1" class="page-link" aria-label="Previous">
+                                            1
+                                            </a>
+                                        </li>
+                                        @if ($current > 4)
+                                            <li class="page-item">
+                                                <a class="page-link">...</a>
+                                            </li> 
+                                        @endif 
+                                        @if ($current == 4)
+                                            <li class="page-item">
+                                                <a href="?page=2" class="page-link">2</a>
+                                            </li> 
+                                        @endif     
+                                    @endif 
+
+                                    @for ($i = 1; $i <= $last; $i++)
+                                        
+                                        @if ( $i > $current - 2 && $i < $current + 2 )
+                                            <li class="page-item">
+                                                <a href="?page={{$i}}" class="page-link {{($i == $current) ? 'active' : '' }}" aria-label="Previous">
+                                                {{$i}}
+                                                </a>
+                                            </li>
+                                        @endif      
+                                    
+                                    @endfor
+
+                                    @if ($current < $last - 1)
+                                        @if ($current < $last - 3)
+                                            <li class="page-item">
+                                                <a class="page-link">...</a>
+                                            </li> 
+                                        @endif
+                                        @if ($current == $last - 3)
+                                            <li class="page-item">
+                                                <a class="page-link">{{$last - 1}}</a>
+                                            </li> 
+                                        @endif     
+                                        <li class="page-item">
+                                            <a href="?page={{$last}}" class="page-link" aria-label="Previous">
+                                            {{$last}}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endif
+                                    
+
+                                @if ($current < $last)
+                                    <li class="page-item">
+                                        <a href="?page={{$current + 1}}" class="page-link" aria-label="Previous">
+                                            <i class="ti-angle-right"></i>
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
-                        </nav> --}}
+                        </nav>
                         </div>
                     </div>
 
