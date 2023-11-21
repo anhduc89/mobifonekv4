@@ -77,12 +77,16 @@
                             @endforeach
 
                             {{-- Phân trang --}}
+
                             {{-- {!! $listNews->links('pagination::bootstrap-4') !!} --}}
                             <nav class="blog-pagination justify-content-center d-flex">
                                 @php
                                     $current = $listNews -> currentPage();
                                     $last = $listNews -> lastPage();
                                 @endphp
+
+                            {{-- {!! $listNews->onEachSide(5)->links('pagination::bootstrap-5') !!} --}}
+                            {{-- <nav class="blog-pagination justify-content-center d-flex">
                             <ul class="pagination">
                                 {{-- Nếu page hiện tại(current) > 1 thì cho phép về page trước --}}
                                 @if ($current > 1)
