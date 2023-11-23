@@ -97,7 +97,7 @@
 
         {{-- Sản phẩm --}}
         <style>
-            h2 a:hover {
+            /* h2 a:hover {
                 color: #1f67b0
             }
 
@@ -141,7 +141,7 @@
 
             .home-blog .single-blogs:hover {
                 border: 0px solid #D9E2E9;
-            }
+            } */
         </style>
 
         <section class="home-blog section-padding border-bottom clearfix">
@@ -166,7 +166,7 @@
                                         {{-- <img src="{{ $item->image_path }}" alt> --}}
                                     </div>
                                     <div class="box-detail-service">
-                                        <div class="blog-caption  box-detail">
+                                        <div class="blog-caption box-detail">
                                             <h3><a href="/san-pham-dich-vu/{{ $item->slug }}">{{ $item->name }}</a></h3>
                                             {!! $item->short_content !!}
                                             {{-- <p class="limit-2-lines"> <?php #echo $item->short_content; ?> </p> --}}

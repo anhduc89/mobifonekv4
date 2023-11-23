@@ -6,12 +6,13 @@
         $info = DB::table('info_companies')->first();
 
         // lấy menu
-        $menus = DB::table('menus')->get();
-
-        session(['frontend' => ['info_companies' => $info, 'menus' => $menus]]);
+        $menus = DB::table('menus')->whereNotIn('parent_id',[8])->get();
+        $menu_product = DB::table('menus')->whereIn('parent_id',[8])->get();
+        #echo "<pre>"; print_r($menu_product); exit;
+        session(['frontend' => ['info_companies' => $info, 'menus' => $menus, 'menu_product' => $menu_product]]);
     }
 
-    // Lấy thông tin công ty
+    // Lấy thông tin công tyF
     $info_companies = session()->get('frontend')['info_companies'];
 
 @endphp

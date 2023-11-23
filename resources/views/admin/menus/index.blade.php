@@ -35,6 +35,7 @@
                                         <tr>
                                             <th>STT</th>
                                             <th>Tên menu</th>
+                                            <th>Danh mục cha</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>
@@ -43,9 +44,21 @@
 
                                         foreach ($dataDisplay as $item)
                                         {
+                                            if($item->parent_id == 0) {
+                                                $parent = '<td> -- </td>';
+                                            }
+                                            else
+                                            {
+                                                foreach($dataDisplay as $itemParent) {
+                                                    if($itemParent->id == $item->parent_id) {
+                                                        $parent = '<td> '.$itemParent->name.' </td>';
+                                                    }
+                                                }
+                                            }
                                             echo ' <tr>
                                                 <th>' . $stt . ' </th>
-                                                <td>' . $item['name'] .' </td>
+                                                <td>' . $item->name .' </td>
+                                                '.$parent.'
                                                 <td>
                                                     <button type="button" class="btn btn-outline-success btn-sm">Chỉnh sửa</button>
                                                     <button type="button" class="btn btn-outline-warning btn-sm">Xóa</button>

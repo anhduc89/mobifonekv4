@@ -23,27 +23,40 @@
                                 <ul id="navigation">
 
                                     {{-- menu --}}
-
-                                    @foreach ($menus as $key => $item)
+                                    @foreach ($menus as $item)
                                         @if ($item->parent_id == 0)
                                             <li><a href="/{{ $item->slug_name }}"> {{ $item->name }} </a>
 
                                                 @php
                                                     $count = 0;
+                                                    $count_product  = 0;
+                                                    $submenuProduct = '';
                                                     $submenu = '';
                                                     $submenu .= '<li><a href="/gioi-thieu-cong-ty"> Giới thiệu công ty </a></li>';
                                                 @endphp
 
-                                                @foreach ($menus as $key1 => $itemSubmenu)
+                                                @foreach ($menus as $itemSubmenu)
                                                     @php
+
                                                         if ($itemSubmenu->id != 3 && $itemSubmenu->parent_id != 0 && $item->id == $itemSubmenu->parent_id) {
                                                             $submenu .= '<li><a href="/tin-tuc/danh-muc/' . $itemSubmenu->slug_name . '"> ' . $itemSubmenu->name . ' </a></li>';
                                                             $count++;
-                                                            unset($menus[$key1]);
+                                                            //unset($menus[$key1]);
                                                         }
                                                     @endphp
                                                 @endforeach
-                                                    {{-- @php
+
+                                                @foreach ($menu_product as $itemMenuProduct)
+                                                    @php
+                                                        if ($itemMenuProduct->id != 8 && $itemMenuProduct->parent_id != 0 && $item->id == $itemMenuProduct->parent_id) {
+                                                            $submenuProduct .= '<li><a href="/san-pham-dich-vu/' . $itemMenuProduct->slug_name . '"> ' . $itemMenuProduct->name . ' </a></li>';
+                                                            $count_product++;
+                                                            //unset($menus[$key1]);
+                                                        }
+                                                    @endphp
+                                                @endforeach
+
+                                                {{-- @php
                                                          $submenu .= '<li><a href="/hinh-anh-cong-ty">Hình ảnh công ty </a></li>';
                                                     @endphp --}}
                                                 @if ($count > 0)
@@ -52,13 +65,20 @@
                                                             echo $submenu;
                                                         @endphp
                                                     </ul>
+
                                                 @endif
 
+                                                @if ($count_product > 0)
+                                                <ul class="submenu">
+                                                    @php
 
-
+                                                        echo $submenuProduct;
+                                                    @endphp
+                                                </ul>
+                                                @endif
                                             </li>
                                             @php
-                                                unset($menus[$key]);
+                                                //unset($menus[$key]);
                                             @endphp
                                         @endif
                                     @endforeach

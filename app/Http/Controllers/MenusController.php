@@ -17,7 +17,7 @@ class MenusController extends Controller
     }
     public function index()
     {
-        $dataDisplay = $this->menu->all()->toArray(); // trả dữ liệu về dạng mảng
+        $dataDisplay = $this->menu->all(); // trả dữ liệu về dạng mảng
         return view('admin.menus.index',compact('dataDisplay'));
     }
 
