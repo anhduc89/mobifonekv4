@@ -27,7 +27,8 @@ class FrontendNewsController extends Controller
             ->where("news.status",1)
             ->orderBy('news.date','desc')
             ->paginate(10);
-
+        // dd($listNews);
+        // print_r($listNews->currentPage());die;
         #echo "<pre>"; print_r($listNews); exit;
         // danh mục tin tức
         $listNewsCategory = DB::select(" SELECT a.*, COUNT(b.id) total_news
