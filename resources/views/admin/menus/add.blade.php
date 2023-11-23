@@ -27,8 +27,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Tên menu</label>
-                                        <input type="text" class="form-control" placeholder="Nhập tên menu"
-                                            name="name">
+                                        <input type="text" class="form-control" placeholder="Nhập tên menu" name="name">
                                     </div>
 
                                     <div class="form-group">

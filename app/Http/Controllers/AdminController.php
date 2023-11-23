@@ -13,7 +13,7 @@ class AdminController extends Controller
     public function loginAdmin(Request $request)
     {
         // return view('login');
-        #dd(bcrypt('MobiFoneKv4@!!')); // MobiFoneKv4@!!  #$2y$10$ehc2XnDxLo2J7nZeUdJZsuKz3TG4d33pmErx3Nf5t10Qi/1G5RtPm
+        #dd(bcrypt('qq')); // host : MobiFoneKv4@!!  local : qq
         if ($request->session()->has('name')) {
             return redirect()->route('homeAdmin'); // nếu đăng nhập thành công thì về đây
         } else {

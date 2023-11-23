@@ -26,6 +26,14 @@
                                         <input type="text" class="form-control" placeholder="Nhập tên danh mục" name="name">
                                     </div>
 
+                                    <div class="form-group">
+                                        <label>Chọn danh mục cha</label>
+                                        <select class="form-control" name="parent_id">
+                                            <option value="0">Chọn danh mục cha</option>
+                                            {!! $categoryParent !!}
+                                        </select>
+                                    </div>
+
                                 </div>
 
                                 <div class="card-footer">

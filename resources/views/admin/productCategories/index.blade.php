@@ -35,6 +35,7 @@
                                         <tr>
                                             <th>STT</th>
                                             <th>Tên danh mục</th>
+                                            <th>Danh mục cha</th>
                                             <th>Hành động</th>
                                         </tr>
                                     </thead>
@@ -45,6 +46,13 @@
                                                 <th>{{ $stt }}</th>
                                                 <td>{{ $item->name }}</td>
 
+                                                    @if($item->parent_id == 0) <td> -- </td>
+                                                    @else
+                                                        @foreach ($dataProductCategory as $itemParent)
+                                                            @if($itemParent->id == $item->parent_id)  <td>{{ $itemParent->name }}</td>
+                                                            @endif
+                                                        @endforeach
+                                                    @endif
                                                 <td>
                                                     <button type="button" class="btn btn-outline-success btn-sm">Chỉnh sửa</button>
                                                     <button type="button" class="btn btn-outline-warning btn-sm">Xóa</button>
@@ -52,8 +60,6 @@
                                             </tr>
                                             <?php $stt ++;?>
                                         @endforeach
-
-
                                     </tbody>
                                 </table>
                             </div>
