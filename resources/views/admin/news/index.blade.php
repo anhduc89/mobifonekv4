@@ -45,11 +45,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $stt = 1;?>
+                                        <?php $stt = 1;
+                                            $host = request()->getSchemeAndHttpHost();
+                                        ?>
                                         @foreach ($listNews as $item)
                                             <tr>
                                                 <th>{{ $stt }}</th>
-                                                <td><p class="text-news" >{{ $item->title }}</p></td>
+                                                <td><a class="text-news"  href="<?php echo $host.'/tin-tuc/chi-tiet/'.$item->slug;?>" target="_blank">{{ $item->title }}</a></td>
                                                 <td>
                                                     <img src="{{ $item->image_path }}" class="image-list">
                                                 </td>

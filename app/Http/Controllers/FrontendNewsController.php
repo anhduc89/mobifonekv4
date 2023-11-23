@@ -67,10 +67,11 @@ class FrontendNewsController extends Controller
         $listNews = DB::table('news')
             ->leftJoin('news_categories','news_categories.id','=','news.category_id')
             ->leftJoin('users','users.id','=','news.user_id' )
-            ->orderBy('news.id','desc')
+            // ->orderBy('news.id','desc')
             ->select('news.*','news_categories.name as category_name','news_categories.slug_name as category_slug','users.name as user_name')
             ->where("news.status",1)
             ->where("news_categories.slug_name",$slug)
+            ->orderBy("news.date","desc")
             ->paginate(5);
 
         // danh mục tin tức
