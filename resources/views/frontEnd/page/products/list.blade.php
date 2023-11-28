@@ -14,12 +14,13 @@
 
         <div class="slider-area">
             <div class="banner-slider slider-height2 slider-bg2 hero-overly d-flex align-items-center">
-                <div class="container custom_container">
+                <div class="container">
                     <div class="row">
                         <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9">
                             <div class="hero-caption hero-caption2">
                                 <h2>Sản phẩm - dịch vụ</h2>
-                                <p>Chúng tôi mang đến sản phẩm - dịch vụ chất lượng tốt nhất phục vụ cho hàng triệu khách hàng</p>
+                                <p>Chúng tôi mang đến sản phẩm - dịch vụ
+                                    chất lượng tốt nhất phục vụ cho hàng triệu khách hàng</p>
                             </div>
                         </div>
                     </div>
@@ -39,7 +40,7 @@
                         </div>
                         <ul class="nav">
                             <!-- Filter by referring to "data-category" of items with the value of "data-filter". -->
-                            <li data-filter="all"> Tất cả </li>
+                            {{-- <li data-filter="all"> Tất cả </li> --}}
                             @foreach ($listCategories as $key => $item)
                                 <li data-filter="{{ $item->id }}"> {{ $item->name }} </li>
                             @endforeach

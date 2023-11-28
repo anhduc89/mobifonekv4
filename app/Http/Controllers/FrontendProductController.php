@@ -13,7 +13,7 @@ class FrontendProductController extends Controller
     {
 
         $listProduct =  DB::select("SELECT * FROM `products` WHERE status = 1 ORDER BY `id` DESC");
-        $listCategories = DB::select("SELECT * FROM `product_categories` ");
+        $listCategories = DB::select("SELECT * FROM `product_categories` WHERE id NOT IN(2)"); // bỏ mục chuyển đổi số. Các sản phẩm thuộc danh mục con của CĐS
         return view('frontEnd.page.products.list',  compact('listProduct','listCategories'));
 
     }
@@ -38,4 +38,10 @@ class FrontendProductController extends Controller
         return view('frontEnd.page.products.detail',  compact('detailProduct', 'listProduct'));
 
     }
+
+    // public function productCategory(Request $request, $productCategorySlug)
+    // {
+    //     // lấy sản phẩm theo slug trên đường link
+    //     $products = DB::select();
+    // }
 }

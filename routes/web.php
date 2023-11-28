@@ -88,6 +88,9 @@ Route::prefix('san-pham-dich-vu')->group(function () {
     Route::get('/', [FrontendProductController::class, 'index'])->name('productFrontEnd');
     Route::get('/{slug}', [FrontendProductController::class, 'detail'])->name('productDetailFrontEnd');
 
+    // phân loại sản phẩm theo danh mục sản phẩm
+    Route::get('/{category-slug}', [FrontendProductController::class, 'productCategory'])->name('productCateogryFrontEnd');
+
 });
 
 // Contact
