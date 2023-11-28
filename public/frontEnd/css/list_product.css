@@ -58,7 +58,7 @@ img {
     justify-content: center;
     min-width: 80px;
     margin: 3px;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     list-style: none;
     cursor: pointer;
     transition: all .5s;
@@ -66,8 +66,36 @@ img {
     border-radius: 5px;
     background-color: #005db2;
 }
-.nav li:hover {
+
+.btn {
+    background: #005db2;
+    font-family: "Chivo",sans-serif;
+    text-transform: inherit !important;
+    padding: 25px 30px !important;
+    color: #fff !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    border-radius: 0px;
+    line-height: 1;
+    line-height: 0;
+    cursor: pointer;
+    -moz-user-select: none;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background-color: #ec3a40 !important;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
     background-color: #ec3a40;
+    border-color: none;
 }
 
 .img-responsive {
